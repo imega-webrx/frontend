@@ -19,7 +19,7 @@ class SearchBlock extends Component {
 
     serarch(e) {
         axios
-            .post("https://webrx/api/col")
+            .post("https://webrx.ru/api/col")
             .then((response) => {
                 console.log(response);
                 history.push("/app/" + e.target.value);
