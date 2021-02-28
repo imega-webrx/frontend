@@ -20,9 +20,9 @@ class SearchBlock extends Component {
         axios
             .post("https://webrx.ru/api/col")
             .then(({ data }) => {
-                this.setState({data: data});
+                this.setState({ data: data });
                 console.log(data);
-            }
+            })
             .catch((error) => {
                 console.log(error);
             });
