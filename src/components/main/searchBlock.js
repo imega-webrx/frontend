@@ -8,10 +8,10 @@ class SearchBlock extends Component {
         super(props);
         this.state = {
             data: [
-                { title: "Афобазол" },
-                { title: "Глицин" },
-                { title: "Феназепам" },
-                { title: "Ацепол" },
+                { title: "Афобазол1" },
+                { title: "Глицин2" },
+                { title: "Феназепам3" },
+                { title: "Ацепол4" },
             ],
         };
     }
@@ -20,7 +20,7 @@ class SearchBlock extends Component {
         axios
             .post("https://webrx.ru/api/col")
             .then(({ data }) => {
-                // this.setState(data);
+                this.setState(data);
                 console.log(data);
             })
             .catch((error) => {
