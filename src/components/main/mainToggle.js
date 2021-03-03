@@ -33,7 +33,7 @@ const MainToggle = () => {
   const classes = useStyles();
   return(
     <div className={classes.wrapper}>
-      <Paper className={`${classes.infoBlock} container-fluid`} square variant="outlined" >
+      <Paper className={`${classes.infoBlock} container`} square variant="outlined" >
         <Tabs
           className={`${classes.tabsList} row`}
           value={value}
