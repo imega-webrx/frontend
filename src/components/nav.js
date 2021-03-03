@@ -14,15 +14,11 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
+    maxWidth: 170,
+    margin: "0px 0 15px 0"
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
-  },
-  toolBar: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   titleHeading: {
     fontSize: '2rem',
@@ -32,22 +28,24 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = () => {
   const classes = useStyles();
   return(
-    <div>
+    <header>
       <AppBar position="static" color="primary">
-        <Toolbar className={classes.toolBar}>
-          <Button>Служба поддержки</Button>
-          <Typography className={classes.titleHeading} variant="title" color="inherit">
-            Webrx
-          </Typography>
-          <FormControl className={classes.formControl} disabled>
-            <InputLabel id="demo-simple-select-label">Москва</InputLabel>
-            <Select>
-              <MenuItem>Москва</MenuItem>
-            </Select>
-          </FormControl>
+        <Toolbar className="container-fluid justify-content-center">
+            <div className="row w-100 justify-content-center">
+              <Button>Служба поддержки</Button>
+              <Typography className={`${classes.titleHeading} col-xl-8 col-sm-4 text-center align-self-center`} variant="title" color="inherit">
+                  Webrx
+              </Typography>
+              <FormControl  className={classes.formControl} disabled>
+                  <InputLabel id="demo-simple-select-label">Москва</InputLabel>
+                  <Select>
+                  <MenuItem>Москва</MenuItem>
+                  </Select>
+              </FormControl>
+            </div>
         </Toolbar>
       </AppBar>
-    </div>
+    </header>
   )
 }
 

@@ -22,7 +22,7 @@ function App() {
           </Route>
           <Route exact path="/app/:id"   component={ResultsWrapper}  />
 
-          
+
         </BrowserRouter>
         <Footer />
       </div>

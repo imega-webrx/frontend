@@ -15,13 +15,13 @@ const useStyles = makeStyles(() => ({
 const Footer = () => {
   const classes = useStyles();
   return(
-    <div className={classes.footer}>
+    <footer className={classes.footer}>
       <BottomNavigation color="secondary" position="fixed">
         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
       </BottomNavigation>
-    </div>
+    </footer>
   )
 };
 
