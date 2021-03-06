@@ -1,3 +1,8 @@
 # Frontend
 
-## install
+## Start dev
+
+```bash
+npm i
+npm run dev
+```
