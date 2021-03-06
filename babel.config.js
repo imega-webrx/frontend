@@ -1,12 +1,4 @@
 module.exports = {
-    env: {
-        production: {
-            plugins: [["emotion", { hoist: true }]],
-        },
-        development: {
-            plugins: [["emotion", { sourceMap: true, autoLabel: true }]],
-        },
-    },
     presets: [
         "@babel/preset-typescript",
         [
@@ -44,5 +36,14 @@ module.exports = {
         //     { loose: false, useBuiltIns: true }
         // ],
         "transform-react-remove-prop-types",
+        [
+            "emotion",
+            {
+                "sourceMap": false,
+                "autoLabel": false,
+                "labelFormat": "[local]",
+                "cssPropOptimization": true
+            }
+        ]
     ],
 };
