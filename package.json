@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build:ssr && node build/ssr.js && rm build/ssr.js",
     "dev": "start-storybook --debug-webpack -p 9001 -c .storybook",
-    "build:ssr": "webpack --display-modules --config webpack.ssr.js"
+    "build:ssr": "webpack --config webpack.ssr.js"
   },
   "eslintConfig": {
     "extends": [
