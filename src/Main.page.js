@@ -13,6 +13,10 @@ const MenuItem = tw(
     "a"
 )`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`;
 
+const MenuItemActive = tw(
+    "a"
+)`bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium`;
+
 const Main = () => (
     <Nav>
         <Container>
@@ -30,7 +34,7 @@ const Main = () => (
             </Logo>
             <Panel>
                 <Menu className="flex space-x-4">
-                    <MenuItem href="#">Dashboard</MenuItem>
+                    <MenuItemActive href="#">Dashboard</MenuItemActive>
                     <MenuItem href="#">Team</MenuItem>
                     <MenuItem href="#">Projects</MenuItem>
                     <MenuItem href="#">Calendar</MenuItem>
