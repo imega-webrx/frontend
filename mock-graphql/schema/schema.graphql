@@ -1,12 +1,20 @@
 type Query {
-
+    searchProduct(in: SearchProductInput): [Product]
 }
 
 type Mutation {
-
+    addProduct(in: AddProductInput): [Product]!
 }
 
 interface Node {
+    id: ID!
+}
+
+input SearchProductInput {
+    query: String!
+}
+
+input AddProductInput {
     id: ID!
 }
 
