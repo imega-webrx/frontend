@@ -15,9 +15,25 @@ type Product implements Node {
     title: String!
     fullTitle: String
     vendors: [Vendor]
+    offers: [Offer]
 }
 
 type Vendor implements Node {
     id: ID!
     title: String!
+}
+
+type Offer implements Node {
+    id: ID!
+    seller: Seller!
+    price: Price!
+}
+
+type Seller implements Node {
+    id: ID!
+    title: String!
+}
+
+type Price implements Node {
+    id: ID!
 }
