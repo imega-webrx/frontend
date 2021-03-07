@@ -1,0 +1,23 @@
+type Query {
+
+}
+
+type Mutation {
+
+}
+
+interface Node {
+    id: ID!
+}
+
+type Product implements Node {
+    id: ID!
+    title: String!
+    fullTitle: String
+    vendors: [Vendor]
+}
+
+type Vendor implements Node {
+    id: ID!
+    title: String!
+}
