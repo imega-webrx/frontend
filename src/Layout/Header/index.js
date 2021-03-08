@@ -4,7 +4,7 @@ import tw from "twin.macro";
 const Header = (props) => (
     <Container>
         {props.children}
-        <Title class="py-10">
+        <Title>
             <Column>
                 <H1>{props.title}</H1>
             </Column>
