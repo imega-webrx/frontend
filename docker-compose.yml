@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+  app:
+    image: imega/graphql-playground:latest
+    volumes:
+      - ./mock-graphql/resolvers:/app/resolvers
+      - ./mock-graphql/schema:/app/schema
+    ports:
+      - 4000:4000
