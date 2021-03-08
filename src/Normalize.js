@@ -17,6 +17,7 @@ const Normalize = () => (
                 background-color: rgba(243, 244, 246, 1);
             }
             div,
+            a,
             ::before,
             ::after {
                 box-sizing: border-box;
