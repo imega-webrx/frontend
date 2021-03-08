@@ -16,6 +16,14 @@ const Normalize = () => (
             body {
                 background-color: rgba(243, 244, 246, 1);
             }
+            div,
+            ::before,
+            ::after {
+                box-sizing: border-box;
+                border-width: 0;
+                border-style: solid;
+                border-color: #e5e7eb;
+            }
             a {
                 color: inherit;
                 text-decoration: inherit;

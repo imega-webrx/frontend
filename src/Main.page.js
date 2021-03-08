@@ -10,7 +10,7 @@ const Main = () => (
         <Header title="Поиск">
             <NavBar>
                 <MenuBar>
-                    <ActiveItem>Поиск</ActiveItem>
+                    <ActiveItem href="#">Поиск</ActiveItem>
                     <DefaultItem href="#">О нас</DefaultItem>
                 </MenuBar>
             </NavBar>
