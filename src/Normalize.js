@@ -18,6 +18,7 @@ const Normalize = () => (
             }
             div,
             a,
+            input,
             ::before,
             ::after {
                 box-sizing: border-box;

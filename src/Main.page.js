@@ -7,6 +7,7 @@ import { DefaultItem, ActiveItem } from "./Layout/NavBar/MenuBar/Item";
 import Content from "./Layout/Main";
 import TabBar from "./Layout/TabBar";
 import { DefaultTab, ActiveTab } from "./Layout/TabBar/Tab";
+import SearchInput from "./Layout/Search/Input";
 
 const Main = () => (
     <React.Fragment>
@@ -23,6 +24,7 @@ const Main = () => (
                 <ActiveTab href="#">Лекарства</ActiveTab>
                 <DefaultTab href="#">Лекарства для животных</DefaultTab>
             </TabBar>
+            <SearchInput />
         </Content>
     </React.Fragment>
 );
