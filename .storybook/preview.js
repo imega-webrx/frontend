@@ -5,10 +5,8 @@ import Normalize from "../src/Normalize";
 export const decorators = [
     (Story) => (
         <React.Fragment>
-            <div style={{ margin: "0" }}>
-                <Normalize />
-                <Story />
-            </div>
+            <Normalize />
+            <Story />
         </React.Fragment>
     ),
 ];
