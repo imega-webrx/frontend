@@ -19,7 +19,6 @@
     "sourceType": "module"
   },
   "plugins": ["react", "jest"],
-
   "rules": {
     "indent": "off",
     "react/jsx-uses-react": 1,
@@ -60,7 +59,6 @@
       }
     ]
   },
-
   "settings": {
     "react": {
       "createClass": "createReactClass",
