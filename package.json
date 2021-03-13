@@ -1,66 +1,68 @@
 {
-  "name": "webrx-frontend",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "build": "npm run build:ssr && node build/ssr.js && rm build/ssr.js",
-    "dev": "start-storybook --debug-webpack -p 9001 -c .storybook",
-    "build:ssr": "webpack --config webpack.ssr.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@apollo/client": "^3.3.11",
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
-    "@babel/eslint-parser": "^7.13.10",
-    "@babel/helper-plugin-utils": "^7.13.0",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
-    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
-    "@babel/plugin-proposal-optional-chaining": "^7.13.8",
-    "@babel/plugin-syntax-jsx": "^7.12.13",
-    "@babel/plugin-transform-react-jsx": "^7.12.17",
-    "@babel/plugin-transform-runtime": "^7.13.9",
-    "@babel/preset-env": "^7.13.9",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.13.0",
-    "@babel/runtime": "^7.13.9",
-    "@babel/runtime-corejs3": "^7.13.9",
-    "@emotion/react": "^11.1.5",
-    "@storybook/addon-a11y": "^6.1.21",
-    "@storybook/addon-docs": "^6.1.21",
-    "@storybook/addon-viewport": "^6.1.21",
-    "@storybook/react": "^6.1.21",
-    "@svgr/webpack": "^5.5.0",
-    "babel-plugin-graphql-tag": "^3.2.0",
-    "babel-plugin-macros": "^2.8.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "emotion-reset": "^3.0.0",
-    "emotion-server": "^10.0.27",
-    "eslint": "^7.21.0",
-    "eslint-plugin-react": "^7.22.0",
-    "graphql": "^15.5.0",
-    "graphql-tag": "^2.12.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "twin.macro": "^2.3.0",
-    "webpack-cli": "^4.5.0"
-  }
+    "name": "webrx-frontend",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "build": "npm run build:ssr && node build/ssr.js && rm build/ssr.js",
+        "dev": "start-storybook --debug-webpack -p 9001 -c .storybook",
+        "build:ssr": "webpack --config webpack.ssr.js",
+        "test": "jest"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@apollo/client": "^3.3.11",
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.8",
+        "@babel/eslint-parser": "^7.13.10",
+        "@babel/helper-plugin-utils": "^7.13.0",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
+        "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+        "@babel/plugin-proposal-optional-chaining": "^7.13.8",
+        "@babel/plugin-syntax-jsx": "^7.12.13",
+        "@babel/plugin-transform-react-jsx": "^7.12.17",
+        "@babel/plugin-transform-runtime": "^7.13.9",
+        "@babel/preset-env": "^7.13.9",
+        "@babel/preset-react": "^7.12.13",
+        "@babel/preset-typescript": "^7.13.0",
+        "@babel/runtime": "^7.13.9",
+        "@babel/runtime-corejs3": "^7.13.9",
+        "@storybook/addon-a11y": "^6.1.21",
+        "@storybook/addon-docs": "^6.1.21",
+        "@storybook/addon-viewport": "^6.1.21",
+        "@storybook/react": "^6.1.21",
+        "@svgr/webpack": "^5.5.0",
+        "babel-jest": "^26.6.3",
+        "babel-plugin-graphql-tag": "^3.2.0",
+        "babel-plugin-macros": "^2.8.0",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "emotion-reset": "^3.0.0",
+        "emotion-server": "^10.0.27",
+        "eslint": "^7.22.0",
+        "eslint-plugin-react": "^7.22.0",
+        "graphql": "^15.5.0",
+        "graphql-tag": "^2.12.1",
+        "jest": "^26.6.3",
+        "react": "16.14.0",
+        "react-dom": "^16.14.0",
+        "twin.macro": "^2.3.0",
+        "webpack-cli": "^4.5.0"
+    }
 }
