@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jest"],
+  "rules": {
+    "indent": "off",
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/react-in-jsx-scope": 0,
+    "react/display-name": 0,
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "semi": ["error", "always"],
+    "curly": ["error"],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "one-var": ["error", { "var": "always", "let": "never", "const": "never" }],
+    "sort-keys": [
+      "warn",
+      "asc",
+      { "caseSensitive": true, "natural": false, "minKeys": 2 }
+    ],
+    "eqeqeq": ["error", "smart"],
+    "complexity": ["warn", { "max": 2 }],
+    "no-magic-numbers": [
+      "error",
+      { "ignore": [-1, 0, 1], "ignoreArrayIndexes": true }
+    ],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "16.14.0"
+    }
+  }
+}
