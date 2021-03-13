@@ -8,6 +8,7 @@ import Content from "./Layout/Main";
 import TabBar from "./Layout/TabBar";
 import { DefaultTab, ActiveTab } from "./Layout/TabBar/Tab";
 import SearchInput from "./Layout/Search/Input";
+import { Newsletter } from "./Layout/Sections";
 
 const Main = () => (
     <React.Fragment>
@@ -26,6 +27,7 @@ const Main = () => (
             </TabBar>
             <SearchInput />
         </Content>
+        <Newsletter />
     </React.Fragment>
 );
 
