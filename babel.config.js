@@ -39,11 +39,11 @@ module.exports = {
         [
             "emotion",
             {
-                "sourceMap": false,
-                "autoLabel": false,
-                "labelFormat": "[local]",
-                "cssPropOptimization": true
-            }
-        ]
+                sourceMap: false,
+                autoLabel: false,
+                labelFormat: "[local]",
+                cssPropOptimization: true,
+            },
+        ],
     ],
 };
