@@ -16,19 +16,7 @@ const Team = () => (
                 <TeamLayout>
                     <TeamList>
                         <TeamMember>
-                            {members}.map((member) =>
-                                <Member>
-                                    <Img src={member.img} />
-                                    <MemberInfo>
-                                        <MemberName>
-                                            {member.name}
-                                        </MemberName>
-                                        <Position>
-                                            {member.position}
-                                        </Position>
-                                    </MemberInfo>
-                                </Member>
-                            )
+                            <ListMembers />
                         </TeamMember>
                     </TeamList>
                 </TeamLayout>
@@ -45,7 +33,19 @@ const members = [
     {img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80', name: 'Courtney Henry', position: 'Designer'},
     {img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80', name: 'Tom Cook', position: 'Director, Product Development'}
 ];
-
+const ListMembers = members.map((member) =>
+    <Member>
+        <Img src={member.img} />
+        <MemberInfo>
+            <MemberName>
+                {member.name}
+            </MemberName>
+            <Position>
+                {member.position}
+            </Position>
+        </MemberInfo>
+    </Member>
+);
 const Container = tw("div")`bg-yellow-300`;
 const Section = tw("section")`mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24`;
 const GridLayout = tw("grid")`grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8`;
