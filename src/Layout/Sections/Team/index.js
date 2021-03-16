@@ -15,9 +15,7 @@ const Team = () => (
                 </TextLayout>
                 <TeamLayout>
                     <TeamList>
-                        <TeamMember>
-                            <ListMembers />
-                        </TeamMember>
+                        <ListMembers />
                     </TeamList>
                 </TeamLayout>
             </GridLayout>
@@ -65,37 +63,24 @@ const members = [
 ];
 const ListMembers = () =>
     members.map((member) => (
-        <Member key={member.name}>
-            <Img src={member.img} />
-            <MemberInfo>
-                <MemberName>{member.name}</MemberName>
-                <Position>{member.position}</Position>
-            </MemberInfo>
-        </Member>
+        <TeamMember key={member.name}>
+            <Member>
+                <Img src={member.img} />
+                <MemberInfo>
+                    <MemberName>{member.name}</MemberName>
+                    <Position>{member.position}</Position>
+                </MemberInfo>
+            </Member>
+        </TeamMember>
     ));
-const Container = tw("div")`bg-yellow-300`;
-const Section = tw("section")`
-    mx-auto
-    py-12
-    px-4
-    max-w-7xl
-    sm:px-6
-    lg:px-8
-    lg:py-24
-`;
-const GridLayout = tw("grid")`grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8`;
+const Container = tw("div")`bg-white`;
+const Section = tw("div")`mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24`;
+const GridLayout = tw("div")`grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8`;
 const TextLayout = tw("div")`space-y-5 sm:space-y-4`;
 const Title = tw("h2")`text-3xl font-extrabold tracking-tight sm:text-4xl`;
 const Description = tw("p")`text-xl text-gray-500`;
 const TeamLayout = tw("div")`lg:col-span-2`;
-const TeamList = tw("ul")`
-    space-y-12
-    sm:grid
-    sm:grid-cols-2
-    sm:gap-12
-    sm:space-y-0
-    lg:gap-x-8
-`;
+const TeamList = tw("ul")`space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8`;
 const TeamMember = tw("li")``;
 const Member = tw("div")`flex items-center space-x-4 lg:space-x-6`;
 const Img = tw("img")`w-16 h-16 rounded-full lg:w-20 lg:h-20`;
