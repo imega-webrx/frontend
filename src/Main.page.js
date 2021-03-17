@@ -11,6 +11,7 @@ import SearchInput from "./Layout/Search/Input";
 import { Team, Newsletter, Ready, Hero } from "./Layout/Sections";
 import { RightMenu } from "./Layout/NavBar/RightMenu";
 
+
 const Main = () => (
     <React.Fragment>
         <Header title="Поиск">
@@ -32,6 +33,8 @@ const Main = () => (
             </TabBar>
             <SearchInput />
         </Content>
+        <Hero />
+        <Ready />
         <Team />
         <Newsletter />
     </React.Fragment>
