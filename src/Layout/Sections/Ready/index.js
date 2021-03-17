@@ -25,7 +25,6 @@ const Ready = () => (
                 </LearnMoreBlock>
             </ButtonArea>
         </Section>
-
     </Container>
 );
 
