@@ -20,6 +20,8 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         name="viewport"
                         content="width=device-width,initial-scale=1"
                     />
+                    <link rel="stylesheet" href="https://tailwindui.com/css/components-v2.css" />
+                    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer=""></script>
                     <Normalize />
                     <style
                         data-emotion-css={ids.join(" ")}

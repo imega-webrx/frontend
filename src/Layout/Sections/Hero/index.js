@@ -1,0 +1,235 @@
+import React from "react";
+import tw from "twin.macro";
+
+const Hero = () => (
+    <Container>
+        <Section>
+            <Main>
+                <GridBlock>
+                    <TextSection>
+                        <Title>
+                            <SmallText>
+                                Coming soon
+                            </SmallText>
+                            <MainText>
+                                <MainTextUp>
+                                    Data to enrich your
+                                </MainTextUp>
+                                <MainTextDown>
+                                    online business
+                                </MainTextDown>
+                            </MainText>
+                        </Title>
+                        <JustText>
+                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                            Elit sunt amet fugiat veniam occaecat fugiat aliqua ad ad non deserunt sunt.
+                        </JustText>
+                        <NotifyBlock>
+                            <NotifyBlockText>
+                                Sign up to get notified when it’s ready.
+                            </NotifyBlockText>
+                            <NotifyBlockForm action="#" method="POST">
+                                <NotifyBlockFormMailLabel for="email">
+                                    Email
+                                </NotifyBlockFormMailLabel>
+                                <NotifyBlockFormMailInput type="email" name="email" id="email" placeholder="Enter your email" />
+                                <NotifyBlockFormButton type="submit">
+                                    Notify me
+                                </NotifyBlockFormButton>
+                            </NotifyBlockForm>
+                            <TextUnder>
+                                We care about the protection of your data. Read our&nbsp;
+                                <TextUnderLink href="#">
+                                    Privacy Policy
+                                </TextUnderLink>
+                            </TextUnder>
+                        </NotifyBlock>
+                    </TextSection>
+                    <Video>
+                        <Preview>
+                            <PreviewButton type="button">
+                                <Img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&;auto=format&;fit=crop&amp;w=1350&;q=80" alt="" />
+                            </PreviewButton>
+                        </Preview>
+                    </Video>
+                </GridBlock>
+            </Main>
+        </Section>
+    </Container>
+);
+const Container = tw("div")`
+    relative
+    bg-white
+    overflow-hidden
+`;
+const Section = tw("div")`
+    relative
+    pt-6
+    pb-16
+    sm:pb-24
+    lg:pb-32
+`;
+const Main = tw("main")`
+    mt-16
+    mx-auto
+    max-w-7xl
+    px-4
+    sm:mt-24
+    sm:px-6
+    lg:mt-32
+`;
+const GridBlock = tw("div")`
+    lg:grid
+    lg:grid-cols-12
+    lg:gap-8
+`;
+const TextSection = tw("div")`
+    sm:text-center
+    md:max-w-2xl
+    md:mx-auto
+    lg:col-span-6
+    lg:text-left
+`;
+const Title = tw("h2")``;
+const SmallText = tw("span")`
+    block
+    text-sm
+    font-semibold
+    uppercase
+    tracking-wide
+    text-gray-500
+    sm:text-base
+    lg:text-sm
+    xl:text-base
+`;
+const MainText = tw("span")`
+    mt-1
+    block
+    text-4xl
+    tracking-tight
+    font-extrabold
+    sm:text-5xl
+    xl:text-6xl
+`;
+const MainTextUp = tw("span")`
+    block
+    text-gray-900
+`;
+const MainTextDown = tw("span")`
+    block
+    text-indigo-600
+`;
+const JustText = tw("p")`
+    mt-3
+    text-base
+    text-gray-500
+    sm:mt-5
+    sm:text-xl
+    lg:text-lg
+    xl:text-xl
+`;
+const NotifyBlock = tw("div")`
+    mt-8
+    sm:max-w-lg
+    sm:mx-auto
+    sm:text-center
+    lg:text-left
+    lg:mx-0
+`;
+const NotifyBlockText = tw("p")`
+    text-base
+    font-medium
+    text-gray-900
+`;
+const NotifyBlockForm = tw("form")`
+    mt-3
+    sm:flex
+`;
+const NotifyBlockFormMailLabel = tw("label")`
+    sr-only
+`;
+const NotifyBlockFormMailInput = tw("input")`
+    block
+    w-full
+    rounded-md
+    py-3
+    text-base
+    placeholder-gray-500
+    shadow-sm
+    focus:ring-indigo-500
+    focus:border-indigo-500
+    sm:flex-1
+    border-gray-300
+`;
+const NotifyBlockFormButton = tw("button")`
+    mt-3
+    w-full
+    px-6
+    py-3
+    border
+    border-transparent
+    text-base
+    font-medium
+    rounded-md
+    text-white
+    bg-gray-800
+    shadow-sm
+    hover:bg-gray-900
+    focus:outline-none
+    focus:ring-2
+    focus:ring-offset-2
+    focus:ring-indigo-500
+    sm:mt-0
+    sm:ml-3
+    sm:flex-shrink-0
+    sm:inline-flex
+    sm:items-center
+    sm:w-auto
+`;
+const TextUnder = tw("p")`
+    mt-3
+    text-sm
+    text-gray-500
+`;
+const TextUnderLink = tw("a")`
+    font-medium
+    text-gray-900
+    underline
+`;
+const Video = tw("div")`
+    mt-12
+    relative
+    sm:max-w-lg
+    sm:mx-auto
+    lg:mt-0
+    lg:max-w-none
+    lg:mx-0
+    lg:col-span-6
+    lg:flex
+    lg:items-center
+`;
+const Preview = tw("div")`
+   relative
+   mx-auto
+   w-full
+   rounded-lg
+   shadow-lg
+   lg:max-w-md
+`;
+const PreviewButton = tw("button")`
+   relative
+   block
+   w-full
+   bg-white
+   rounded-lg
+   overflow-hidden
+   focus:outline-none
+   focus:ring-2
+   focus:ring-offset-2
+   focus:ring-indigo-500
+`;
+const Img = tw("img")`
+   w-full
+`;
+
+export { Hero };
