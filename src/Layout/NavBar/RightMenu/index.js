@@ -22,12 +22,6 @@ const DropDownButton = tw(
 )`bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`;
 const DropDownSpan = tw("span")`sr-only`;
 const DropDownBell = tw("img")`h-8 w-8 rounded-full`;
-const DropDownList = tw(
-    "div"
-)`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`;
-const DropDownItem = tw(
-    "a"
-)`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100`;
 
 const RightMenu = () => (
     <React.Fragment>
@@ -76,30 +70,6 @@ const RightMenu = () => (
                                     />
                                 </DropDownButton>
                             </div>
-
-                            <DropDownList
-                                data-todo-x-description="Dropdown menu, show/hide based on menu state."
-                                data-todo-x-show="open"
-                                data-todo-x-transition-enter="transition ease-out duration-200"
-                                data-todo-x-transition-enter-start="transform opacity-0 scale-95"
-                                data-todo-x-transition-enter-end="transform opacity-100 scale-100"
-                                data-todo-x-transition-leave="transition ease-in duration-75"
-                                data-todo-x-transition-leave-start="transform opacity-100 scale-100"
-                                data-todo-x-transition-leave-end="transform opacity-0 scale-95"
-                                role="menu"
-                                aria-orientation="vertical"
-                                aria-labelledby="user-menu"
-                            >
-                                <DropDownItem href="/" role="menuitem">
-                                    Your Profile
-                                </DropDownItem>
-                                <DropDownItem href="/" role="menuitem">
-                                    Settings
-                                </DropDownItem>
-                                <DropDownItem href="/" role="menuitem">
-                                    Sign out
-                                </DropDownItem>
-                            </DropDownList>
                         </DropDownMenu>
                     </DropDownContainer>
                 </RightMenuContainer>
