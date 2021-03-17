@@ -14,6 +14,6 @@ const Main = ({ children }) => (
 
 const MenuBar = tw("div")`flex items-center`;
 const Container = tw("div")`hidden md:block`;
-const Column = tw("div")`ml-10 flex items-baseline space-x-4`;
+const Column = tw("div")`ml-10 flex items-center space-x-4 `;
 
 export default Main;
