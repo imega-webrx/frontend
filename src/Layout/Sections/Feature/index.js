@@ -28,25 +28,25 @@ const Feature = () => (
 const features = [
     {
         icon: <FirstIcon />,
-        underText: "людей, которые ценят свое время и хотят сэкономить деньги",
+        higherText: "людей, которые ценят свое время и хотят сэкономить деньги",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
     {
         icon: <SecondIcon />,
-        underText: "аптеки, желающие увеличить узнаваемость и выручку",
+        higherText: "аптеки, желающие увеличить узнаваемость и выручку",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
     {
         icon: <ThirdIcon />,
-        underText: "ветеринарные клиники, которые планируют увеличить свою клиентскую базу",
+        higherText: "ветеринарные клиники, которые планируют увеличить свою клиентскую базу",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
     {
         icon: <FourthIcon />,
-        underText: "врачи, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
+        higherText: "врачи, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
@@ -60,9 +60,9 @@ const Features = () =>
                 </Icon>
             </IconBlock>
             <TextBlockIcon>
-                <UnderText>
-                    {feature.underText}
-                </UnderText>
+                <HigherText>
+                    {feature.higherText}
+                </HigherText>
                 <DownText>
                     {feature.downText}
                 </DownText>
@@ -129,7 +129,7 @@ const Icon = tw("div")`
 const TextBlockIcon = tw("div")`
    ml-4
 `;
-const UnderText = tw("dt")`
+const HigherText = tw("dt")`
    text-lg
    leading-6
    font-medium
