@@ -5,11 +5,9 @@ const Newsletter = () => (
     <Container>
         <Section>
             <InfoLayout>
-                <Title>Sign up for our newsletter</Title>
+                <Title>Не упусти возможность сэкономить</Title>
                 <Description>
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                    qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                    occaecat fugiat.
+                    и получать лучшие предложения
                 </Description>
             </InfoLayout>
             <FormLayout>
@@ -24,7 +22,7 @@ const Newsletter = () => (
                         placeholder="Enter your email"
                     />
                     <ButtonLayout>
-                        <Button type="submit">Notify me</Button>
+                        <Button type="submit">Подписаться</Button>
                     </ButtonLayout>
                 </Form>
                 <FormText>

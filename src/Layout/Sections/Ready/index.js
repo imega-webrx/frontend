@@ -6,21 +6,21 @@ const Ready = () => (
         <Section>
             <Title>
                 <Question>
-                    Ready to dive in?
+                    Нужна бесплатная консультация провизора или ветеринарного врача?
                 </Question>
                 <Todo>
-                    Start your free trial today.
+                    Напиши в чат.
                 </Todo>
             </Title>
             <ButtonArea>
                 <GetStartedBlock>
                     <GetStartedLink href="#">
-                        Get started
+                        Написать
                     </GetStartedLink>
                 </GetStartedBlock>
                 <LearnMoreBlock>
                     <LearnMoreLink href="#">
-                        Learn more
+                        Узнать больше
                     </LearnMoreLink>
                 </LearnMoreBlock>
             </ButtonArea>
