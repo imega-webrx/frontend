@@ -1,6 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
-import { BellSVG } from "./BellSVG";
+import Bell from "./icon/bell.svg";
 
 const HeaderContainer = tw("div")`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`;
 const HeaderBar = tw("div")`flex justify-between h-16`;
@@ -11,6 +11,7 @@ const BellIcon = tw(
     "button"
 )`bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`;
 const BellIconSpan = tw("span")`sr-only`;
+const BellIconSVG = tw("svg")`h-6 w-6`;
 
 const DropDownContainer = tw(
     "div"
@@ -30,9 +31,17 @@ const RightMenu = () => (
                 <DropDownContainer>
                     <BellIcon>
                         <BellIconSpan>View notifications</BellIconSpan>
-                        <BellSVG />
+                        <BellIconSVG
+                            data-todo-x-description="Heroicon name: outline/bell"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <Bell />
+                        </BellIconSVG>
                     </BellIcon>
-
                     {/* Profile dropdown */}
                     <DropDownMenu
                         data-todo-x-data="{ open: false }"
