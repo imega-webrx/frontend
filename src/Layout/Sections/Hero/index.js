@@ -13,10 +13,10 @@ const Hero = () => (
                             </SmallText>
                             <MainText>
                                 <MainTextUp>
-                                    Data to enrich your
+                                    Как работает WebRX?
                                 </MainTextUp>
                                 <MainTextDown>
-                                    online business
+                                    Легко и быстро!
                                 </MainTextDown>
                             </MainText>
                         </Title>

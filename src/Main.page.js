@@ -5,9 +5,9 @@ import NavBar from "./Layout/NavBar";
 import MenuBar from "./Layout/NavBar/MenuBar";
 import { DefaultItem, ActiveItem } from "./Layout/NavBar/MenuBar/Item";
 import {
-    Team,
     Newsletter,
     Ready,
+    Feature,
     Hero,
     SearchSection,
 } from "./Layout/Sections";
@@ -25,7 +25,7 @@ const Main = () => (
         <SearchSection />
         <Hero />
         <Ready />
-        <Team />
+        <Feature />
         <Newsletter />
     </React.Fragment>
 );
