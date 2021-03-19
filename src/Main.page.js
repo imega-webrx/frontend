@@ -3,7 +3,6 @@ import React from "react";
 import Header from "./Layout/Header";
 import NavBar from "./Layout/NavBar";
 import MenuBar from "./Layout/NavBar/MenuBar";
-import { RightMenu } from "./Layout/NavBar/RightMenu";
 import { DefaultItem, ActiveItem } from "./Layout/NavBar/MenuBar/Item";
 import {
     Newsletter,
@@ -18,12 +17,11 @@ const Main = () => (
         <Header title="Поиск">
             <NavBar>
                 <MenuBar>
-                    <ActiveItem href="#">Dashboard</ActiveItem>
-                    <DefaultItem href="#">Team</DefaultItem>
-                    <DefaultItem href="#">Projects</DefaultItem>
-                    <DefaultItem href="#">Calendar</DefaultItem>
-
-                    <RightMenu />
+                    <ActiveItem href="#">О WebRx</ActiveItem>
+                    <DefaultItem href="#">Поиск по состоянию здоровья</DefaultItem>
+                    <DefaultItem href="#">Контакты</DefaultItem>
+                    <DefaultItem href="#">Новости</DefaultItem>
+                    <DefaultItem href="#">Добавить компанию</DefaultItem>
                 </MenuBar>
             </NavBar>
         </Header>

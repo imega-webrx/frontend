@@ -2,20 +2,30 @@ import React from "react";
 import tw from "twin.macro";
 import Bell from "./icon/bell.svg";
 
-const HeaderContainer = tw("div")`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`;
-const HeaderBar = tw("div")`flex justify-between h-16`;
-
 const RightMenuContainer = tw("div")`flex items-center`;
 
-const BellIcon = tw(
-    "button"
-)`bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`;
+const BellIcon = tw("button")`
+    bg-gray-800
+    p-1
+    rounded-full
+    text-gray-400
+    hover:text-white
+    focus:outline-none
+    focus:ring-2
+    focus:ring-offset-2
+    focus:ring-offset-gray-800
+    focus:ring-white
+`;
 const BellIconSpan = tw("span")`sr-only`;
 const BellIconSVG = tw("svg")`h-6 w-6`;
 
-const DropDownContainer = tw(
-    "div"
-)`hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center`;
+const DropDownContainer = tw("div")`
+    hidden
+    md:ml-4
+    md:flex-shrink-0
+    md:flex
+    md:items-center
+`;
 
 const DropDownMenu = tw("div")`ml-3 relative`;
 const DropDownButton = tw(
@@ -25,20 +35,11 @@ const DropDownSpan = tw("span")`sr-only`;
 const DropDownBell = tw("img")`h-8 w-8 rounded-full`;
 
 const RightMenu = () => (
-    <HeaderContainer>
-        <HeaderBar>
             <RightMenuContainer>
                 <DropDownContainer>
                     <BellIcon>
                         <BellIconSpan>View notifications</BellIconSpan>
-                        <BellIconSVG
-                            data-todo-x-description="Heroicon name: outline/bell"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                        >
+                        <BellIconSVG>
                             <Bell />
                         </BellIconSVG>
                     </BellIcon>
@@ -65,8 +66,6 @@ const RightMenu = () => (
                     </DropDownMenu>
                 </DropDownContainer>
             </RightMenuContainer>
-        </HeaderBar>
-    </HeaderContainer>
 );
 
 export { RightMenu };
