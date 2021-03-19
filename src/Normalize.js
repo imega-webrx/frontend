@@ -47,7 +47,7 @@ const Normalize = () => (
                 --tw-ring-opacity: 1;
                 --tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
             }
-            .focus:border-indigo-500:focus {
+            .border-indigo-500:focus {
                 --tw-border-opacity: 1;
                 border-color: rgba(99, 102, 241, var(--tw-border-opacity));
             }
