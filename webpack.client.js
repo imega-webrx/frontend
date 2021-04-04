@@ -2,7 +2,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: {
-        client: "./src/Layout/NavBar/MobileMenu/index.js"
+        client: "./src/Main.page.js"
     },
     target: "web",
     mode: "production",
