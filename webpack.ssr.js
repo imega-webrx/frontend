@@ -45,6 +45,10 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.css$/i,
+                loader: "css-loader",
+            },
         ],
     },
     plugins: [
