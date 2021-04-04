@@ -8,7 +8,7 @@ const Logo = () => (
     </Container>
 );
 
-const Container = tw("div")`flex-shrink-0 ml-4 sm:ml-6 md:ml-6`;
+const Container = tw("div")`flex-shrink-0 ml-4 lg:ml-0`;
 const Img = tw("img")`h-12 w-12`;
 
 export default Logo;

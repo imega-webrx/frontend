@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import {RightMenu} from "./RightMenu";
+import MobileMenu from "./MobileMenu";
 
 const NavBar = (props) => (
     <nav>
@@ -8,6 +9,7 @@ const NavBar = (props) => (
             <Border>
                 <Container>{props.children}</Container>
                 <RightMenu />
+                <MobileMenu />
             </Border>
         </Layout>
     </nav>
