@@ -1,6 +1,8 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
+const configRules = require("./webpack.common");
 
-module.exports = {
+module.exports = Object.assign({}, configRules, {
     entry: {
         client: "./src/Main.page.js"
     },
@@ -8,19 +10,8 @@ module.exports = {
     mode: "production",
     output: {
         filename: "[name].js",
-        path: __dirname + "/dist",
+        path: path.resolve(__dirname, "build"),
         publicPath: "/"
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx|mjs)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            }
-        ]
     },
     optimization: {
         minimize: true,
@@ -37,4 +28,4 @@ module.exports = {
             })
         ]
     }
-};
+});
