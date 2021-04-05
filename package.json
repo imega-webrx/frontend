@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "npm run build:ssr && build:client && node build/ssr.js && rm build/ssr.js",
+    "build": "npm run build:ssr && npm run build:client && node build/ssr.js && rm build/ssr.js",
     "dev": "start-storybook --debug-webpack -p 9001 -c .storybook",
     "build:ssr": "webpack --config webpack.ssr.js",
     "build:client": "webpack --config webpack.client.js",
