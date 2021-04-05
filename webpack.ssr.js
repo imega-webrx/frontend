@@ -1,10 +1,11 @@
 const webpack = require("webpack");
 const path = require("path");
+const configRules = require("./webpack.common");
 
 const pathToLibrary = (name) =>
     path.resolve(__dirname, `./node_modules/${name}`);
 
-module.exports = {
+module.exports = Object.assign({}, configRules,{
     entry: "./src/ssr.js",
     target: "node",
     mode: "production",
@@ -24,36 +25,11 @@ module.exports = {
             "@emotion/hash": pathToLibrary("@emotion/hash"),
         },
     },
-    module: {
-        rules: [
-            {
-                test: /\.js?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                },
-            },
-            {
-                test: /\.svg$/,
-                use: ["@svgr/webpack"],
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
-            },
-            {
-                test: /\.css$/i,
-                loader: "css-loader",
-            },
-        ],
-    },
     plugins: [
         new webpack.DefinePlugin({
             "process.env.SERVER": JSON.stringify(true),
         }),
     ],
-};
+});
+
+
