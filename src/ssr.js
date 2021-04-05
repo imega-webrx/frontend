@@ -29,6 +29,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                 </head>
                 <body>
                     <div id="root" dangerouslySetInnerHTML={{ __html: html }} />
+                    <script src="/client.js" />
                 </body>
             </html>
         </React.Fragment>
