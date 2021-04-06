@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const configRules = require("./webpack.common");
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 
 const pathToLibrary = (name) =>
     path.resolve(__dirname, `./node_modules/${name}`);
@@ -29,6 +30,7 @@ module.exports = Object.assign({}, configRules,{
         new webpack.DefinePlugin({
             "process.env.SERVER": JSON.stringify(true),
         }),
+        new ExtractTextPlugin('styles.css'),
     ],
 });
 
