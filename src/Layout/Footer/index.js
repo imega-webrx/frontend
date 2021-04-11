@@ -2,10 +2,10 @@ import React from "react";
 import tw from "twin.macro";
 
 // images
-import images from "./img"
+import images from "./img";
 const {fb,dribble,twitter,github,inst,logo} = images;
 
-const Footer = (props) => (
+const Footer = () => (
     <Container>
         <Section className="container">
             <SocialBlock>
@@ -15,27 +15,27 @@ const Footer = (props) => (
                 <JustText>Making the world a better place through constructing elegant hierarchies.</JustText>
                 <SocialLinks>
                     <SocialLinkItem>
-                        <Link href="/" href="/">
+                        <Link href="/">
                             <Img src={fb}/>
                         </Link>
                     </SocialLinkItem>
                     <SocialLinkItem>
-                        <Link href="/" href="/">
+                        <Link href="/">
                             <Img src={inst}/>
                         </Link>
                     </SocialLinkItem>
                     <SocialLinkItem>
-                        <Link href="/" href="/">
+                        <Link href="/">
                             <Img src={twitter}/>
                         </Link>
                     </SocialLinkItem>
                     <SocialLinkItem>
-                        <Link href="/" href="/">
+                        <Link href="/">
                             <Img src={github}/>
                         </Link>
                     </SocialLinkItem>
                     <SocialLinkItem>
-                        <Link href="/" href="/">
+                        <Link href="/">
                             <Img src={dribble}/>
                         </Link>
                     </SocialLinkItem>
@@ -122,7 +122,7 @@ const Container = tw("footer")`
     bg-gray-800
     flex
     flex-col
-`
+`;
 const Section = tw("div")`
     flex
     mx-auto
@@ -137,48 +137,48 @@ const Section = tw("div")`
     mb-4
     w-full
     flex-wrap
-`
+`;
 const SocialBlock = tw("div")`
     flex
     flex-col
     text-gray-300
     max-w-sm
-`
+`;
 const Logo = tw("div")`
     mb-8
     w-10
-`
+`;
 const Img = tw("img")`
     max-w-full
-`
+`;
 const JustText = tw("p")`
     mb-8
-`
+`;
 const SocialLinks = tw("ul")`
     flex
     mb-8
-`
+`;
 const SocialLinkItem = tw("li")`
     mr-6 last:mr-0
-`
-const Link = tw('a')`
+`;
+const Link = tw("a")`
     hover:text-gray-700 transition-all duration-300
-`
+`;
 const PagesBlock = tw("div")`
     flex
     flex-wrap
-`
+`;
 const PagesList = tw("ul")`
     flex
     flex-col   
-`
+`;
 const PageListTitle = tw("h5")`
     font-bold
     uppercase
     text-gray-400
     mb-4
     text-sm	
-`
+`;
 const PagesBlockItem = tw("div")`
     flex
     flex-col
@@ -186,13 +186,13 @@ const PagesBlockItem = tw("div")`
     sm:mr-10
     lg:mr-28
     mr-10   
-`
+`;
 const PageListItem = tw("li")`
     mb-4 last:mb-0
     text-gray-300
     text-base	
-`
-const Copyright = tw('div')`
+`;
+const Copyright = tw("div")`
     mx-auto
     mt-4
     mb-4
@@ -200,6 +200,6 @@ const Copyright = tw('div')`
     flex
     justify-center
     text-gray-300
-`
+`;
 
 export default Footer;
