@@ -25,15 +25,23 @@ const SearchInput = () => (
             <Button>Искать</Button>
         </Container>
         <BadgeLayout>
+            <BadgesTitle>Популярные запросы</BadgesTitle>
             <FilterBadges>
-                <Badge>Анальгин</Badge>
-                <Badge>Пенталгин</Badge>
-                <Badge>Зовиракс</Badge>
-                <Badge>Витамин D</Badge>
+                <Badge>Нурофен</Badge>
+                <Badge>Ксалерто</Badge>
+                <Badge>Детралекс</Badge>
+                <Badge>Кагоцел</Badge>
+                <Badge>Канкор</Badge>
+                <Badge>Ингавирин</Badge>
             </FilterBadges>
         </BadgeLayout>
+        <DescriptionLayout>
+            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с лицензией.
+            Мы помогаем людям по всей стране.
+        </DescriptionLayout>
     </SearchInputLayout>
 );
+
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
 const Container = tw("div")`
     max-w-3xl
@@ -46,14 +54,31 @@ const Container = tw("div")`
     sm:gap-y-0
 `;
 
+const DescriptionLayout = tw("div")`
+    flex
+    justify-center
+    px-3
+    py-3
+    font-medium
+`;
+
 const BadgeLayout = tw("div")`
     hidden
     sm:flex
+    flex-col
     py-4
-    items-center
     max-w-3xl
     mx-auto
 `;
+
+const BadgesTitle = tw("div")`
+    flex
+    mt-5
+    mb-3
+    text-lg
+    font-medium
+`;
+
 const FilterBadges = tw("div")`
     flex
     flex-col
@@ -62,6 +87,7 @@ const FilterBadges = tw("div")`
     sm:flex-row
     sm:space-x-4
 `;
+
 const Badge = tw("span")`
     inline-flex
     items-center
