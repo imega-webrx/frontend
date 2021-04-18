@@ -15,6 +15,8 @@ const BellIcon = tw("button")`
     focus:ring-offset-2
     focus:ring-offset-gray-800
     focus:ring-white
+    border-none
+    cursor-pointer
 `;
 const BellIconSpan = tw("span")`sr-only`;
 const BellIconSVG = tw("svg")`h-6 w-6`;
@@ -28,9 +30,17 @@ const DropDownContainer = tw("div")`
 `;
 
 const DropDownMenu = tw("div")`ml-3 relative`;
-const DropDownButton = tw(
-    "button"
-)`bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`;
+const DropDownButton = tw("button")`
+    bg-gray-800
+    flex text-sm
+    rounded-full
+    focus:outline-none
+    focus:ring-2
+    focus:ring-offset-2
+    focus:ring-offset-gray-800
+    focus:ring-white
+    border-none
+    cursor-pointer`;
 const DropDownSpan = tw("span")`sr-only`;
 const DropDownBell = tw("img")`h-8 w-8 rounded-full`;
 
