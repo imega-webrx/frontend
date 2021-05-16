@@ -8,7 +8,7 @@ const SearchInput = () => (
         <Container className="group">
             <Control>
                 <Label for="search">Search</Label>
-                <Relative>
+                <Relative onBlur={searchSuggestHide}>
                     <IconWrapper>
                         <Icon>
                             <SearchIcon />
@@ -19,6 +19,7 @@ const SearchInput = () => (
                         name="search"
                         placeholder="Search"
                         type="search"
+                        onInput={searchSuggestResult} 
                     />
                 </Relative>
             </Control>
@@ -41,6 +42,13 @@ const SearchInput = () => (
         </DescriptionLayout>
     </SearchInputLayout>
 );
+
+function searchSuggestResult(){
+    console.log('In focus type');
+}
+function searchSuggestHide(){
+    console.log('It disappeared ');
+}
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
 const Container = tw("div")`
