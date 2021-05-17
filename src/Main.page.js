@@ -14,26 +14,29 @@ import {
     SearchSection,
 } from "./Layout/Sections";
 
-const Main = () => (
-    <React.Fragment>
-        <Header title="Поиск">
-            <NavBar>
-                <MenuBar>
-                    <ActiveItem href="#">О WebRx</ActiveItem>
-                    <DefaultItem href="#">Поиск по состоянию здоровья</DefaultItem>
-                    <DefaultItem href="#">Контакты</DefaultItem>
-                    <DefaultItem href="#">Новости</DefaultItem>
-                    <DefaultItem href="#">Добавить компанию</DefaultItem>
-                </MenuBar>
-            </NavBar>
-        </Header>
-        <SearchSection />
-        <Hero />
-        <Ready />
-        <Feature />
-        <Newsletter />
-        <Footer/>
-    </React.Fragment>
-);
+const Main = () => {
+    console.log("========== test log");
+    return (
+        <React.Fragment>
+            <Header title="Поиск">
+                <NavBar>
+                    <MenuBar>
+                        <ActiveItem href="#">О WebRx</ActiveItem>
+                        <DefaultItem href="#">Поиск по состоянию здоровья</DefaultItem>
+                        <DefaultItem href="#">Контакты</DefaultItem>
+                        <DefaultItem href="#">Новости</DefaultItem>
+                        <DefaultItem href="#">Добавить компанию</DefaultItem>
+                    </MenuBar>
+                </NavBar>
+            </Header>
+            <SearchSection />
+            <Hero />
+            <Ready />
+            <Feature />
+            <Newsletter />
+            <Footer />
+        </React.Fragment>
+    )
+};
 
 export default Main;
