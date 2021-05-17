@@ -4,7 +4,7 @@ const configRules = require("./webpack.common");
 
 module.exports = Object.assign({}, configRules, {
     entry: {
-        client: "./src/Main.page.js"
+        client: "./src/index.js"
     },
     target: "web",
     mode: "production",
