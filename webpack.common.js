@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
+
 const configRules = {
     module: {
         rules: [
@@ -22,9 +24,12 @@ const configRules = {
             },
             {
                 test: /\.css$/i,
-                loader: "css-loader",
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },
-        ],
+       ],
     },
 };
 

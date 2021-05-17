@@ -20,6 +20,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         name="viewport"
                         content="width=device-width,initial-scale=1"
                     />
+                    <link rel="stylesheet" type="text/css" href="styles.css" />
                     <Normalize />
                     <style
                         data-emotion-css={ids.join(" ")}
@@ -29,7 +30,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                 </head>
                 <body>
                     <div id="root" dangerouslySetInnerHTML={{ __html: html }} />
-                    <script src="/client.js" />
+                    <script src="client.js" />
                 </body>
             </html>
         </React.Fragment>

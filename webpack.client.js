@@ -1,10 +1,11 @@
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const configRules = require("./webpack.common");
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 
 module.exports = Object.assign({}, configRules, {
     entry: {
-        client: "./src/Main.page.js"
+        client: "./src/Main.page.js",
     },
     target: "web",
     mode: "production",
@@ -27,5 +28,8 @@ module.exports = Object.assign({}, configRules, {
                 extractComments: false
             })
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('styles.css'),
+    ],
 });
