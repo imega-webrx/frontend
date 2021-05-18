@@ -1,13 +1,68 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = () => (
+const items = [
+    {
+        id: "1",
+        name: "Нурофен",
+        cost: "999р"    
+    },
+    {
+        id: "2",
+        name: "Ксалерто",
+        cost: "999р"    
+    },
+    {
+        id: "3",
+        name: "Детралекс",
+        cost: "999р"    
+    },
+    {
+        id: "4",
+        name: "Кагоцел",
+        cost: "999р"    
+    },
+    {
+        id: "5",
+        name: "Канкор",
+        cost: "999р"    
+    },
+    {
+        id: "6",
+        name: "Ингавирин",
+        cost: "999р"    
+    },
+    {
+        id: "7",
+        name: "Колдрекс",
+        cost: "999р"    
+    },
+    {
+        id: "8",
+        name: "Детрагель",
+        cost: "999р"    
+    },
+];
+
+function SearchInput(){
+    const [searchValue, setSearchValue] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const handleChange = event => {
+        setSearchValue(event.target.value);
+    };
+    useEffect(() => {
+        const results = items.filter(item =>
+        item.name.toLowerCase().includes(searchValue)
+        );
+        setSearchResults(searchValue.length >= 3 ? results : []);
+    }, [searchValue]);
+    return (
     <SearchInputLayout>
         <Container className="group">
             <Control>
-                <Label for="search">Search</Label>
+                <Label htmlFor="search">Search</Label>
                 <Relative onBlur={searchSuggestHide}>
                     <IconWrapper>
                         <Icon>
@@ -19,11 +74,17 @@ const SearchInput = () => (
                         name="search"
                         placeholder="Search"
                         type="search"
-                        onInput={searchSuggestResult} 
+                        value={searchValue}
+                        onChange={ev => handleChange(ev)}
                     />
                 </Relative>
             </Control>
             <Button>Искать</Button>
+            <ul>
+                {searchResults.map(item => (
+                <li key={item.id}>{item.name} - {item.cost}</li>
+                ))}
+            </ul>
         </Container>
         <BadgeLayout>
             <BadgesTitle>Популярные запросы</BadgesTitle>
@@ -41,10 +102,11 @@ const SearchInput = () => (
             Мы помогаем людям по всей стране.
         </DescriptionLayout>
     </SearchInputLayout>
-);
+)};
 
-function searchSuggestResult(){
+function searchSuggestResult(ev){
     console.log('In focus type');
+    console.log(ev.target.value);
 }
 function searchSuggestHide(){
     console.log('It disappeared ');
@@ -131,8 +193,10 @@ const Button = tw("a")`
     focus:ring-2
     focus:ring-offset-2
     xl:col-span-2
-    bg-indigo-500
+    bg-black
     cursor-pointer
+    hover:bg-white
+    hover:text-black
 `;
 
 const Icon = tw("div")`h-5 w-5 text-gray-400`;
