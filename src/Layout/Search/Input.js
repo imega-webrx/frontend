@@ -3,12 +3,12 @@ import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = () => (
+const SearchInput = () => {
 
-    [showResults, setShowResults] = React.useState(false),
-    onSuggest = () => setShowResults(true),
-    offSuggest = () => setShowResults(false),
-    <SearchInputLayout>
+    const [showResults, setShowResults] = React.useState(false);
+    const onSuggest = () => setShowResults(true);
+    const offSuggest = () => setShowResults(false);
+    return( <SearchInputLayout>
         <Container className="group">
             <Control>
                 <Label for="search">Search</Label>
@@ -47,7 +47,8 @@ const SearchInput = () => (
             Мы помогаем людям по всей стране.
         </DescriptionLayout>
     </SearchInputLayout>
-);
+    )
+};
 
 
 const Results = tw("div")`
