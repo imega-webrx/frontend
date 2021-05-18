@@ -1,7 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
 import tw from "twin.macro";
-import ReactDOM from "react-dom";
 
 import SearchIcon from "./icon/search.svg";
 
