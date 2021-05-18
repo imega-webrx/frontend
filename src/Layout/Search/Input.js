@@ -47,7 +47,7 @@ const SearchInput = () => {
             Мы помогаем людям по всей стране.
         </DescriptionLayout>
     </SearchInputLayout>
-    )
+    );
 };
 
 
