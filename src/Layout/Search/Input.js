@@ -3,7 +3,7 @@ import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = (showResults, setShowResults, onSuggest, offSuggest) => (
+const SearchInput = () => (
 
     [showResults, setShowResults] = React.useState(false),
     onSuggest = () => setShowResults(true),
