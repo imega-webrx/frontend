@@ -29,7 +29,7 @@ const Hero = () => (
                                 Sign up to get notified when it’s ready.
                             </NotifyBlockText>
                             <NotifyBlockForm action="#" method="POST">
-                                <NotifyBlockFormMailLabel for="email">
+                                <NotifyBlockFormMailLabel htmlFor="email">
                                     Email
                                 </NotifyBlockFormMailLabel>
                                 <NotifyBlockFormMailInput type="email" name="email" id="email" placeholder="Enter your email" />

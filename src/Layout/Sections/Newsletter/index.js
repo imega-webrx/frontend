@@ -12,7 +12,7 @@ const Newsletter = () => (
             </InfoLayout>
             <FormLayout>
                 <Form>
-                    <Label for="emailAddress">Email address</Label>
+                    <Label htmlFor="emailAddress">Email address</Label>
                     <Input
                         id="emailAddress"
                         name="emailAddress"
