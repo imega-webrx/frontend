@@ -15,7 +15,6 @@ import {
 } from "./Layout/Sections";
 
 const Main = () => {
-    console.log("========== test log");
     return (
         <React.Fragment>
             <Header title="Поиск">

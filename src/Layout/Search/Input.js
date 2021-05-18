@@ -1,14 +1,20 @@
 import React from "react";
+import { render } from "react-dom";
 import tw from "twin.macro";
+import ReactDOM from "react-dom";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = () => (
+const SearchInput = (showResults, setShowResults, onSuggest, offSuggest) => (
+
+    [showResults, setShowResults] = React.useState(false),
+    onSuggest = () => setShowResults(true),
+    offSuggest = () => setShowResults(false),
     <SearchInputLayout>
         <Container className="group">
             <Control>
                 <Label for="search">Search</Label>
-                <Relative onBlur={searchSuggestHide}>
+                <Relative onBlur={offSuggest}>
                     <IconWrapper>
                         <Icon>
                             <SearchIcon />
@@ -19,11 +25,13 @@ const SearchInput = () => (
                         name="search"
                         placeholder="Search"
                         type="search"
-                        onInput={searchSuggestResult} 
-                    />
+                        onClick = {onSuggest}
+                        />
+                   
                 </Relative>
             </Control>
             <Button>Искать</Button>
+            {showResults ? <Results>Result from inpuit</Results> : null} 
         </Container>
         <BadgeLayout>
             <BadgesTitle>Популярные запросы</BadgesTitle>
@@ -43,12 +51,17 @@ const SearchInput = () => (
     </SearchInputLayout>
 );
 
-function searchSuggestResult(){
-    console.log('In focus type');
-}
+
+const Results = tw("div")`
+bg-white
+w-40
+p-10
+`;
+
 function searchSuggestHide(){
     console.log('It disappeared ');
 }
+
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
 const Container = tw("div")`
