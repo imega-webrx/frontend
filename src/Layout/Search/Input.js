@@ -1,67 +1,63 @@
 import React from "react";
-import { render } from "react-dom";
 import tw from "twin.macro";
-import ReactDOM from "react-dom";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = (showResults, setShowResults, onSuggest, offSuggest) => (
-
-    [showResults, setShowResults] = React.useState(false),
-    onSuggest = () => setShowResults(true),
-    offSuggest = () => setShowResults(false),
-    <SearchInputLayout>
-        <Container className="group">
-            <Control>
-                <Label for="search">Search</Label>
-                <Relative onBlur={offSuggest}>
-                    <IconWrapper>
-                        <Icon>
-                            <SearchIcon />
-                        </Icon>
-                    </IconWrapper>
-                    <Input
-                        id="search"
-                        name="search"
-                        placeholder="Search"
-                        type="search"
-                        onClick = {onSuggest}
+const SearchInput = () => {
+    const [showResults, setShowResults] = React.useState(false);
+    const onSuggest = () => setShowResults(true);
+    const offSuggest = () => setShowResults(false);
+    return (
+        <SearchInputLayout>
+            <Container className="group">
+                <Control>
+                    <Label for="search">Search</Label>
+                    <Relative onBlur={offSuggest}>
+                        <IconWrapper>
+                            <Icon>
+                                <SearchIcon />
+                            </Icon>
+                        </IconWrapper>
+                        <Input
+                            id="search"
+                            name="search"
+                            placeholder="Search"
+                            type="search"
+                            onClick={onSuggest}
                         />
-                   
-                </Relative>
-            </Control>
-            <Button>Искать</Button>
-            {showResults ? <Results>Result from inpuit</Results> : null} 
-        </Container>
-        <BadgeLayout>
-            <BadgesTitle>Популярные запросы</BadgesTitle>
-            <FilterBadges>
-                <Badge>Нурофен</Badge>
-                <Badge>Ксалерто</Badge>
-                <Badge>Детралекс</Badge>
-                <Badge>Кагоцел</Badge>
-                <Badge>Канкор</Badge>
-                <Badge>Ингавирин</Badge>
-            </FilterBadges>
-        </BadgeLayout>
-        <DescriptionLayout>
-            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с лицензией.
-            Мы помогаем людям по всей стране.
-        </DescriptionLayout>
-    </SearchInputLayout>
-);
-
+                    </Relative>
+                </Control>
+                <Button>Искать</Button>
+                {showResults ? <Results>Result from inpuit</Results> : null}
+            </Container>
+            <BadgeLayout>
+                <BadgesTitle>Популярные запросы</BadgesTitle>
+                <FilterBadges>
+                    <Badge>Нурофен</Badge>
+                    <Badge>Ксалерто</Badge>
+                    <Badge>Детралекс</Badge>
+                    <Badge>Кагоцел</Badge>
+                    <Badge>Канкор</Badge>
+                    <Badge>Ингавирин</Badge>
+                </FilterBadges>
+            </BadgeLayout>
+            <DescriptionLayout>
+                WebRX собрал тысячи аптек и ветклиник. Только проверенные
+                компании с лицензией. Мы помогаем людям по всей стране.
+            </DescriptionLayout>
+        </SearchInputLayout>
+    );
+};
 
 const Results = tw("div")`
-bg-white
-w-40
-p-10
+    bg-white
+    w-40
+    p-10
 `;
 
-function searchSuggestHide(){
-    console.log('It disappeared ');
+function searchSuggestHide() {
+    console.log("It disappeared ");
 }
-
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
 const Container = tw("div")`
