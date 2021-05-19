@@ -54,12 +54,12 @@ const Results = tw("div")`
     w-40
     p-10
 `;
-
-function searchSuggestHide() {
-    console.log("It disappeared ");
+function searchSuggestHide(){
+    console.log('It disappeared ');
 }
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
+
 const Container = tw("div")`
     max-w-3xl
     mx-auto
