@@ -6,9 +6,7 @@ const Newsletter = () => (
         <Section>
             <InfoLayout>
                 <Title>Не упусти возможность сэкономить</Title>
-                <Description>
-                    и получать лучшие предложения
-                </Description>
+                <Description>и получать лучшие предложения</Description>
             </InfoLayout>
             <FormLayout>
                 <Form>
