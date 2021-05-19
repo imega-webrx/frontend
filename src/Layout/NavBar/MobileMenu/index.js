@@ -2,11 +2,11 @@ import React from "react";
 import tw from "twin.macro";
 import { slide as Menu } from "react-burger-menu";
 import mobile from "./mobile.css";
-import {ActiveItem, DefaultItem} from "../MenuBar/Item";
+import { ActiveItem, DefaultItem } from "../MenuBar/Item";
 
 const MobileMenu = () => (
     <Container>
-        <Menu disableOverlayClick right styles={ mobile }>
+        <Menu disableOverlayClick right styles={mobile}>
             <ActiveItem href="#">О WebRx</ActiveItem>
             <DefaultItem href="#">Поиск по состоянию здоровья</DefaultItem>
             <DefaultItem href="#">Контакты</DefaultItem>

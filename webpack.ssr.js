@@ -5,7 +5,7 @@ const configRules = require("./webpack.common");
 const pathToLibrary = (name) =>
     path.resolve(__dirname, `./node_modules/${name}`);
 
-module.exports = Object.assign({}, configRules,{
+module.exports = Object.assign({}, configRules, {
     entry: "./src/ssr.js",
     target: "node",
     mode: "production",
@@ -31,5 +31,3 @@ module.exports = Object.assign({}, configRules,{
         }),
     ],
 });
-
-
