@@ -19,7 +19,7 @@ const SearchInput = () => (
                         name="search"
                         placeholder="Search"
                         type="search"
-                        onInput={searchSuggestResult} 
+                        onInput={searchSuggestResult}
                     />
                 </Relative>
             </Control>
@@ -37,17 +37,17 @@ const SearchInput = () => (
             </FilterBadges>
         </BadgeLayout>
         <DescriptionLayout>
-            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с лицензией.
-            Мы помогаем людям по всей стране.
+            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с
+            лицензией. Мы помогаем людям по всей стране.
         </DescriptionLayout>
     </SearchInputLayout>
 );
 
-function searchSuggestResult(){
-    console.log('In focus type');
+function searchSuggestResult() {
+    console.log("In focus type");
 }
-function searchSuggestHide(){
-    console.log('It disappeared ');
+function searchSuggestHide() {
+    console.log("It disappeared ");
 }
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
