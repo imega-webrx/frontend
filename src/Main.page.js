@@ -40,4 +40,6 @@ const Main = () => {
     );
 };
 
+console.log('Test Prettier');
+
 export default Main;
