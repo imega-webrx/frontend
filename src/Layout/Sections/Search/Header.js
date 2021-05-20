@@ -6,7 +6,9 @@ const Header = () => {
         <HeaderLayout>
             <Title>
                 <TitleBlock>WebRx</TitleBlock>
-                <TitleBlock>Хватит платить слишком много за лекарства!</TitleBlock>
+                <TitleBlock>
+                    Хватит платить слишком много за лекарства!
+                </TitleBlock>
             </Title>
             <Text>Сравни цены и сэкономь до 80%.</Text>
         </HeaderLayout>

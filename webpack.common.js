@@ -16,7 +16,7 @@ const configRules = {
                 test: /\.(png|jpg|jpeg|gif)$/i,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: "file-loader",
                     },
                 ],
             },

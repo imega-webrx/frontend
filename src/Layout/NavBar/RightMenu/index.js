@@ -35,37 +35,37 @@ const DropDownSpan = tw("span")`sr-only`;
 const DropDownBell = tw("img")`h-8 w-8 rounded-full`;
 
 const RightMenu = () => (
-            <RightMenuContainer>
-                <DropDownContainer>
-                    <BellIcon>
-                        <BellIconSpan>View notifications</BellIconSpan>
-                        <BellIconSVG>
-                            <Bell />
-                        </BellIconSVG>
-                    </BellIcon>
-                    {/* Profile dropdown */}
-                    <DropDownMenu
-                        data-todo-x-data="{ open: false }"
-                        data-todo-at-keydown-escape-stop="open = false"
-                        data-todo-at-click-away="open = false"
-                    >
-                        <DropDownButton
-                            type="button"
-                            id="user-menu"
-                            aria-expanded="false"
-                            data-todo-at-click="open = !open"
-                            aria-haspopup="true"
-                            data-todo-x-bind-aria-expanded="open"
-                        >
-                            <DropDownSpan>Open user menu</DropDownSpan>
-                            <DropDownBell
-                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt=""
-                            />
-                        </DropDownButton>
-                    </DropDownMenu>
-                </DropDownContainer>
-            </RightMenuContainer>
+    <RightMenuContainer>
+        <DropDownContainer>
+            <BellIcon>
+                <BellIconSpan>View notifications</BellIconSpan>
+                <BellIconSVG>
+                    <Bell />
+                </BellIconSVG>
+            </BellIcon>
+            {/* Profile dropdown */}
+            <DropDownMenu
+                data-todo-x-data="{ open: false }"
+                data-todo-at-keydown-escape-stop="open = false"
+                data-todo-at-click-away="open = false"
+            >
+                <DropDownButton
+                    type="button"
+                    id="user-menu"
+                    aria-expanded="false"
+                    data-todo-at-click="open = !open"
+                    aria-haspopup="true"
+                    data-todo-x-bind-aria-expanded="open"
+                >
+                    <DropDownSpan>Open user menu</DropDownSpan>
+                    <DropDownBell
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                    />
+                </DropDownButton>
+            </DropDownMenu>
+        </DropDownContainer>
+    </RightMenuContainer>
 );
 
 export { RightMenu };
