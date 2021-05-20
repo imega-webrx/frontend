@@ -4,14 +4,14 @@ const configRules = require("./webpack.common");
 
 module.exports = Object.assign({}, configRules, {
     entry: {
-        client: "./src/index.js"
+        client: "./src/index.js",
     },
     target: "web",
     mode: "production",
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, "build"),
-        publicPath: "/"
+        publicPath: "/",
     },
     optimization: {
         minimize: true,
@@ -20,12 +20,12 @@ module.exports = Object.assign({}, configRules, {
                 terserOptions: {
                     ie8: false,
                     output: {
-                        comments: false
-                    }
+                        comments: false,
+                    },
                 },
                 sourceMap: true,
-                extractComments: false
-            })
-        ]
-    }
+                extractComments: false,
+            }),
+        ],
+    },
 });

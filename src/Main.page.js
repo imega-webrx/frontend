@@ -22,7 +22,9 @@ const Main = () => {
                 <NavBar>
                     <MenuBar>
                         <ActiveItem href="#">О WebRx</ActiveItem>
-                        <DefaultItem href="#">Поиск по состоянию здоровья</DefaultItem>
+                        <DefaultItem href="#">
+                            Поиск по состоянию здоровья
+                        </DefaultItem>
                         <DefaultItem href="#">Контакты</DefaultItem>
                         <DefaultItem href="#">Новости</DefaultItem>
                         <DefaultItem href="#">Добавить компанию</DefaultItem>
@@ -36,7 +38,7 @@ const Main = () => {
             <Newsletter />
             <Footer />
         </React.Fragment>
-    )
+    );
 };
 
 export default Main;
