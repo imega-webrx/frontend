@@ -1,50 +1,103 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = () => (
-    <SearchInputLayout>
-        <Container className="group">
-            <Control>
-                <Label for="search">Search</Label>
-                <Relative onBlur={searchSuggestHide}>
-                    <IconWrapper>
-                        <Icon>
-                            <SearchIcon />
-                        </Icon>
-                    </IconWrapper>
-                    <Input
-                        id="search"
-                        name="search"
-                        placeholder="Search"
-                        type="search"
-                        onInput={searchSuggestResult}
-                    />
-                </Relative>
-            </Control>
-            <Button>Искать</Button>
-        </Container>
-        <BadgeLayout>
-            <BadgesTitle>Популярные запросы</BadgesTitle>
-            <FilterBadges>
-                <Badge>Нурофен</Badge>
-                <Badge>Ксалерто</Badge>
-                <Badge>Детралекс</Badge>
-                <Badge>Кагоцел</Badge>
-                <Badge>Канкор</Badge>
-                <Badge>Ингавирин</Badge>
-            </FilterBadges>
-        </BadgeLayout>
-        <DescriptionLayout>
-            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с
-            лицензией. Мы помогаем людям по всей стране.
-        </DescriptionLayout>
-    </SearchInputLayout>
-);
+// Этот запрос пока для теста
+const query = {
+    query: `query searchProduct($title: String!) {
+                searchProduct(title: $title) {
+                ...ProductFields
+                }
+            }
 
-function searchSuggestResult() {
+            fragment ProductFields on Product {
+                id
+                title
+                fullTitle
+            }
+        `,
+    variables: {
+        title: "Капецитабин",
+    },
+};
+
+function SearchInput() {
+    const [searchValue, setSearchValue] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const handleChange = (event) => {
+        setSearchValue(event.target.value);
+    };
+    useEffect(() => {
+        const results = items.filter((item) =>
+            item.name.toLowerCase().includes(searchValue)
+        );
+        fetch("http://localhost:4000/graphql", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(query),
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+            });
+        setSearchResults(searchValue.length >= 3 ? results : []);
+    }, [searchValue]);
+    return (
+        <SearchInputLayout>
+            <Container className="group">
+                <Control>
+                    <Label htmlFor="search">Search</Label>
+                    <Relative onBlur={searchSuggestHide}>
+                        <IconWrapper>
+                            <Icon>
+                                <SearchIcon />
+                            </Icon>
+                        </IconWrapper>
+                        <Input
+                            id="search"
+                            name="search"
+                            placeholder="Search"
+                            type="search"
+                            value={searchValue}
+                            onChange={(ev) => handleChange(ev)}
+                        />
+                    </Relative>
+                </Control>
+                <Button>Искать</Button>
+                <ul>
+                    {searchResults.map((item) => (
+                        <li key={item.id}>
+                            {item.name} - {item.cost}
+                        </li>
+                    ))}
+                </ul>
+            </Container>
+            <BadgeLayout>
+                <BadgesTitle>Популярные запросы</BadgesTitle>
+                <FilterBadges>
+                    <Badge>Нурофен</Badge>
+                    <Badge>Ксалерто</Badge>
+                    <Badge>Детралекс</Badge>
+                    <Badge>Кагоцел</Badge>
+                    <Badge>Канкор</Badge>
+                    <Badge>Ингавирин</Badge>
+                </FilterBadges>
+            </BadgeLayout>
+            <DescriptionLayout>
+                WebRX собрал тысячи аптек и ветклиник. Только проверенные
+                компании с лицензией. Мы помогаем людям по всей стране.
+            </DescriptionLayout>
+        </SearchInputLayout>
+    );
+}
+
+function searchSuggestResult(ev) {
     console.log("In focus type");
+    console.log(ev.target.value);
 }
 function searchSuggestHide() {
     console.log("It disappeared ");
@@ -131,8 +184,10 @@ const Button = tw("a")`
     focus:ring-2
     focus:ring-offset-2
     xl:col-span-2
-    bg-indigo-500
+    bg-black
     cursor-pointer
+    hover:bg-white
+    hover:text-black
 `;
 
 const Icon = tw("div")`h-5 w-5 text-gray-400`;
