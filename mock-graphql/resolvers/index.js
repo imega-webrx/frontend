@@ -20,8 +20,7 @@ const resolvers = {
                     vendors: [
                         {
                             id: "b60cd925-0047-4959-8e4c-d48sdf87sdf7",
-                            title:
-                                "Где-то в Росссии",
+                            title: "Где-то в Росссии",
                         },
                     ],
                 },
