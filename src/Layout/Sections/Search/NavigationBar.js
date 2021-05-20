@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro";
 const NavBarSelect = () => (
     <SelectLayout>
         <Label htmlFor="tabs">Select a tab</Label>
-        <Select id="tabs" name="tabs" defaultValue={'Home'}>
+        <Select id="tabs" name="tabs" defaultValue={"Home"}>
             <option value="Home">My Account</option>
             <option value="Company">Company</option>
             <option value="Members">Team Members</option>
