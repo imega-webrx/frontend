@@ -14,7 +14,9 @@ const Feature = () => (
                     Сервис поиска и сравнения цен WebRX реализован для:
                 </Title>
                 <TextUnderTitle>
-                    Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
+                    Lorem ipsum dolor sit amet consect adipisicing elit.
+                    Possimus magnam voluptatum cupiditate veritatis in accusamus
+                    quisquam.
                 </TextUnderTitle>
             </TextBlock>
             <FeatureBlock>
@@ -40,13 +42,15 @@ const features = [
     },
     {
         icon: <ThirdIcon />,
-        higherText: "ветеринарные клиники, которые планируют увеличить свою клиентскую базу",
+        higherText:
+            "ветеринарные клиники, которые планируют увеличить свою клиентскую базу",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
     {
         icon: <FourthIcon />,
-        higherText: "врачи, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
+        higherText:
+            "врачи, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
         downText:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
     },
@@ -55,17 +59,11 @@ const Features = () =>
     features.map((feature, id) => (
         <FlexBlock key={id}>
             <IconBlock>
-                <Icon>
-                    {feature.icon}
-                </Icon>
+                <Icon>{feature.icon}</Icon>
             </IconBlock>
             <TextBlockIcon>
-                <HigherText>
-                    {feature.higherText}
-                </HigherText>
-                <DownText>
-                    {feature.downText}
-                </DownText>
+                <HigherText>{feature.higherText}</HigherText>
+                <DownText>{feature.downText}</DownText>
             </TextBlockIcon>
         </FlexBlock>
     ));

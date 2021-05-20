@@ -1,115 +1,108 @@
-import React, {useState, useEffect} from "react";
+
+import React, { useState, useEffect } from "react";
+
 import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const items = [
-    {
-        id: "1",
-        name: "Нурофен",
-        cost: "999р"    
-    },
-    {
-        id: "2",
-        name: "Ксалерто",
-        cost: "999р"    
-    },
-    {
-        id: "3",
-        name: "Детралекс",
-        cost: "999р"    
-    },
-    {
-        id: "4",
-        name: "Кагоцел",
-        cost: "999р"    
-    },
-    {
-        id: "5",
-        name: "Канкор",
-        cost: "999р"    
-    },
-    {
-        id: "6",
-        name: "Ингавирин",
-        cost: "999р"    
-    },
-    {
-        id: "7",
-        name: "Колдрекс",
-        cost: "999р"    
-    },
-    {
-        id: "8",
-        name: "Детрагель",
-        cost: "999р"    
-    },
-];
+// Этот запрос пока для теста
+const query = {
+    query: `query searchProduct($title: String!) {
+                searchProduct(title: $title) {
+                ...ProductFields
+                }
+            }
 
-function SearchInput(){
+            fragment ProductFields on Product {
+                id
+                title
+                fullTitle
+            }
+        `,
+    variables: {
+        title: "Капецитабин",
+    },
+};
+
+function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const handleChange = event => {
+    const handleChange = (event) => {
         setSearchValue(event.target.value);
     };
     useEffect(() => {
-        const results = items.filter(item =>
-        item.name.toLowerCase().includes(searchValue)
+        const results = items.filter((item) =>
+            item.name.toLowerCase().includes(searchValue)
         );
+        fetch("http://localhost:4000/graphql", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(query),
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+            });
         setSearchResults(searchValue.length >= 3 ? results : []);
     }, [searchValue]);
     return (
-    <SearchInputLayout>
-        <Container className="group">
-            <Control>
-                <Label htmlFor="search">Search</Label>
-                <Relative onBlur={searchSuggestHide}>
-                    <IconWrapper>
-                        <Icon>
-                            <SearchIcon />
-                        </Icon>
-                    </IconWrapper>
-                    <Input
-                        id="search"
-                        name="search"
-                        placeholder="Search"
-                        type="search"
-                        value={searchValue}
-                        onChange={ev => handleChange(ev)}
-                    />
-                </Relative>
-            </Control>
-            <Button>Искать</Button>
-            <ul>
-                {searchResults.map(item => (
-                <li key={item.id}>{item.name} - {item.cost}</li>
-                ))}
-            </ul>
-        </Container>
-        <BadgeLayout>
-            <BadgesTitle>Популярные запросы</BadgesTitle>
-            <FilterBadges>
-                <Badge>Нурофен</Badge>
-                <Badge>Ксалерто</Badge>
-                <Badge>Детралекс</Badge>
-                <Badge>Кагоцел</Badge>
-                <Badge>Канкор</Badge>
-                <Badge>Ингавирин</Badge>
-            </FilterBadges>
-        </BadgeLayout>
-        <DescriptionLayout>
-            WebRX собрал тысячи аптек и ветклиник. Только проверенные компании с лицензией.
-            Мы помогаем людям по всей стране.
-        </DescriptionLayout>
-    </SearchInputLayout>
-)};
+        <SearchInputLayout>
+            <Container className="group">
+                <Control>
+                    <Label htmlFor="search">Search</Label>
+                    <Relative onBlur={searchSuggestHide}>
+                        <IconWrapper>
+                            <Icon>
+                                <SearchIcon />
+                            </Icon>
+                        </IconWrapper>
+                        <Input
+                            id="search"
+                            name="search"
+                            placeholder="Search"
+                            type="search"
+                            value={searchValue}
+                            onChange={(ev) => handleChange(ev)}
+                        />
+                    </Relative>
+                </Control>
+                <Button>Искать</Button>
+                <ul>
+                    {searchResults.map((item) => (
+                        <li key={item.id}>
+                            {item.name} - {item.cost}
+                        </li>
+                    ))}
+                </ul>
+            </Container>
+            <BadgeLayout>
+                <BadgesTitle>Популярные запросы</BadgesTitle>
+                <FilterBadges>
+                    <Badge>Нурофен</Badge>
+                    <Badge>Ксалерто</Badge>
+                    <Badge>Детралекс</Badge>
+                    <Badge>Кагоцел</Badge>
+                    <Badge>Канкор</Badge>
+                    <Badge>Ингавирин</Badge>
+                </FilterBadges>
+            </BadgeLayout>
+            <DescriptionLayout>
+                WebRX собрал тысячи аптек и ветклиник. Только проверенные
+                компании с лицензией. Мы помогаем людям по всей стране.
+            </DescriptionLayout>
+        </SearchInputLayout>
+    );
+}
 
-function searchSuggestResult(ev){
-    console.log('In focus type');
+function searchSuggestResult(ev) {
+    console.log("In focus type");
     console.log(ev.target.value);
 }
-function searchSuggestHide(){
-    console.log('It disappeared ');
+function searchSuggestHide() {
+    console.log("It disappeared ");
 }
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;

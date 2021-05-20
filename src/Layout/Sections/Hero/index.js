@@ -8,21 +8,17 @@ const Hero = () => (
                 <GridBlock>
                     <TextSection>
                         <Title>
-                            <SmallText>
-                                Coming soon
-                            </SmallText>
+                            <SmallText>Coming soon</SmallText>
                             <MainText>
-                                <MainTextUp>
-                                    Как работает WebRX?
-                                </MainTextUp>
-                                <MainTextDown>
-                                    Легко и быстро!
-                                </MainTextDown>
+                                <MainTextUp>Как работает WebRX?</MainTextUp>
+                                <MainTextDown>Легко и быстро!</MainTextDown>
                             </MainText>
                         </Title>
                         <JustText>
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-                            Elit sunt amet fugiat veniam occaecat fugiat aliqua ad ad non deserunt sunt.
+                            Anim aute id magna aliqua ad ad non deserunt sunt.
+                            Qui irure qui lorem cupidatat commodo. Elit sunt
+                            amet fugiat veniam occaecat fugiat aliqua ad ad non
+                            deserunt sunt.
                         </JustText>
                         <NotifyBlock>
                             <NotifyBlockText>
@@ -32,13 +28,19 @@ const Hero = () => (
                                 <NotifyBlockFormMailLabel htmlFor="email">
                                     Email
                                 </NotifyBlockFormMailLabel>
-                                <NotifyBlockFormMailInput type="email" name="email" id="email" placeholder="Enter your email" />
+                                <NotifyBlockFormMailInput
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                />
                                 <NotifyBlockFormButton type="submit">
                                     Notify me
                                 </NotifyBlockFormButton>
                             </NotifyBlockForm>
                             <TextUnder>
-                                We care about the protection of your data. Read our&nbsp;
+                                We care about the protection of your data. Read
+                                our&nbsp;
                                 <TextUnderLink href="#">
                                     Privacy Policy
                                 </TextUnderLink>
@@ -48,7 +50,10 @@ const Hero = () => (
                     <Video>
                         <Preview>
                             <PreviewButton type="button">
-                                <Img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&;auto=format&;fit=crop&amp;w=1350&;q=80" alt="" />
+                                <Img
+                                    src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&;auto=format&;fit=crop&amp;w=1350&;q=80"
+                                    alt=""
+                                />
                             </PreviewButton>
                         </Preview>
                     </Video>
