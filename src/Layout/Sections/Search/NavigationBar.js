@@ -3,12 +3,12 @@ import tw, { styled } from "twin.macro";
 
 const NavBarSelect = () => (
     <SelectLayout>
-        <Label for="tabs">Select a tab</Label>
-        <Select id="tabs" name="tabs">
-            <option selected="">My Account</option>
-            <option>Company</option>
-            <option>Team Members</option>
-            <option>Billing</option>
+        <Label htmlFor="tabs">Select a tab</Label>
+        <Select id="tabs" name="tabs" defaultValue={'Home'}>
+            <option value="Home">My Account</option>
+            <option value="Company">Company</option>
+            <option value="Members">Team Members</option>
+            <option value="Billing">Billing</option>
         </Select>
     </SelectLayout>
 );

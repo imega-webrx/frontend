@@ -1,18 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-const SearchInput = () => {
-    const [showResults, setShowResults] = React.useState(false);
-    const onSuggest = () => setShowResults(true);
-    const offSuggest = () => setShowResults(false);
+
     return (
         <SearchInputLayout>
             <Container className="group">
                 <Control>
-                    <Label for="search">Search</Label>
-                    <Relative onBlur={offSuggest}>
+
                         <IconWrapper>
                             <Icon>
                                 <SearchIcon />
@@ -23,12 +19,12 @@ const SearchInput = () => {
                             name="search"
                             placeholder="Search"
                             type="search"
-                            onClick={onSuggest}
+
                         />
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
-                {showResults ? <Results>Result from inpuit</Results> : null}
+
             </Container>
             <BadgeLayout>
                 <BadgesTitle>Популярные запросы</BadgesTitle>
@@ -47,13 +43,7 @@ const SearchInput = () => {
             </DescriptionLayout>
         </SearchInputLayout>
     );
-};
 
-const Results = tw("div")`
-    bg-white
-    w-40
-    p-10
-`;
 function searchSuggestHide() {
     console.log("It disappeared ");
 }
@@ -140,8 +130,10 @@ const Button = tw("a")`
     focus:ring-2
     focus:ring-offset-2
     xl:col-span-2
-    bg-indigo-500
+    bg-black
     cursor-pointer
+    hover:bg-white
+    hover:text-black
 `;
 
 const Icon = tw("div")`h-5 w-5 text-gray-400`;
