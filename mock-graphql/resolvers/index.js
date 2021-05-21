@@ -1,31 +1,27 @@
+const products = [
+    {
+        id: "1",
+        title: "Капецитабин",
+        price: "150",
+    },
+    {
+        id: "2",
+        title: "Валидол",
+        price: "200",
+    },
+    {
+        id: "3",
+        title: "Валивсех",
+        price: "50",
+    },
+];
+// данные и поля еще добавлю сюда
 const resolvers = {
     Query: {
-        searchProduct: () => {
-            return [
-                {
-                    id: "ed3d9a4e-e02c-4fcd-bfb4-003d6e766cf8",
-                    title: "Капецитабин",
-                    fullTitle: "Кселода",
-                    vendors: [
-                        {
-                            id: "b60cd925-0047-4959-8e4c-d48bd688f00f",
-                            title: "Ф.Хоффманн-Ля Рош Лтд (Швейцария), произведено Хоффманн-Ля Рош Инк США",
-                        },
-                    ],
-                },
-                {
-                    code: "ed3d9a4e-e02c-4fcd-bfb4-003d56m456n4",
-                    name: "Валидол",
-                    fullTitle: "Сердце",
-                    vendors: [
-                        {
-                            id: "b60cd925-0047-4959-8e4c-d48sdf87sdf7",
-                            title:
-                                "Где-то в Росссии",
-                        },
-                    ],
-                },
-            ];
+        product(parent, args, context, info) {
+            return products.filter(
+                (product) =>  args.title.length > 2 && product.title.toLowerCase().indexOf(args.title.toLowerCase()) > -1
+            );
         },
     },
 };
