@@ -20,7 +20,11 @@ const resolvers = {
     Query: {
         product(parent, args, context, info) {
             return products.filter(
-                (product) =>  args.title.length > 2 && product.title.toLowerCase().indexOf(args.title.toLowerCase()) > -1
+                (product) =>
+                    args.title.length > 2 &&
+                    product.title
+                        .toLowerCase()
+                        .indexOf(args.title.toLowerCase()) > -1
             );
         },
     },
