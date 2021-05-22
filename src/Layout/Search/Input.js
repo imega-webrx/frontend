@@ -3,49 +3,61 @@ import tw from "twin.macro";
 
 import SearchIcon from "./icon/search.svg";
 
-// Этот запрос пока для теста
-const query = {
-    query: `query searchProduct($title: String!) {
-                searchProduct(title: $title) {
-                ...ProductFields
-                }
-            }
-
-            fragment ProductFields on Product {
-                id
-                title
-                fullTitle
-            }
-        `,
-    variables: {
-        title: "Капецитабин",
-    },
-};
-
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const handleChange = (event) => {
         setSearchValue(event.target.value);
     };
-    useEffect(() => {
-        const results = items.filter((item) =>
-            item.name.toLowerCase().includes(searchValue)
-        );
+    // метот с фетчем принимающий провалидированный title
+    function fetchProducts(title) {
         fetch("http://localhost:4000/graphql", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
-                Accept: "application/json",
             },
-            body: JSON.stringify(query),
+            body: JSON.stringify({
+                query: `query Products($title: String!){
+                            product(title:$title){
+                                id
+                                title
+                                price
+                            }
+                    }
+                `,
+                variables: {
+                    title: title,
+                },
+            }),
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
+                setSearchResults(res.data.product);
+                console.table(res.data.product);
+            })
+            .catch((err) => {
+                console.error(err);
             });
-        setSearchResults(searchValue.length >= 3 ? results : []);
+    }
+
+    useEffect(() => {
+        // если длина более 3х, то валидируем и в запрос, а если нет, то пустой массив
+        if (searchValue.length >= 3) {
+            let regex = /[a-zA-Z\u0400-\u04FF]+/g;
+            let m = "";
+            let title = "";
+
+            while ((m = regex.exec(searchValue)) !== null) {
+                m.forEach((match) => {
+                    title += match;
+                });
+            }
+            fetchProducts(title);
+        } else {
+            setSearchResults([]);
+        }
     }, [searchValue]);
+
     return (
         <SearchInputLayout>
             <Container className="group">
@@ -71,7 +83,7 @@ function SearchInput() {
                 <ul>
                     {searchResults.map((item) => (
                         <li key={item.id}>
-                            {item.name} - {item.cost}
+                            {item.title} - {item.price}
                         </li>
                     ))}
                 </ul>
