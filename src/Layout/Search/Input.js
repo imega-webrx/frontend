@@ -112,7 +112,7 @@ function SearchInput() {
 function searchSuggestResult(ev) {
     console.log("In focus type");
     console.log(ev.target.value);
-    console.log(ev)
+    console.log(ev);
 }
 function searchSuggestHide() {
     console.log("It disappeared ");
