@@ -120,7 +120,6 @@ function SearchInput() {
     );
 }
 
-
 const ContainerResults = tw("div")`
     col-span-12
     sm:col-span-10  
