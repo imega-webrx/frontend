@@ -120,10 +120,10 @@ function SearchInput() {
     );
 }
 
+
 const ContainerResults = tw("div")`
     col-span-12
-    sm:col-span-10
-    
+    sm:col-span-10  
 `;
 const ResultList = tw("ul")`
     block
@@ -142,7 +142,6 @@ const ResultList = tw("ul")`
     focus:placeholder-gray-400
     focus:ring-1
     sm:text-sm
-    
 `;
 
 const ResultItem = tw("li")`
