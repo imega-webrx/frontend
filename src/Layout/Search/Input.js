@@ -80,6 +80,8 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
+                {/* hint based on the entered data  */}
+                {searchValue ? <Results>Result from inpuit</Results> : null}
                 <ul>
                     {searchResults.map((item) => (
                         <li key={item.id}>
@@ -110,10 +112,17 @@ function SearchInput() {
 function searchSuggestResult(ev) {
     console.log("In focus type");
     console.log(ev.target.value);
+    console.log(ev)
 }
 function searchSuggestHide() {
     console.log("It disappeared ");
 }
+
+const Results = tw("div")`
+    bg-white
+    w-40
+    p-10
+`;
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
 const Container = tw("div")`
