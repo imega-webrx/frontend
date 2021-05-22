@@ -6,8 +6,12 @@ import SearchIcon from "./icon/search.svg";
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [showHint, setShowHint] = useState(false);
+    const onShowHint = () => setShowHint(true);
+    const onHideHint = () => setShowHint(false);
     const handleChange = (event) => {
         setSearchValue(event.target.value);
+        onShowHint();
     };
     // метот с фетчем принимающий провалидированный title
     function fetchProducts(title) {
@@ -57,13 +61,12 @@ function SearchInput() {
             setSearchResults([]);
         }
     }, [searchValue]);
-
     return (
         <SearchInputLayout>
             <Container className="group">
                 <Control>
                     <Label htmlFor="search">Search</Label>
-                    <Relative onBlur={searchSuggestHide}>
+                    <Relative onBlur={onHideHint}>
                         <IconWrapper>
                             <Icon>
                                 <SearchIcon />
@@ -80,8 +83,16 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
+
                 {/* hint based on the entered data  */}
-                {searchValue ? <Results>Result from inpuit</Results> : null}
+
+                {searchValue.length >= 3 && showHint ? (
+                    <ContainerResults>
+                        <ResultList>
+                            <ResultItem>Test for example: 01</ResultItem>
+                        </ResultList>
+                    </ContainerResults>
+                ) : null}
                 <ul>
                     {searchResults.map((item) => (
                         <li key={item.id}>
@@ -109,19 +120,33 @@ function SearchInput() {
     );
 }
 
-function searchSuggestResult(ev) {
-    console.log("In focus type");
-    console.log(ev.target.value);
-    console.log(ev)
-}
-function searchSuggestHide() {
-    console.log("It disappeared ");
-}
-
-const Results = tw("div")`
+const ContainerResults = tw("div")`
+    col-span-12
+    sm:col-span-10
+    
+`;
+const ResultList = tw("ul")`
+    block
+    max-w-xl
+    w-full
     bg-white
-    w-40
-    p-10
+    border
+    border-gray-300
+    absolute
+    py-4
+    pl-10
+    pr-3
+    placeholder-gray-500
+    focus:outline-none
+    focus:text-gray-900
+    focus:placeholder-gray-400
+    focus:ring-1
+    sm:text-sm
+    
+`;
+
+const ResultItem = tw("li")`
+    text-sm
 `;
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
