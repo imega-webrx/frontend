@@ -6,12 +6,11 @@ import SearchIcon from "./icon/search.svg";
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const [showHint, setShowHint] = useState(false);
-    const onShowHint = () => setShowHint(true);
-    const onHideHint = () => setShowHint(false);
+    const [isShowHint, setIsShowHint] = useState(false);
+    const minValueHint = 3;
     const handleChange = (event) => {
         setSearchValue(event.target.value);
-        onShowHint();
+        setIsShowHint(true);
     };
     // метот с фетчем принимающий провалидированный title
     function fetchProducts(title) {
@@ -66,7 +65,9 @@ function SearchInput() {
             <Container className="group">
                 <Control>
                     <Label htmlFor="search">Search</Label>
-                    <Relative onBlur={onHideHint}>
+                    <Relative onBlur={() => {
+                        setIsShowHint(false);
+                    }}>
                         <IconWrapper>
                             <Icon>
                                 <SearchIcon />
@@ -86,7 +87,7 @@ function SearchInput() {
 
                 {/* hint based on the entered data  */}
 
-                {searchValue.length >= 3 && showHint ? (
+                {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
                             <ResultItem>Test for example: 01</ResultItem>
