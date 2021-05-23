@@ -65,9 +65,11 @@ function SearchInput() {
             <Container className="group">
                 <Control>
                     <Label htmlFor="search">Search</Label>
-                    <Relative onBlur={() => {
-                        setIsShowHint(false);
-                    }}>
+                    <Relative
+                        onBlur={() => {
+                            setIsShowHint(false);
+                        }}
+                    >
                         <IconWrapper>
                             <Icon>
                                 <SearchIcon />
