@@ -1,11 +1,35 @@
 type Product {
-  id: ID!
-  title: String!
-  price: String!
+    id: ID!
+    title: String!
+    price: String!
+    #   props: {
+    #         dosage: {
+    #             value: String
+    #             notation: String
+    #         },
+    #         valume: {
+    #             value: String
+    #             notation: String
+    #         },
+    #         quantity:{
+    #             value: String
+    #             notation: String
+    #         },
+    #         image: String
+    #     },
+    structure: String
+    description: String
+}
+
+type Manufacturer {
+    manufacturerid: ID!
+    name: String!
+    country: String
+    products(title: String!): [Product]
 }
 
 type Query {
-  product(title: String!): [Product]
+    manufacturers: [Manufacturer]
 }
 
 # тут еще будут объекты
