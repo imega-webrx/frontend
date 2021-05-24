@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 import SearchIcon from "./icon/search.svg";
 
@@ -91,7 +91,10 @@ function SearchInput() {
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ResultItemName>Какое-то название, которое подошло под критерии поиска</ResultItemName>
+                            <ResultItemName>
+                                Какое-то название, которое подошло под критерии
+                                поиска
+                            </ResultItemName>
                             <ResultItemType>Лекарственная форма</ResultItemType>
                         </ResultList>
                     </ContainerResults>
@@ -123,28 +126,25 @@ function SearchInput() {
     );
 }
 
-const ContainerResults = styled.div`
-
-
-`;
+const ContainerResults = styled.div``;
 const ResultList = styled.ul`
     background-color: white;
     padding: 18px;
     position: absolute;
     max-width: 602px;
     width: 100%;
-    border: 1px solid #F0F0F0;
+    border: 1px solid #f0f0f0;
     border-radius: 0px 0px 7px 7px;
     cursor: pointer;
 `;
 
 const ResultItemName = styled.li`
-    color: #6C639F;
+    color: #6c639f;
     margin-bottom: 14px;
     margin-top: 10px;
 `;
 const ResultItemType = styled.li`
-    color: #8F9394;
+    color: #8f9394;
     margin-bottom: 10px;
 `;
 
