@@ -6,20 +6,20 @@ const products = [
         props: {
             dosage: {
                 value: "200",
-                notation: "mg"
+                notation: "mg",
             },
-            valume: {
+            volume: {
                 value: "500",
-                notation: "ml"
+                notation: "ml",
             },
-            quantity:{
+            quantity: {
                 value: "1",
-                notation: "bottle"
+                notation: "bottle",
             },
-            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений"
+            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений",
         },
-        manufacturer: "1",
-        structure:"Тут состав описан",
+        manufacturerid: "1",
+        structure: "Тут состав описан",
         description: "Тут описание",
     },
     {
@@ -29,20 +29,20 @@ const products = [
         props: {
             dosage: {
                 value: "200",
-                notation: "mg"
+                notation: "mg",
             },
-            valume: {
+            volume: {
                 value: "2",
-                notation: "g"
+                notation: "g",
             },
-            quantity:{
+            quantity: {
                 value: "60",
-                notation: "pills"
+                notation: "pills",
             },
-            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений"
+            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений",
         },
         manufacturerid: "2",
-        structure:"Тут состав описан",
+        structure: "Тут состав описан",
         description: "Тут описание",
     },
     {
@@ -52,20 +52,20 @@ const products = [
         props: {
             dosage: {
                 value: "200",
-                notation: "mg"
+                notation: "mg",
             },
-            valume: {
+            volume: {
                 value: "500",
-                notation: "ml"
+                notation: "ml",
             },
-            quantity:{
+            quantity: {
                 value: "1",
-                notation: "bottle"
+                notation: "bottle",
             },
-            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений"
+            image: "тут либо ссылка либо в base64 изображение либо можно сделать массив изображений",
         },
         manufacturerid: "3",
-        structure:"Тут состав описан",
+        structure: "Тут состав описан",
         description: "Тут описание",
     },
 ];
@@ -86,13 +86,13 @@ const manufacturers = [
         name: "Производитель 3",
         country: "Россия",
     },
-]
+];
 // данные и поля еще добавлю сюда
 const resolvers = {
     Query: {
         manufacturers() {
             return manufacturers;
-        }
+        },
     },
     Manufacturer: {
         products(parent, args, context, info) {
@@ -105,7 +105,7 @@ const resolvers = {
                     product.manufacturerid === parent.manufacturerid
             );
         },
-    }
+    },
 };
 
 module.exports = resolvers;

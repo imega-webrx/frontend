@@ -1,22 +1,29 @@
+type Dosage {
+    value: String
+    notation: String
+}
+
+type Volume {
+    value: String
+    notation: String
+}
+type Quantity {
+    value: String
+    notation: String
+}
+
+type Props {
+    dosage: Dosage
+    volume: Volume
+    quantity: Quantity
+    image: String
+}
+
 type Product {
     id: ID!
     title: String!
     price: String!
-    #   props: {
-    #         dosage: {
-    #             value: String
-    #             notation: String
-    #         },
-    #         valume: {
-    #             value: String
-    #             notation: String
-    #         },
-    #         quantity:{
-    #             value: String
-    #             notation: String
-    #         },
-    #         image: String
-    #     },
+    props: Props!
     structure: String
     description: String
 }

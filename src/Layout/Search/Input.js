@@ -21,13 +21,29 @@ function SearchInput() {
             },
             body: JSON.stringify({
                 query: `query Products($title: String!){
-                            product(title:$title){
-                                id
-                                title
-                                price
+                            manufacturers{
+                                manufacturerid
+                                products(title: $title){
+                                    id
+                                    title
+                                    price
+                                    props{
+                                    dosage{
+                                        value
+                                        notation
+                                    }
+                                    volume{
+                                        value
+                                        notation
+                                    }
+                                    quantity{
+                                        value
+                                        notation
+                                    }
+                                    }
+                                }
                             }
-                    }
-                `,
+                        }`,
                 variables: {
                     title: title,
                 },
@@ -125,7 +141,7 @@ function SearchInput() {
 
 const ContainerResults = tw("div")`
     col-span-12
-    sm:col-span-10  
+    sm:col-span-10
 `;
 const ResultList = tw("ul")`
     block
