@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
+import styled from "@emotion/styled";
 
 import SearchIcon from "./icon/search.svg";
 
@@ -86,13 +87,15 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
-
                 {/* hint based on the entered data  */}
-
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ResultItem>Test for example: 01</ResultItem>
+                            <ResultItemName>
+                                Какое-то название, которое подошло под критерии
+                                поиска
+                            </ResultItemName>
+                            <ResultItemType>Лекарственная форма</ResultItemType>
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -123,31 +126,26 @@ function SearchInput() {
     );
 }
 
-const ContainerResults = tw("div")`
-    col-span-12
-    sm:col-span-10  
-`;
-const ResultList = tw("ul")`
-    block
-    max-w-xl
-    w-full
-    bg-white
-    border
-    border-gray-300
-    absolute
-    py-4
-    pl-10
-    pr-3
-    placeholder-gray-500
-    focus:outline-none
-    focus:text-gray-900
-    focus:placeholder-gray-400
-    focus:ring-1
-    sm:text-sm
+const ContainerResults = styled.div``;
+const ResultList = styled.ul`
+    background-color: white;
+    padding: 18px;
+    position: absolute;
+    max-width: 602px;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    border-radius: 0px 0px 7px 7px;
+    cursor: pointer;
 `;
 
-const ResultItem = tw("li")`
-    text-sm
+const ResultItemName = styled.li`
+    color: #6c639f;
+    margin-bottom: 14px;
+    margin-top: 10px;
+`;
+const ResultItemType = styled.li`
+    color: #8f9394;
+    margin-bottom: 10px;
 `;
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
@@ -256,7 +254,7 @@ const Input = tw("input")`
     bg-white
     border
     border-gray-300
-    rounded-l-md
+    rounded-tl-md
     rounded-r-md
     sm:rounded-r-none
     py-4
