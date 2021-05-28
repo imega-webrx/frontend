@@ -117,7 +117,7 @@ function SearchInput() {
                     ))}
                 </ul>
             </Container>
-            {BooksGet()}
+            {BooksTitle()}
             <BadgeLayout>
                 <BadgesTitle>Популярные запросы</BadgesTitle>
                 <FilterBadges>
@@ -138,23 +138,21 @@ function SearchInput() {
 }
 
 
-
-
-function BooksGet() {
-    const GET_BOOKS = gql`
-    {
+const GET_BOOKS = gql`
+    query Query{
         books{
             title
-            author
         }
     }
-`;
-    const { data} = useQuery(GET_BOOKS);
-    const BookTitle = styled.div``;
-    return (
-        <BookTitle name="book">{data.books.title}</BookTitle>
-    )
+`
+function BooksTitle(){
+    const { loading, error, data } = useQuery(GET_BOOKS);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error...</p>;
+    return <p>Book: {data.books.title}</p>;
 }
+
+
 
 
 
