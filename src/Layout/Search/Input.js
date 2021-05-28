@@ -47,10 +47,6 @@ function SearchInput() {
         
     };
     
-   
-   
-   
-
 
     useEffect(() => {
         // если длина более 3х, то валидируем и в запрос, а если нет, то пустой массив
@@ -151,12 +147,6 @@ function BooksTitle(){
     if (error) return <p>Error...</p>;
     return <p>Book: {data.books.title}</p>;
 }
-
-
-
-
-
-
 
 
 const ContainerResults = styled.div``;
