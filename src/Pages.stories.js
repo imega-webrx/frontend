@@ -9,7 +9,7 @@ export default {
 };
 
 const Template = (args) => <MainPage />;
-const SubTemplate = (args) => <ShowWords/>;
+const SubTemplate = (args) => <ShowWords />;
 const MainStory = Template.bind({});
 const SubStory = SubTemplate.bind({});
 

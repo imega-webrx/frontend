@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import tw from "twin.macro";
 import styled from "@emotion/styled";
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery } from "@apollo/client";
 
 import SearchIcon from "./icon/search.svg";
 
@@ -44,9 +44,7 @@ function SearchInput() {
             .catch((err) => {
                 console.error(err);
             });
-        
-    };
-    
+    }
 
     useEffect(() => {
         // если длина более 3х, то валидируем и в запрос, а если нет, то пустой массив
@@ -65,7 +63,6 @@ function SearchInput() {
             setSearchResults([]);
         }
     }, [searchValue]);
-
 
     return (
         <SearchInputLayout>
@@ -133,7 +130,6 @@ function SearchInput() {
     );
 }
 
-
 // const GET_BOOKS = gql`
 //     query Query{
 //         books{
@@ -147,7 +143,6 @@ function SearchInput() {
 //     if (error) return <p>Error...</p>;
 //     return <p>Book: {data.books.title}</p>;
 // }
-
 
 const ContainerResults = styled.div``;
 const ResultList = styled.ul`
