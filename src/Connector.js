@@ -7,9 +7,7 @@ const client = new ApolloClient({
 
 const Connector = () => (
     <ApolloProvider client={client}>
-        <Layout>
-            <Search />
-        </Layout>
+        <Search />
     </ApolloProvider>
 );
 
