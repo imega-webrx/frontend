@@ -13,8 +13,6 @@ import {
     from,
 } from "@apollo/client";
 
-
-
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [isShowHint, setIsShowHint] = useState(false);
@@ -30,20 +28,22 @@ function SearchInput() {
         });
         if (loading) return <p></p>;
         if (error) return <p>Error...</p>;
-        
+
         return (
-            <h1>{data.product.map(product => (
-                <ResultItemName key={product.id}>{product.title}
-                    <ResultItemType>{product.price}</ResultItemType>
-                </ResultItemName>
-                
-            ))}</h1>
+            <h1>
+                {data.product.map((product) => (
+                    <ResultItemName key={product.id}>
+                        {product.title}
+                        <ResultItemType>{product.price}</ResultItemType>
+                    </ResultItemName>
+                ))}
+            </h1>
         );
     }
     function ShowWords() {
         return (
             <ApolloProvider client={client}>
-              <GetProducts/>
+                <GetProducts />
             </ApolloProvider>
         );
     }
@@ -79,7 +79,7 @@ function SearchInput() {
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ShowWords/>
+                            <ShowWords />
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -103,7 +103,6 @@ function SearchInput() {
     );
 }
 
-
 const httpLink = new HttpLink({
     uri: "http://localhost:4000/graphql",
 });
@@ -114,13 +113,13 @@ const client = new ApolloClient({
 });
 
 const GET_PRODUCT = gql`
-query Query($title: String!) {
-    product(title: $title) {
-        id
-        title
-        price
+    query Query($title: String!) {
+        product(title: $title) {
+            id
+            title
+            price
+        }
     }
-}
 `;
 
 const ContainerResults = styled.div``;
