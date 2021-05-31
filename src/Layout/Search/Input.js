@@ -2,10 +2,21 @@ import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
+import {
+    ApolloProvider,
+    ApolloClient,
+    ApolloLink,
+    HttpLink,
+    InMemoryCache,
+    gql,
+    useQuery,
+    from,
+} from "@apollo/client";
+
+
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
     const handleChange = (event) => {
@@ -13,52 +24,29 @@ function SearchInput() {
         setIsShowHint(true);
     };
 
-    function fetchProducts(title) {
-        fetch("http://localhost:4000/graphql", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify({
-                query: `query Products($title: String!){
-                            product(title:$title){
-                                id
-                                title
-                                price
-                            }
-                    }
-                `,
-                variables: {
-                    title: title,
-                },
-            }),
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResults(res.data.product);
-                console.table(res.data.product);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
+    function GetProducts() {
+        const { loading, error, data } = useQuery(GET_PRODUCT, {
+            variables: { title: searchValue },
+        });
+        if (loading) return <p></p>;
+        if (error) return <p>Error...</p>;
+        
+        return (
+            <h1>{data.product.map(product => (
+                <ResultItemName key={product.id}>{product.title}
+                    <ResultItemType>{product.price}</ResultItemType>
+                </ResultItemName>
+                
+            ))}</h1>
+        );
     }
-
-    useEffect(() => {
-        if (searchValue.length >= 3) {
-            let regex = /[a-zA-Z\u0400-\u04FF]+/g;
-            let m = "";
-            let title = "";
-
-            while ((m = regex.exec(searchValue)) !== null) {
-                m.forEach((match) => {
-                    title += match;
-                });
-            }
-            fetchProducts(title);
-        } else {
-            setSearchResults([]);
-        }
-    }, [searchValue]);
+    function ShowWords() {
+        return (
+            <ApolloProvider client={client}>
+              <GetProducts/>
+            </ApolloProvider>
+        );
+    }
 
     return (
         <SearchInputLayout>
@@ -91,14 +79,7 @@ function SearchInput() {
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            {searchResults.map((item) => (
-                                <ResultItemName key={item.id}>
-                                    {item.title}
-                                    <ResultItemType>
-                                        {item.price}
-                                    </ResultItemType>
-                                </ResultItemName>
-                            ))}
+                            <ShowWords/>
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -122,6 +103,26 @@ function SearchInput() {
     );
 }
 
+
+const httpLink = new HttpLink({
+    uri: "http://localhost:4000/graphql",
+});
+
+const client = new ApolloClient({
+    link: ApolloLink.from([httpLink]),
+    cache: new InMemoryCache(),
+});
+
+const GET_PRODUCT = gql`
+query Query($title: String!) {
+    product(title: $title) {
+        id
+        title
+        price
+    }
+}
+`;
+
 const ContainerResults = styled.div``;
 
 const ResultList = styled.ul`
@@ -135,7 +136,7 @@ const ResultList = styled.ul`
     cursor: pointer;
 `;
 
-const ResultItemName = styled.li`
+const ResultItemName = styled.p`
     color: #6c639f;
     border-bottom: 1px solid #d1d5db;
     :last-child {
