@@ -92,7 +92,7 @@ function SearchInput() {
                     <ContainerResults>
                         <ResultList>
                             {searchResults.map((item) => (
-                                <ResultItemName>
+                                <ResultItemName key={item.id}>
                                     {item.title}
                                     <ResultItemType>
                                         {item.price}
