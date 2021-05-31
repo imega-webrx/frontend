@@ -21,6 +21,25 @@ function SearchInput() {
         setSearchValue(event.target.value);
         setIsShowHint(true);
     };
+    
+    const httpLink = new HttpLink({
+        uri: "http://localhost:4000/graphql",
+    });
+
+    const client = new ApolloClient({
+        link: ApolloLink.from([httpLink]),
+        cache: new InMemoryCache(),
+    });
+
+    const GET_PRODUCT = gql`
+    query Query($title: String!) {
+        product(title: $title) {
+            id
+            title
+            price
+            }
+        }
+    `;    
 
     function GetProducts() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
@@ -103,24 +122,7 @@ function SearchInput() {
     );
 }
 
-const httpLink = new HttpLink({
-    uri: "http://localhost:4000/graphql",
-});
 
-const client = new ApolloClient({
-    link: ApolloLink.from([httpLink]),
-    cache: new InMemoryCache(),
-});
-
-const GET_PRODUCT = gql`
-    query Query($title: String!) {
-        product(title: $title) {
-            id
-            title
-            price
-        }
-    }
-`;
 
 const ContainerResults = styled.div``;
 
