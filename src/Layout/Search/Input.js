@@ -3,8 +3,6 @@ import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
 
-
-
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -15,7 +13,6 @@ function SearchInput() {
         setIsShowHint(true);
     };
 
-   
     function fetchProducts(title) {
         fetch("http://localhost:4000/graphql", {
             method: "POST",
@@ -63,8 +60,6 @@ function SearchInput() {
         }
     }, [searchValue]);
 
-
-
     return (
         <SearchInputLayout>
             <Container className="group">
@@ -91,19 +86,19 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
-                
+
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
-                        <ResultList>                             
+                        <ResultList>
                             {searchResults.map((item) => (
-                            <ResultItemName>
-                                {item.title}  
-                                <ResultItemType>
-                                    {item.price}
-                                </ResultItemType>
-                            </ResultItemName>        
-                            ))}           
+                                <ResultItemName>
+                                    {item.title}
+                                    <ResultItemType>
+                                        {item.price}
+                                    </ResultItemType>
+                                </ResultItemName>
+                            ))}
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -127,23 +122,22 @@ function SearchInput() {
     );
 }
 
-
 const ContainerResults = styled.div``;
 
 const ResultList = styled.ul`
     background-color: white;
-    
+
     position: absolute;
     max-width: 640px;
     width: 100%;
-    
+
     border-radius: 0px 0px 7px 7px;
     cursor: pointer;
 `;
 
 const ResultItemName = styled.li`
     color: #6c639f;
-    border-bottom: 1px solid #D1D5DB;
+    border-bottom: 1px solid #d1d5db;
     :last-child {
         border-bottom: none;
     }
