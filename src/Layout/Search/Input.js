@@ -21,7 +21,7 @@ function SearchInput() {
         setSearchValue(event.target.value);
         setIsShowHint(true);
     };
-    
+
     const httpLink = new HttpLink({
         uri: "http://localhost:4000/graphql",
     });
@@ -32,14 +32,14 @@ function SearchInput() {
     });
 
     const GET_PRODUCT = gql`
-    query Query($title: String!) {
-        product(title: $title) {
-            id
-            title
-            price
+        query Query($title: String!) {
+            product(title: $title) {
+                id
+                title
+                price
             }
         }
-    `;    
+    `;
 
     function GetProducts() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
@@ -121,8 +121,6 @@ function SearchInput() {
         </SearchInputLayout>
     );
 }
-
-
 
 const ContainerResults = styled.div``;
 
