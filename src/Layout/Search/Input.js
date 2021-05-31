@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
-
 import SearchIcon from "./icon/search.svg";
+
+
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
@@ -13,7 +14,8 @@ function SearchInput() {
         setSearchValue(event.target.value);
         setIsShowHint(true);
     };
-    // метот с фетчем принимающий провалидированный title
+
+   
     function fetchProducts(title) {
         fetch("http://localhost:4000/graphql", {
             method: "POST",
@@ -45,7 +47,6 @@ function SearchInput() {
     }
 
     useEffect(() => {
-        // если длина более 3х, то валидируем и в запрос, а если нет, то пустой массив
         if (searchValue.length >= 3) {
             let regex = /[a-zA-Z\u0400-\u04FF]+/g;
             let m = "";
@@ -61,6 +62,9 @@ function SearchInput() {
             setSearchResults([]);
         }
     }, [searchValue]);
+
+
+
     return (
         <SearchInputLayout>
             <Container className="group">
@@ -87,25 +91,22 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
+                
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
-                        <ResultList>
+                        <ResultList>                             
+                            {searchResults.map((item) => (
                             <ResultItemName>
-                                Какое-то название, которое подошло под критерии
-                                поиска
-                            </ResultItemName>
-                            <ResultItemType>Лекарственная форма</ResultItemType>
+                                {item.title}  
+                                <ResultItemType>
+                                    {item.price}
+                                </ResultItemType>
+                            </ResultItemName>        
+                            ))}           
                         </ResultList>
                     </ContainerResults>
                 ) : null}
-                <ul>
-                    {searchResults.map((item) => (
-                        <li key={item.id}>
-                            {item.title} - {item.price}
-                        </li>
-                    ))}
-                </ul>
             </Container>
             <BadgeLayout>
                 <BadgesTitle>Популярные запросы</BadgesTitle>
@@ -126,26 +127,31 @@ function SearchInput() {
     );
 }
 
+
 const ContainerResults = styled.div``;
+
 const ResultList = styled.ul`
     background-color: white;
-    padding: 18px;
+    
     position: absolute;
-    max-width: 602px;
+    max-width: 640px;
     width: 100%;
-    border: 1px solid #f0f0f0;
+    
     border-radius: 0px 0px 7px 7px;
     cursor: pointer;
 `;
 
 const ResultItemName = styled.li`
     color: #6c639f;
-    margin-bottom: 14px;
-    margin-top: 10px;
+    border-bottom: 1px solid #D1D5DB;
+    :last-child {
+        border-bottom: none;
+    }
+    padding: 20px;
 `;
 const ResultItemType = styled.li`
     color: #8f9394;
-    margin-bottom: 10px;
+    margin-top: 10px;
 `;
 
 const SearchInputLayout = tw("div")`bg-yellow-300 px-4 sm:px-6 lg:px-8 py-2`;
