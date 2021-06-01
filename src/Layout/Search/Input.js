@@ -13,6 +13,26 @@ import {
 } from "@apollo/client";
 import fetch from "cross-fetch";
 
+const httpLink = new HttpLink({
+        uri: "http://localhost:4000/graphql",
+        fetch,
+ });
+
+ const client = new ApolloClient({
+     link: ApolloLink.from([httpLink]),
+     cache: new InMemoryCache(),
+ });
+
+ const GET_PRODUCT = gql`
+     query Query($title: String!) {
+         product(title: $title) {
+             id
+             title
+             price
+         }
+     }
+ `;
+
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
     const [isShowHint, setIsShowHint] = useState(false);
@@ -22,25 +42,7 @@ function SearchInput() {
         setIsShowHint(true);
     };
 
-    const httpLink = new HttpLink({
-        uri: "http://localhost:4000/graphql",
-        fetch,
-    });
-
-    const client = new ApolloClient({
-        link: ApolloLink.from([httpLink]),
-        cache: new InMemoryCache(),
-    });
-
-    const GET_PRODUCT = gql`
-        query Query($title: String!) {
-            product(title: $title) {
-                id
-                title
-                price
-            }
-        }
-    `;
+    
 
     function GetProducts() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
