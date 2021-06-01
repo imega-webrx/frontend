@@ -11,7 +11,7 @@ import {
     gql,
     useQuery,
 } from "@apollo/client";
-import fetch from 'cross-fetch';
+import fetch from "cross-fetch";
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
@@ -23,7 +23,8 @@ function SearchInput() {
     };
 
     const httpLink = new HttpLink({
-        uri: "http://localhost:4000/graphql", fetch
+        uri: "http://localhost:4000/graphql",
+        fetch,
     });
 
     const client = new ApolloClient({
@@ -46,7 +47,7 @@ function SearchInput() {
             variables: { title: searchValue },
         });
         if (loading) return <p></p>;
-        if (error) return console.log('Error');
+        if (error) return console.log("Error");
 
         return (
             <div>
