@@ -46,8 +46,12 @@ function SearchInput() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
             variables: { title: searchValue },
         });
-        if (loading){ return <p></p>};
-        if (error){ return console.log("Error")};
+        if (loading) {
+            return <p></p>;
+        }
+        if (error) {
+            return console.log("Error");
+        }
 
         return (
             <div>
