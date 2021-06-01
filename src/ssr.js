@@ -35,7 +35,10 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         content="https://webrx.ru/f7578d37eab95108db8cf957b7c1545b.jpg"
                     />
                     <meta property="og:site_name" content="WebRx" />
-                    <meta name="keywords" content="цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках" />
+                    <meta
+                        name="keywords"
+                        content="цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках"
+                    />
                     {/* <script type="application/ld+json">
                         {  
                             "@context": "http://schema.org", 

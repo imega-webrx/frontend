@@ -40,8 +40,8 @@ const Hero = () => (
                                 </NotifyBlockFormButton>
                             </NotifyBlockForm>
                             <TextUnder>
-                                Мы заботимся о безопасности Ваших данных. 
-                                <br/>
+                                Мы заботимся о безопасности Ваших данных.
+                                <br />
                                 Прочтите нашу &nbsp;
                                 <TextUnderLink href="#">
                                     Политику конфиденциальности
