@@ -15,10 +15,11 @@ const Hero = () => (
                             </MainText>
                         </Title>
                         <JustText>
-                            Anim aute id magna aliqua ad ad non deserunt sunt.
-                            Qui irure qui lorem cupidatat commodo. Elit sunt
-                            amet fugiat veniam occaecat fugiat aliqua ad ad non
-                            deserunt sunt.
+                            Просто введите название лекарства (в том числе
+                            рецептурного), на которое хотите найти цены в своем
+                            городе и сервис покажет возможные варианты и
+                            местонахождение аптек. Мы также помогаем сравнить
+                            цены на ветеринарные услуги.
                         </JustText>
                         <NotifyBlock>
                             <NotifyBlockText>
@@ -39,10 +40,11 @@ const Hero = () => (
                                 </NotifyBlockFormButton>
                             </NotifyBlockForm>
                             <TextUnder>
-                                We care about the protection of your data. Read
-                                our&nbsp;
+                                Мы заботимся о безопасности Ваших данных. 
+                                <br/>
+                                Прочтите нашу &nbsp;
                                 <TextUnderLink href="#">
-                                    Privacy Policy
+                                    Политику конфиденциальности
                                 </TextUnderLink>
                             </TextUnder>
                         </NotifyBlock>
@@ -107,7 +109,7 @@ const SmallText = tw("span")`
     lg:text-sm
     xl:text-base
 `;
-const MainText = tw("span")`
+const MainText = tw("div")`
     mt-1
     block
     text-4xl
@@ -116,12 +118,11 @@ const MainText = tw("span")`
     sm:text-5xl
     xl:text-6xl
 `;
-const MainTextUp = tw("span")`
+const MainTextUp = tw("h2")`
     block
     text-gray-900
 `;
-const MainTextDown = tw("span")`
-    block
+const MainTextDown = tw("h2")`
     text-indigo-600
 `;
 const JustText = tw("p")`

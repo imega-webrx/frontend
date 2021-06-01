@@ -30,29 +30,29 @@ const Feature = () => (
 const features = [
     {
         icon: <FirstIcon />,
-        higherText: "людей, которые ценят свое время и хотят сэкономить деньги",
+        higherText: "Людей, которые ценят свое время и хотят сэкономить деньги",
         downText:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+            "Мы покажем самую низкую цену на лекарства в вашем городе и аптеку, где они продаются, в том числе и аналоги",
     },
     {
         icon: <SecondIcon />,
-        higherText: "аптеки, желающие увеличить узнаваемость и выручку",
+        higherText: "Аптек, желающих увеличить узнаваемость и выручку",
         downText:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+            "Направьте нам актуальный прайс-лист лекарств, чтобы посетители видели вашу аптеку в выдаче и приобрели лекарства",
     },
     {
         icon: <ThirdIcon />,
         higherText:
-            "ветеринарные клиники, которые планируют увеличить свою клиентскую базу",
+            "Ветеринарных клиник, которые планируют увеличить свою клиентскую базу",
         downText:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+            "Мы помогаем сравнить не только лекарства для людей, но и для животных, а также услуги ветеринарных клиник",
     },
     {
         icon: <FourthIcon />,
         higherText:
-            "врачи, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
+            "Врачей, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
         downText:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+            "С помощью наших алгоритмов мы поможем подобрать аналоги за считанные секунды, в том числе по ценовому диапазону",
     },
 ];
 const Features = () =>

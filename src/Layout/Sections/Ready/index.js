@@ -30,7 +30,7 @@ const Section = tw(
 const Title = tw(
     "h2"
 )`text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl`;
-const Question = tw("span")`block`;
+const Question = tw("h2")`block`;
 const Todo = tw("span")`block text-indigo-600`;
 const ButtonArea = tw("div")`mt-8 flex lg:mt-0 lg:flex-shrink-0`;
 const GetStartedBlock = tw("div")`inline-flex rounded-md shadow`;
