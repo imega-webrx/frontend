@@ -14,24 +14,24 @@ import {
 import fetch from "cross-fetch";
 
 const httpLink = new HttpLink({
-        uri: "http://localhost:4000/graphql",
-        fetch,
- });
+    uri: "http://localhost:4000/graphql",
+    fetch,
+});
 
- const client = new ApolloClient({
-     link: ApolloLink.from([httpLink]),
-     cache: new InMemoryCache(),
- });
+const client = new ApolloClient({
+    link: ApolloLink.from([httpLink]),
+    cache: new InMemoryCache(),
+});
 
- const GET_PRODUCT = gql`
-     query Query($title: String!) {
-         product(title: $title) {
-             id
-             title
-             price
-         }
-     }
- `;
+const GET_PRODUCT = gql`
+    query Query($title: String!) {
+        product(title: $title) {
+            id
+            title
+            price
+        }
+    }
+`;
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
@@ -41,8 +41,6 @@ function SearchInput() {
         setSearchValue(event.target.value);
         setIsShowHint(true);
     };
-
-    
 
     function GetProducts() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
