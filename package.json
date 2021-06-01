@@ -55,6 +55,7 @@
     "babel-plugin-graphql-tag": "^3.2.0",
     "babel-plugin-macros": "^2.8.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "cross-fetch": "^3.1.4",
     "emotion-reset": "^3.0.0",
     "emotion-server": "^10.0.27",
     "eslint": "^7.22.0",

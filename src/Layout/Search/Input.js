@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
@@ -10,10 +10,8 @@ import {
     InMemoryCache,
     gql,
     useQuery,
-    from,
 } from "@apollo/client";
-
-
+import fetch from 'cross-fetch';
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
@@ -24,26 +22,47 @@ function SearchInput() {
         setIsShowHint(true);
     };
 
+    const httpLink = new HttpLink({
+        uri: "http://localhost:4000/graphql", fetch
+    });
+
+    const client = new ApolloClient({
+        link: ApolloLink.from([httpLink]),
+        cache: new InMemoryCache(),
+    });
+
+    const GET_PRODUCT = gql`
+        query Query($title: String!) {
+            product(title: $title) {
+                id
+                title
+                price
+            }
+        }
+    `;
+
     function GetProducts() {
         const { loading, error, data } = useQuery(GET_PRODUCT, {
             variables: { title: searchValue },
         });
         if (loading) return <p></p>;
-        if (error) return <p>Error...</p>;
-        
+        if (error) return console.log('Error');
+
         return (
-            <h1>{data.product.map(product => (
-                <ResultItemName key={product.id}>{product.title}
-                    <ResultItemType>{product.price}</ResultItemType>
-                </ResultItemName>
-                
-            ))}</h1>
+            <div>
+                {data.product.map((product) => (
+                    <ResultItemName key={product.id}>
+                        {product.title}
+                        <ResultItemType>{product.price}</ResultItemType>
+                    </ResultItemName>
+                ))}
+            </div>
         );
     }
-    function ShowWords() {
+    function ShowSuggest() {
         return (
             <ApolloProvider client={client}>
-              <GetProducts/>
+                <GetProducts />
             </ApolloProvider>
         );
     }
@@ -74,12 +93,11 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
-
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ShowWords/>
+                            <ShowSuggest />
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -103,26 +121,6 @@ function SearchInput() {
     );
 }
 
-
-const httpLink = new HttpLink({
-    uri: "http://localhost:4000/graphql",
-});
-
-const client = new ApolloClient({
-    link: ApolloLink.from([httpLink]),
-    cache: new InMemoryCache(),
-});
-
-const GET_PRODUCT = gql`
-query Query($title: String!) {
-    product(title: $title) {
-        id
-        title
-        price
-    }
-}
-`;
-
 const ContainerResults = styled.div``;
 
 const ResultList = styled.ul`
@@ -136,7 +134,7 @@ const ResultList = styled.ul`
     cursor: pointer;
 `;
 
-const ResultItemName = styled.p`
+const ResultItemName = styled.li`
     color: #6c639f;
     border-bottom: 1px solid #d1d5db;
     :last-child {
@@ -144,7 +142,7 @@ const ResultItemName = styled.p`
     }
     padding: 20px;
 `;
-const ResultItemType = styled.li`
+const ResultItemType = styled.p`
     color: #8f9394;
     margin-top: 10px;
 `;
