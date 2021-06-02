@@ -1,11 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
+import {
+    ApolloProvider,
+    ApolloClient,
+    ApolloLink,
+    HttpLink,
+    InMemoryCache,
+    gql,
+    useQuery,
+} from "@apollo/client";
+import fetch from "cross-fetch";
+
+const httpLink = new HttpLink({
+    fetch,
+    uri: "http://localhost:4000/graphql",
+});
+
+const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    link: ApolloLink.from([httpLink]),
+});
+
+const GET_PRODUCT = gql`
+    query Query($title: String!) {
+        product(title: $title) {
+            id
+            title
+            price
+        }
+    }
+`;
 
 function SearchInput() {
     const [searchValue, setSearchValue] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
     const handleChange = (event) => {
@@ -13,52 +42,35 @@ function SearchInput() {
         setIsShowHint(true);
     };
 
-    function fetchProducts(title) {
-        fetch("http://localhost:4000/graphql", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify({
-                query: `query Products($title: String!){
-                            product(title:$title){
-                                id
-                                title
-                                price
-                            }
-                    }
-                `,
-                variables: {
-                    title: title,
-                },
-            }),
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResults(res.data.product);
-                console.table(res.data.product);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    }
-
-    useEffect(() => {
-        if (searchValue.length >= 3) {
-            let regex = /[a-zA-Z\u0400-\u04FF]+/g;
-            let m = "";
-            let title = "";
-
-            while ((m = regex.exec(searchValue)) !== null) {
-                m.forEach((match) => {
-                    title += match;
-                });
-            }
-            fetchProducts(title);
-        } else {
-            setSearchResults([]);
+    function GetProducts() {
+        const { loading, error, data } = useQuery(GET_PRODUCT, {
+            variables: { title: searchValue },
+        });
+        if (loading) {
+            return <p></p>;
         }
-    }, [searchValue]);
+        if (error) {
+            return console.log("Error");
+        }
+
+        return (
+            <div>
+                {data.product.map((product) => (
+                    <ResultItemName key={product.id}>
+                        {product.title}
+                        <ResultItemType>{product.price}</ResultItemType>
+                    </ResultItemName>
+                ))}
+            </div>
+        );
+    }
+    function ShowSuggest() {
+        return (
+            <ApolloProvider client={client}>
+                <GetProducts />
+            </ApolloProvider>
+        );
+    }
 
     return (
         <SearchInputLayout>
@@ -86,19 +98,11 @@ function SearchInput() {
                     </Relative>
                 </Control>
                 <Button>Искать</Button>
-
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            {searchResults.map((item) => (
-                                <ResultItemName key={item.id}>
-                                    {item.title}
-                                    <ResultItemType>
-                                        {item.price}
-                                    </ResultItemType>
-                                </ResultItemName>
-                            ))}
+                            <ShowSuggest />
                         </ResultList>
                     </ContainerResults>
                 ) : null}
@@ -143,7 +147,7 @@ const ResultItemName = styled.li`
     }
     padding: 20px;
 `;
-const ResultItemType = styled.li`
+const ResultItemType = styled.p`
     color: #8f9394;
     margin-top: 10px;
 `;
