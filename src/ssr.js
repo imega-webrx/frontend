@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/server";
 import { extractCritical } from "emotion-server";
 import { renderToStringWithData } from "@apollo/client/react/ssr";
-import { Helmet } from "react-helmet";
+
 
 import MainPage from "./Main.page";
 import Normalize from "./Normalize";
