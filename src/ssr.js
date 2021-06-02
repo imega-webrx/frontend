@@ -40,9 +40,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         name="keywords"
                         content="цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках"
                     />
-                    <script type="application/ld+json">
-                        {seoData}
-                    </script>    
+                    <script type="application/ld+json">{seoData}</script>
                     <Normalize />
                     <style
                         data-emotion-css={ids.join(" ")}
@@ -68,18 +66,20 @@ r.then((res) => {
     });
 }).catch((err) => console.error(err));
 
-const seoData = { 
-    "@context": "http://schema.org", 
+const seoData = {
+    "@context": "http://schema.org",
     "@type": "WebSite",
-    "name": "Сравнить цены на лекарства и ветеринарные услуги онлайн - WebRx",
-    "description": "Справочная цен на лекарства в аптеках по всем городам, актуальная стоимость на 2021 год, онлайн проверка наличия. Сравнение цен на услуги ветеринара.",
-    "url": "https://webrx.ru",
-    "image": "https://webrx.ru/f7578d37eab95108db8cf957b7c1545b.jpg",
-    "aggregateRating": {
+    name: "Сравнить цены на лекарства и ветеринарные услуги онлайн - WebRx",
+    description:
+        "Справочная цен на лекарства в аптеках по всем городам, актуальная стоимость на 2021 год, онлайн проверка наличия. Сравнение цен на услуги ветеринара.",
+    url: "https://webrx.ru",
+    image: "https://webrx.ru/f7578d37eab95108db8cf957b7c1545b.jpg",
+    aggregateRating: {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "251"
+        ratingValue: "4.9",
+        reviewCount: "251",
     },
-    "alternateName": "WebRx",
-    "keywords": "цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн, цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках"  
-}
+    alternateName: "WebRx",
+    keywords:
+        "цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн, цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках",
+};
