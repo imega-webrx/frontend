@@ -97,7 +97,7 @@ const TextSection = tw("div")`
     lg:col-span-6
     lg:text-left
 `;
-const Title = tw("h2")``;
+const Title = tw("div")``;
 const SmallText = tw("span")`
     block
     text-sm
