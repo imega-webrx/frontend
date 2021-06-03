@@ -39,7 +39,9 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         name="keywords"
                         content="цены на лекарства,сравнение цен на лекарства, сравнение услуг ветеринара, стоимость лекарств онлайн цена на лекарства онлайн,сайт сравнения цен лекарств,стоимость лекарств в аптеках"
                     />
-                    <script type="application/ld+json">{structuredSeoData}</script>
+                    <script type="application/ld+json">
+                        {structuredSeoData}
+                    </script>
                     <Normalize />
                     <style
                         data-emotion-css={ids.join(" ")}
@@ -65,8 +67,6 @@ r.then((res) => {
     });
 }).catch((err) => console.error(err));
 
-
-
 const structuredSeoData = () => {
     let seoData = {
         "@context": "http://schema.org",
@@ -87,4 +87,4 @@ const structuredSeoData = () => {
     };
 
     return JSON.stringify(seoData);
-}
+};
