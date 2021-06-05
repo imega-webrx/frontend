@@ -13,15 +13,13 @@ import {
 } from "@apollo/client";
 import fetch from "cross-fetch";
 
-
-
-const graphqlHost = process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
+const graphqlHost =
+    process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
 
 const httpLink = new HttpLink({
     fetch,
     uri: graphqlHost,
 });
-
 
 
 const client = new ApolloClient({
