@@ -25,7 +25,7 @@ const HeaderLayout = tw("section")`
     sm:px-6
     lg:px-8
 `;
-const Title = tw("h2")`text-3xl font-extrabold text-gray-800 sm:text-4xl`;
+const Title = tw("div")`text-3xl font-extrabold text-gray-800 sm:text-4xl`;
 const TitleBlock = tw("h1")``;
 const Text = tw("p")`mt-4 text-lg leading-6 text-gray-600`;
 
