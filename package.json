@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build:ssr && npm run build:client && node build/ssr.js && rm build/ssr.js",
-    "dev": "STORYBOOK_GRAPHQL_HOST=$DOCKER_MACHINE_NAME:4000 start-storybook --debug-webpack -p 9001 -c .storybook",
+    "dev": "start-storybook --debug-webpack -p 9001 -c .storybook STORYBOOK_GRAPHQL_HOST=$DOCKER_MACHINE_NAME:4000",
     "build:ssr": "webpack --config webpack.ssr.js",
     "build:client": "webpack --config webpack.client.js",
     "test": "jest"
