@@ -28,7 +28,6 @@ module.exports = Object.assign({}, configRules, {
     plugins: [
         new webpack.DefinePlugin({
             "process.env.SERVER": JSON.stringify(true),
-            "process.env.STORYBOOK_GRAPHQL_HOST": JSON.stringify("/graphql"),
         }),
     ],
 });

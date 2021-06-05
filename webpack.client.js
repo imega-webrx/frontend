@@ -1,6 +1,7 @@
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const configRules = require("./webpack.common");
+const webpack = require("webpack");
 
 module.exports = Object.assign({}, configRules, {
     entry: {
@@ -28,4 +29,9 @@ module.exports = Object.assign({}, configRules, {
             }),
         ],
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            "process.env.STORYBOOK_GRAPHQL_HOST": JSON.stringify("/graphql"),
+        }),
+    ],
 });
