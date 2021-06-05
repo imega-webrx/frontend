@@ -21,7 +21,6 @@ const httpLink = new HttpLink({
     uri: graphqlHost,
 });
 
-
 const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: ApolloLink.from([httpLink]),
