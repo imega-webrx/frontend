@@ -20,7 +20,7 @@ const products = [
         price: "от 700р.",
     },
 ];
-// данные и поля еще добавлю сюда
+
 const resolvers = {
     Query: {
         product(parent, args, context, info) {
