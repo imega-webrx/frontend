@@ -20,11 +20,13 @@ const Select = tw("select")`
     w-full
     focus:ring-indigo-500
     focus:border-indigo-500
+    border
+    border-solid
     border-gray-300
     rounded-md
     pl-3
     pr-10
-    py-2
+    py-3
     bg-white
     text-base
 `;

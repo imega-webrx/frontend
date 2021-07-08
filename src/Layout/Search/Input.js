@@ -173,6 +173,7 @@ const DescriptionLayout = tw("div")`
     px-3
     py-3
     font-medium
+    text-center
 `;
 
 const BadgeLayout = tw("div")`
@@ -236,7 +237,7 @@ const Button = tw("a")`
     focus:ring-2
     focus:ring-offset-2
     xl:col-span-2
-    bg-black
+    bg-blue-600
     cursor-pointer
     hover:bg-white
     hover:text-black
@@ -261,10 +262,10 @@ const Input = tw("input")`
     bg-white
     border
     border-gray-300
-    rounded-tl-md
+    rounded-l-md
     rounded-r-md
     sm:rounded-r-none
-    py-4
+    py-3
     pl-10
     pr-3
     text-sm

@@ -39,19 +39,22 @@ const Footer = () => (
 );
 
 const FooterLayout = tw("footer")`max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8`;
+
 const LogoGroup = tw("section")`
-    grid
-    grid-cols-2
+    flex
+    flex-wrap
+    justify-around
     gap-8
-    md:grid-cols-6
-    lg:grid-cols-5
+    sm:gap-x-20
+    sm:justify-center
+    md:gap-x-40
+    md:justify-evenly
+    lg:gap-x-8
+    lg:justify-between
 `;
 const LogoLayout = tw("div")`
-    col-span-1
     flex
     justify-center
-    md:col-span-2
-    lg:col-span-1
 `;
 const Logo = tw("img")`h-12`;
 
