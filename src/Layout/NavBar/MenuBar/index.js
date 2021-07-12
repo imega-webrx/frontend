@@ -1,11 +1,8 @@
 import React from "react";
 import tw from "twin.macro";
 
-import Logo from "./Logo";
-
 const Main = ({ children }) => (
     <MenuBar>
-        <Logo />
         <Container>
             <Column>{children}</Column>
         </Container>
