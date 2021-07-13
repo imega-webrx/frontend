@@ -7,7 +7,7 @@ const Header = (props) => (
     </Container>
 );
 
-const Container = tw("div")`bg-gray-800`;
+const Container = tw("div")`hidden md:block bg-gray-800`;
 const Nav = tw("nav")``;
 
 export default Header;
