@@ -1,11 +1,13 @@
 import React from "react";
 import tw from "twin.macro";
+import RightMenu from "./RightMenu/index.js";
 
 const NavBar = (props) => (
     <nav>
         <Layout>
             <Border>
                 <Container>{props.children}</Container>
+                <RightMenu />
             </Border>
         </Layout>
     </nav>
