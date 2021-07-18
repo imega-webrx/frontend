@@ -7,13 +7,13 @@ const MobileMenu = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
     const onToggleMenu = () => {
-        setIsOpenMenu(prev => !prev);
+        setIsOpenMenu((prev) => !prev);
     };
 
     const [isOpenProfileMenu, setIsOpenProfileMenu] = useState(false);
 
     const onToggleProfileMenu = () => {
-        setIsOpenProfileMenu(prev => !prev);
+        setIsOpenProfileMenu((prev) => !prev);
     };
 
     return (
