@@ -5,7 +5,7 @@ import NavBar from "./Layout/NavBar";
 import MenuBar from "./Layout/NavBar/MenuBar";
 import Footer from "./Layout/Footer";
 
-import { DefaultItem, ActiveItem } from "./Layout/NavBar/MenuBar/Item";
+import { DefaultItem } from "./Layout/NavBar/MenuBar/Item";
 import {
     Newsletter,
     Ready,
@@ -20,11 +20,7 @@ const Main = () => {
             <Header title="Поиск">
                 <NavBar>
                     <MenuBar>
-                        <ActiveItem href="#">О WebRx</ActiveItem>
-                        <DefaultItem href="#">
-                            Поиск по состоянию здоровья
-                        </DefaultItem>
-                        <DefaultItem href="#">Контакты</DefaultItem>
+                        <DefaultItem href="#">Страхование</DefaultItem>
                         <DefaultItem href="#">Новости</DefaultItem>
                         <DefaultItem href="#">Добавить компанию</DefaultItem>
                     </MenuBar>

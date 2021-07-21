@@ -57,11 +57,7 @@ const MobileMenu = () => {
             {isOpenMenu ? (
                 <MobileMenuContainer>
                     <Menu>
-                        <LinkDefault href="/">О WebRx</LinkDefault>
-                        <LinkHover href="/">
-                            Поиск по состоянию здоровья
-                        </LinkHover>
-                        <LinkHover href="/">Контакты</LinkHover>
+                        <LinkHover href="/">Страхование</LinkHover>
                         <LinkHover href="/">Новости</LinkHover>
                         <LinkHover href="/">Добавить компанию</LinkHover>
                     </Menu>
@@ -171,17 +167,6 @@ const MobileMenuContainer = tw("div")`md:hidden`;
 
 const Menu = tw("div")`
     px-2 pt-2 pb-3 space-y-1
-`;
-
-const LinkDefault = tw("a")`
-    bg-gray-900
-    text-white 
-    block 
-    px-3 
-    py-2 
-    rounded-md 
-    text-base 
-    font-medium
 `;
 
 const LinkHover = tw("a")`
