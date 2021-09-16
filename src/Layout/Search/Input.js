@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
@@ -12,6 +13,7 @@ import {
     useQuery,
 } from "@apollo/client";
 import fetch from "cross-fetch";
+import { useHistory } from "react-router";
 
 const graphqlHost =
     process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
@@ -37,6 +39,8 @@ const GET_PRODUCT = gql`
 `;
 
 function SearchInput() {
+    const history = useHistory();
+
     const [searchValue, setSearchValue] = useState("");
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
@@ -100,7 +104,7 @@ function SearchInput() {
                         />
                     </Relative>
                 </Control>
-                <Button>Искать</Button>
+                <Button onClick={() => history.push("/searchResult")}>Искать</Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>

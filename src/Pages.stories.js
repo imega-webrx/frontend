@@ -1,20 +1,20 @@
 import React from "react";
-
-import MainPage from "./Main.page";
+import App from "./App";
 
 export default {
+    component: App,
     title: "Pages",
-    component: MainPage,
 };
 
-const Template = (args) => <MainPage />;
+const Template = (args) => <App />;
 
 const MainStory = Template.bind({});
 
 MainStory.args = {};
 
 MainStory.story = {
-    name: "Main",
+    name: "App",
 };
+
 
 export { MainStory };
