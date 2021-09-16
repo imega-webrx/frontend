@@ -16,5 +16,4 @@ MainStory.story = {
     name: "App",
 };
 
-
 export { MainStory };

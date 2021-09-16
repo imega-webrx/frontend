@@ -15,28 +15,56 @@ const HeaderContainer = (props) => (
 );
 
 const Header = (props) => {
-
     return (
         <HeaderContainer title="Поиск">
             <NavBar>
                 <MenuBar>
-                    <NavLink exact to="/" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                    <NavLink
+                        exact
+                        to="/"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
                         О WebRx
                     </NavLink>
-                    <NavLink to="searchResult" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                    <NavLink
+                        to="searchResult"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
                         Поиск по состоянию здоровья
                     </NavLink>
-                    <NavLink to="/contacts" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Контакты</NavLink>
-                    <NavLink to="/news" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Новости</NavLink>
-                    <NavLink to="/addCompany" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Добавить компанию</NavLink>
+                    <NavLink
+                        to="/contacts"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
+                        Контакты
+                    </NavLink>
+                    <NavLink
+                        to="/news"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
+                        Новости
+                    </NavLink>
+                    <NavLink
+                        to="/addCompany"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
+                        Добавить компанию
+                    </NavLink>
                 </MenuBar>
             </NavBar>
         </HeaderContainer>
     );
 };
 
-const navlinkCSS = "bg-transparent border-0 cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium";
-const navlinkActiveCSS = "border-0 cursor-pointer bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium";
+const navlinkCSS =
+    "bg-transparent border-0 cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium";
+const navlinkActiveCSS =
+    "border-0 cursor-pointer bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium";
 
 const Container = tw("div")`bg-gray-800`;
 const Nav = tw("nav")`hidden md:block`;

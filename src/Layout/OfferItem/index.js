@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
 
-
 const OfferItem = () => {
-
     const [isOpen, setIsOpen] = useState(true);
 
     const [isOpenBlock, setIsOpenBlock] = useState({
@@ -19,7 +17,7 @@ const OfferItem = () => {
         contraindication: false,
         withCareful: false,
         modeOfApp: false,
-        creator: false
+        creator: false,
     });
 
     const onClickHandler = (event) => {
@@ -32,7 +30,10 @@ const OfferItem = () => {
         <ListEl>
             <CardReduced>
                 <ImgContainer>
-                    <CardImg src="https://vseapteki.ru/cropping/thumbnails/101/3239/share_default/" alt="cardImg" />
+                    <CardImg
+                        src="https://vseapteki.ru/cropping/thumbnails/101/3239/share_default/"
+                        alt="cardImg"
+                    />
                 </ImgContainer>
                 <Right>
                     <Name>Нурофен форте</Name>
@@ -40,184 +41,317 @@ const OfferItem = () => {
                     <BuyBlock>
                         <PharmacyLink href="#">Apteka.ru</PharmacyLink>
                         <Price>200 руб.</Price>
-                        <BtnBuy type="button">
-                            Купить
-                        </BtnBuy>
+                        <BtnBuy type="button">Купить</BtnBuy>
                     </BuyBlock>
 
-                    {
-                        isOpen ?
-                            <BtnRoll onClick={() => setIsOpen(false)}>Свернуть</BtnRoll>
-                            :
-                            <BtnRoll onClick={() => setIsOpen(true)}>Характеристики</BtnRoll>
-                    }
+                    {isOpen ? (
+                        <BtnRoll onClick={() => setIsOpen(false)}>
+                            Свернуть
+                        </BtnRoll>
+                    ) : (
+                        <BtnRoll onClick={() => setIsOpen(true)}>
+                            Характеристики
+                        </BtnRoll>
+                    )}
                 </Right>
             </CardReduced>
 
             <div>
-                {
-                    isOpen ?
-                        <Specifications>
-                            <Title
-                                name="condition"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Условия отпуска
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["condition"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    свободный
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="packing"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Фасовка
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["packing"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    таблетки
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="description"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Описание
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["description"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    Нестероидный противовоспалительный препарат (НПВП).
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="dosage"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Дозировка
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["dosage"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    Внутрь, запивая водой. Взрослым и детям старше 12 лет — по 1 табл., но не более 3 табл. в течение 24 ч.
-                                    Максимальная суточная доза для взрослых — 1200 мг; для детей 12–17 лет — 1000 мг.
-                                    Если при приеме в течение 2–3 дней симптомы сохраняются, следует прекратить прием и обратиться к врачу.
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="forms"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Лекарственные формы
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["forms"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    Круглые двояковыпуклые таблетки, покрытые сахарной оболочкой белого цвета с надпечаткой красного цвета «Nurofen 400» на одной стороне таблетки.
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="intName"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Международное непатентованное название
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["intName"] ? "block" : "none" }}>
-                                Nurofen forte
-                            </TextBlock>
-                            <Title
-                                name="farmAction"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Фармакологическое действие
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["farmAction"] ? "block" : "none" }}>
-                                <ul>
-                                    <Li>жаропонижающее</Li>
-                                    <Li>обезболивающее</Li>
-                                    <Li>противовоспалительное</Li>
-                                </ul>
-                            </TextBlock>
-                            <Title
-                                name="indication"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Показание
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["indication"] ? "block" : "none" }}>
-                                <ul>
-
-                                    <Li>головная и зубная боль;</Li>
-                                    <Li>мигрень;</Li>
-                                    <Li>болезненные менструации;</Li>
-                                    <Li>невралгия;</Li>
-                                    <Li>боль в спине, мышечные, ревматические и другие виды боли;</Li>
-                                    <Li>лихорадочные состояния при гриппе и простудных заболеваниях.</Li>
-                                </ul>
-                            </TextBlock>
-                            <Title
-                                name="contraindication"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Противопоказании
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["contraindication"] ? "block" : "none" }}>
-                                <ul>
-                                    <Li>гиперчувствительность к любому из ингредиентов, входящих в состав препарата;</Li>
-                                    <Li>гиперчувствительность к ацетилсалициловой кислоте или другим НПВС в анамнезе (в т.ч. анамнестические данные о бронхообструкции, рините, крапивнице после приема ацетилсалициловой кислоты или иного НПВС); полный или неполный синдром непереносимости ацетилсалициловой кислоты (риносинусит, крапивница, полипы слизистой носа, бронхиальная астма);</Li>
-                                    <Li>эрозивно-язвенные заболевания органов желудочно-кишечного тракта в стадии обострения (в т.ч. язвенная болезнь желудка и двенадцатиперстной кишки, болезнь Крона, неспецифический язвенный колит);</Li>
-                                    <Li>гемофилия и другие нарушения свертываемости крови (в т.ч. гипокоагуляция), геморрагические диатезы;</Li>
-                                    <Li>период после проведения аортокоронарного шунтирования;</Li>
-                                    <Li>желудочно-кишечные кровотечения и внутричерепные кровоизлияния;</Li>
-                                    <Li>выраженная печеночная недостаточность или активное заболевание печени;</Li>
-                                    <Li>выраженная почечная недостаточность;</Li>
-                                    <Li>подтвержденная гиперкалиемия;</Li>
-                                    <Li>беременность;</Li>
-                                    <Li>детский возраст до 12 лет.</Li>
-                                </ul>
-                            </TextBlock>
-                            <Title
-                                name="withCareful"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                С осторожностью:
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["withCareful"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    пожилой возраст, сердечная недостаточность, артериальная гипертензия, ИБС, цереброваскулярные заболевания, дислипидемия, сахарный диабет, заболевания периферических артерий, цирроз печени с портальной гипертензией, печеночная и/или почечная недостаточность, нефротический синдром, гипербилирубинемия, язвенная болезнь желудка и двенадцатиперстной кишки (в анамнезе), гастрит, энтерит, колит, заболевания крови неясной этиологии (лейкопения и анемия), период лактации, тяжелые соматические заболевания;
-                                    курение, частое употребление алкоголя;
-                                    длительное использование НПВС, одновременный прием пероральных ГКС (в т.ч. преднизолона), антикоагулянтов (в т.ч. варфарина), антиагрегантов (в т.ч. ацетилсалициловой кислоты, клопидогрела), селективных ингибиторов обратного захвата серотонина (в т.ч. циталопрама, флуоксетина, пароксетина, сертралина).
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="modeOfApp"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Способ применения
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["modeOfApp"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    Внутрь, запивая водой. Взрослым и детям старше 12 лет — по 1 табл., но не более 3 табл. в течение 24 ч.
-                                    Максимальная суточная доза для взрослых — 1200 мг; для детей 12–17 лет — 1000 мг.
-                                    Если при приеме в течение 2–3 дней симптомы сохраняются, следует прекратить прием и обратиться к врачу.
-                                </Paragraph>
-                            </TextBlock>
-                            <Title
-                                name="creator"
-                                onClick={(event) => onClickHandler(event)}
-                            >
-                                Производитель
-                            </Title>
-                            <TextBlock style={{ display: isOpenBlock["creator"] ? "block" : "none" }}>
-                                <Paragraph>
-                                    Великобритания
-                                </Paragraph>
-                            </TextBlock>
-                        </Specifications> : null}
+                {isOpen ? (
+                    <Specifications>
+                        <Title
+                            name="condition"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Условия отпуска
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["condition"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>свободный</Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="packing"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Фасовка
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["packing"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>таблетки</Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="description"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Описание
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["description"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>
+                                Нестероидный противовоспалительный препарат
+                                (НПВП).
+                            </Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="dosage"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Дозировка
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["dosage"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>
+                                Внутрь, запивая водой. Взрослым и детям старше
+                                12 лет — по 1 табл., но не более 3 табл. в
+                                течение 24 ч. Максимальная суточная доза для
+                                взрослых — 1200 мг; для детей 12–17 лет — 1000
+                                мг. Если при приеме в течение 2–3 дней симптомы
+                                сохраняются, следует прекратить прием и
+                                обратиться к врачу.
+                            </Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="forms"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Лекарственные формы
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["forms"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>
+                                Круглые двояковыпуклые таблетки, покрытые
+                                сахарной оболочкой белого цвета с надпечаткой
+                                красного цвета «Nurofen 400» на одной стороне
+                                таблетки.
+                            </Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="intName"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Международное непатентованное название
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["intName"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            Nurofen forte
+                        </TextBlock>
+                        <Title
+                            name="farmAction"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Фармакологическое действие
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["farmAction"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <ul>
+                                <Li>жаропонижающее</Li>
+                                <Li>обезболивающее</Li>
+                                <Li>противовоспалительное</Li>
+                            </ul>
+                        </TextBlock>
+                        <Title
+                            name="indication"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Показание
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["indication"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <ul>
+                                <Li>головная и зубная боль;</Li>
+                                <Li>мигрень;</Li>
+                                <Li>болезненные менструации;</Li>
+                                <Li>невралгия;</Li>
+                                <Li>
+                                    боль в спине, мышечные, ревматические и
+                                    другие виды боли;
+                                </Li>
+                                <Li>
+                                    лихорадочные состояния при гриппе и
+                                    простудных заболеваниях.
+                                </Li>
+                            </ul>
+                        </TextBlock>
+                        <Title
+                            name="contraindication"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Противопоказании
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["contraindication"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <ul>
+                                <Li>
+                                    гиперчувствительность к любому из
+                                    ингредиентов, входящих в состав препарата;
+                                </Li>
+                                <Li>
+                                    гиперчувствительность к ацетилсалициловой
+                                    кислоте или другим НПВС в анамнезе (в т.ч.
+                                    анамнестические данные о бронхообструкции,
+                                    рините, крапивнице после приема
+                                    ацетилсалициловой кислоты или иного НПВС);
+                                    полный или неполный синдром непереносимости
+                                    ацетилсалициловой кислоты (риносинусит,
+                                    крапивница, полипы слизистой носа,
+                                    бронхиальная астма);
+                                </Li>
+                                <Li>
+                                    эрозивно-язвенные заболевания органов
+                                    желудочно-кишечного тракта в стадии
+                                    обострения (в т.ч. язвенная болезнь желудка
+                                    и двенадцатиперстной кишки, болезнь Крона,
+                                    неспецифический язвенный колит);
+                                </Li>
+                                <Li>
+                                    гемофилия и другие нарушения свертываемости
+                                    крови (в т.ч. гипокоагуляция),
+                                    геморрагические диатезы;
+                                </Li>
+                                <Li>
+                                    период после проведения аортокоронарного
+                                    шунтирования;
+                                </Li>
+                                <Li>
+                                    желудочно-кишечные кровотечения и
+                                    внутричерепные кровоизлияния;
+                                </Li>
+                                <Li>
+                                    выраженная печеночная недостаточность или
+                                    активное заболевание печени;
+                                </Li>
+                                <Li>выраженная почечная недостаточность;</Li>
+                                <Li>подтвержденная гиперкалиемия;</Li>
+                                <Li>беременность;</Li>
+                                <Li>детский возраст до 12 лет.</Li>
+                            </ul>
+                        </TextBlock>
+                        <Title
+                            name="withCareful"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            С осторожностью:
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["withCareful"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>
+                                пожилой возраст, сердечная недостаточность,
+                                артериальная гипертензия, ИБС,
+                                цереброваскулярные заболевания, дислипидемия,
+                                сахарный диабет, заболевания периферических
+                                артерий, цирроз печени с портальной
+                                гипертензией, печеночная и/или почечная
+                                недостаточность, нефротический синдром,
+                                гипербилирубинемия, язвенная болезнь желудка и
+                                двенадцатиперстной кишки (в анамнезе), гастрит,
+                                энтерит, колит, заболевания крови неясной
+                                этиологии (лейкопения и анемия), период
+                                лактации, тяжелые соматические заболевания;
+                                курение, частое употребление алкоголя;
+                                длительное использование НПВС, одновременный
+                                прием пероральных ГКС (в т.ч. преднизолона),
+                                антикоагулянтов (в т.ч. варфарина),
+                                антиагрегантов (в т.ч. ацетилсалициловой
+                                кислоты, клопидогрела), селективных ингибиторов
+                                обратного захвата серотонина (в т.ч.
+                                циталопрама, флуоксетина, пароксетина,
+                                сертралина).
+                            </Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="modeOfApp"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Способ применения
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["modeOfApp"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>
+                                Внутрь, запивая водой. Взрослым и детям старше
+                                12 лет — по 1 табл., но не более 3 табл. в
+                                течение 24 ч. Максимальная суточная доза для
+                                взрослых — 1200 мг; для детей 12–17 лет — 1000
+                                мг. Если при приеме в течение 2–3 дней симптомы
+                                сохраняются, следует прекратить прием и
+                                обратиться к врачу.
+                            </Paragraph>
+                        </TextBlock>
+                        <Title
+                            name="creator"
+                            onClick={(event) => onClickHandler(event)}
+                        >
+                            Производитель
+                        </Title>
+                        <TextBlock
+                            style={{
+                                display: isOpenBlock["creator"]
+                                    ? "block"
+                                    : "none",
+                            }}
+                        >
+                            <Paragraph>Великобритания</Paragraph>
+                        </TextBlock>
+                    </Specifications>
+                ) : null}
             </div>
         </ListEl>
     );
 };
-
 
 const ListEl = tw("div")`
     px-6 py-4 border-gray-50 justify-between border-b-2
@@ -293,7 +427,5 @@ const Paragraph = tw("p")`
 const Li = tw("li")`
     leading-normal
 `;
-
-
 
 export default OfferItem;
