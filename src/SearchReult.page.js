@@ -4,7 +4,6 @@ import tw from "twin.macro";
 import OfferItem from "./Layout/OfferItem";
 
 const SearchResult = () => {
-
     const OFFERS = [
         {
             id: 1,
@@ -12,7 +11,7 @@ const SearchResult = () => {
             img: "https://images.apteka.ru/medium_58c04557-10d2-4c14-b2d3-ff18d2c4f52e.jpeg",
             price: 880,
             pharmacyName: "Apteka.ru",
-            pharmacyLink: "https://apteka.ru/"
+            pharmacyLink: "https://apteka.ru/",
         },
         {
             id: 2,
@@ -20,7 +19,7 @@ const SearchResult = () => {
             img: "https://cdn1.ozone.ru/multimedia/1023347160.jpg",
             price: 1570,
             pharmacyName: "Apteka.ru",
-            pharmacyLink: "https://apteka.ru/"
+            pharmacyLink: "https://apteka.ru/",
         },
         {
             id: 3,
@@ -28,18 +27,16 @@ const SearchResult = () => {
             img: "https://static3.asna.ru//imgprx/teWqRcAOQiQGseTWr1N1ztasw2PaM5jkuQ9BYITW4xI/s:170:120:1/q:100/aHR0cHM6Ly9pbWdzLmFzbmEucnUvaWJsb2NrL2Q2Mi9kNjJlMzllZGQ3MDhiMzc3MDY3MzE3OWE4NTQwMzJlNy80ZTYwZDBkYjg0MDg4NWY1M2U2OTAwNzhhZGU0Yjc4ZS5qcGc.jpg?auto=format&fit=max&w=256",
             price: 5,
             pharmacyName: "асна",
-            pharmacyLink: "https://asna.ru/"
+            pharmacyLink: "https://asna.ru/",
         },
     ];
 
     return (
         <Layout>
             <ListContainer>
-                {
-                    OFFERS.map((offer) => (
-                        <OfferItem offer={offer} key={offer.id}/>
-                    ))
-                }
+                {OFFERS.map((offer) => (
+                    <OfferItem offer={offer} key={offer.id} />
+                ))}
             </ListContainer>
         </Layout>
     );

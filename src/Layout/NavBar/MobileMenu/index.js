@@ -58,14 +58,35 @@ const MobileMenu = () => {
             {isOpenMenu ? (
                 <MobileMenuContainer>
                     <Menu>
-                        <NavLink exact to="/" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                        <NavLink
+                            exact
+                            to="/"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
                             О WebRx
                         </NavLink>
-                        <NavLink to="insurance" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                        <NavLink
+                            to="insurance"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
                             Страхование
                         </NavLink>
-                        <NavLink to="/news" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Новости</NavLink>
-                        <NavLink to="/addCompany" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Добавить компанию</NavLink>
+                        <NavLink
+                            to="/news"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            Новости
+                        </NavLink>
+                        <NavLink
+                            to="/addCompany"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            Добавить компанию
+                        </NavLink>
                     </Menu>
 
                     <Footer>
@@ -108,8 +129,10 @@ const MobileMenu = () => {
     );
 };
 
-const navlinkCSS = "text-white block px-3 py-2 rounded-md text-base font-medium";
-const navlinkActiveCSS = "block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium";
+const navlinkCSS =
+    "text-white block px-3 py-2 rounded-md text-base font-medium";
+const navlinkActiveCSS =
+    "block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium";
 
 const Footer = tw("div")`
     pt-4 pb-3 border-t border-gray-700

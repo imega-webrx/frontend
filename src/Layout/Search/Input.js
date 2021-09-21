@@ -128,8 +128,8 @@ function SearchInput() {
                 </FilterBadges>
             </BadgeLayout>
             <DescriptionLayout>
-                WebRX собрал тысячи аптек. Только проверенные
-                компании с лицензией Ригла Аптека.ру 36.6 Живика
+                WebRX собрал тысячи аптек. Только проверенные компании с
+                лицензией Ригла Аптека.ру 36.6 Живика
             </DescriptionLayout>
         </SearchInputLayout>
     );
