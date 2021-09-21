@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
 
-
 const OfferItem = (props) => {
-
-    const {name, img, price, pharmacyName, pharmacyLink} = props.offer;
+    const { name, img, price, pharmacyName, pharmacyLink } = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +19,7 @@ const OfferItem = (props) => {
         intName: false,
         modeOfApp: false,
         packing: false,
-        withCareful: false
+        withCareful: false,
     });
 
     const onClickHandler = (event) => {
@@ -40,19 +38,22 @@ const OfferItem = (props) => {
                     <OfferName>{name}</OfferName>
 
                     <BuyBlock>
-                        <PharmacyLink href={pharmacyLink}>{pharmacyName}</PharmacyLink>
+                        <PharmacyLink href={pharmacyLink}>
+                            {pharmacyName}
+                        </PharmacyLink>
                         <Price>{price} руб.</Price>
-                        <BtnBuy type="button">
-                            Купить
-                        </BtnBuy>
+                        <BtnBuy type="button">Купить</BtnBuy>
                     </BuyBlock>
 
-                    {
-                        isOpen ?
-                            <BtnRoll onClick={() => setIsOpen(false)}>Свернуть</BtnRoll>
-                            :
-                            <BtnRoll onClick={() => setIsOpen(true)}>Характеристики</BtnRoll>
-                    }
+                    {isOpen ? (
+                        <BtnRoll onClick={() => setIsOpen(false)}>
+                            Свернуть
+                        </BtnRoll>
+                    ) : (
+                        <BtnRoll onClick={() => setIsOpen(true)}>
+                            Характеристики
+                        </BtnRoll>
+                    )}
                 </RightBlock>
             </CardReduced>
 
@@ -352,7 +353,6 @@ const OfferItem = (props) => {
         </Card>
     );
 };
-
 
 const Card = tw("div")`
     px-3 py-4 border-gray-50 justify-between border-b-2

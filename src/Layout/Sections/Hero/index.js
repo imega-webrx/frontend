@@ -10,7 +10,9 @@ const Hero = () => (
                         <Title>
                             <MainText>
                                 <MainTextUp>Как работает WebRX?</MainTextUp>
-                                <MainTextDown>Качественно, Легко и Быстро!</MainTextDown>
+                                <MainTextDown>
+                                    Качественно, Легко и Быстро!
+                                </MainTextDown>
                             </MainText>
                         </Title>
                         <JustText>

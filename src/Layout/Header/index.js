@@ -14,7 +14,6 @@ const HeaderContainer = (props) => (
 );
 
 const Header = () => {
-
     return (
         <HeaderContainer title="Поиск">
             <NavBar>
@@ -27,11 +26,27 @@ const Header = () => {
                     >
                         О WebRx
                     </NavLink>
-                    <NavLink to="insurance" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                    <NavLink
+                        to="insurance"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
                         Страхование
                     </NavLink>
-                    <NavLink to="/news" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Новости</NavLink>
-                    <NavLink to="/addCompany" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Добавить компанию</NavLink>
+                    <NavLink
+                        to="/news"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
+                        Новости
+                    </NavLink>
+                    <NavLink
+                        to="/addCompany"
+                        className={navlinkCSS}
+                        activeClassName={navlinkActiveCSS}
+                    >
+                        Добавить компанию
+                    </NavLink>
                 </MenuBar>
             </NavBar>
         </HeaderContainer>
