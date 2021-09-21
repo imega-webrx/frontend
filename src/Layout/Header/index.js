@@ -13,12 +13,8 @@ const HeaderContainer = (props) => (
     </Container>
 );
 
-<<<<<<< HEAD
 const Header = () => {
 
-=======
-const Header = (props) => {
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
     return (
         <HeaderContainer title="Поиск">
             <NavBar>
@@ -31,42 +27,11 @@ const Header = (props) => {
                     >
                         О WebRx
                     </NavLink>
-<<<<<<< HEAD
                     <NavLink to="insurance" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
                         Страхование
                     </NavLink>
                     <NavLink to="/news" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Новости</NavLink>
                     <NavLink to="/addCompany" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Добавить компанию</NavLink>
-=======
-                    <NavLink
-                        to="searchResult"
-                        className={navlinkCSS}
-                        activeClassName={navlinkActiveCSS}
-                    >
-                        Поиск по состоянию здоровья
-                    </NavLink>
-                    <NavLink
-                        to="/contacts"
-                        className={navlinkCSS}
-                        activeClassName={navlinkActiveCSS}
-                    >
-                        Контакты
-                    </NavLink>
-                    <NavLink
-                        to="/news"
-                        className={navlinkCSS}
-                        activeClassName={navlinkActiveCSS}
-                    >
-                        Новости
-                    </NavLink>
-                    <NavLink
-                        to="/addCompany"
-                        className={navlinkCSS}
-                        activeClassName={navlinkActiveCSS}
-                    >
-                        Добавить компанию
-                    </NavLink>
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
                 </MenuBar>
             </NavBar>
         </HeaderContainer>

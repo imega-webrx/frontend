@@ -2,17 +2,12 @@
 import React, { useState } from "react";
 import tw from "twin.macro";
 
-<<<<<<< HEAD
 
 const OfferItem = (props) => {
 
     const {name, img, price, pharmacyName, pharmacyLink} = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
-=======
-const OfferItem = () => {
-    const [isOpen, setIsOpen] = useState(true);
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
 
     const [isOpenBlock, setIsOpenBlock] = useState({
         condition: false,
@@ -25,12 +20,8 @@ const OfferItem = () => {
         indication: false,
         intName: false,
         modeOfApp: false,
-<<<<<<< HEAD
         packing: false,
         withCareful: false
-=======
-        creator: false,
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
     });
 
     const onClickHandler = (event) => {
@@ -43,20 +34,12 @@ const OfferItem = () => {
         <Card>
             <CardReduced>
                 <ImgContainer>
-<<<<<<< HEAD
                     <CardImg src={img} alt="cardImg" />
-=======
-                    <CardImg
-                        src="https://vseapteki.ru/cropping/thumbnails/101/3239/share_default/"
-                        alt="cardImg"
-                    />
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
                 </ImgContainer>
                 <RightBlock>
                     <OfferName>{name}</OfferName>
 
                     <BuyBlock>
-<<<<<<< HEAD
                         <PharmacyLink href={pharmacyLink}>{pharmacyName}</PharmacyLink>
                         <Price>{price} руб.</Price>
                         <BtnBuy type="button">
@@ -71,23 +54,6 @@ const OfferItem = () => {
                             <BtnRoll onClick={() => setIsOpen(true)}>Характеристики</BtnRoll>
                     }
                 </RightBlock>
-=======
-                        <PharmacyLink href="#">Apteka.ru</PharmacyLink>
-                        <Price>200 руб.</Price>
-                        <BtnBuy type="button">Купить</BtnBuy>
-                    </BuyBlock>
-
-                    {isOpen ? (
-                        <BtnRoll onClick={() => setIsOpen(false)}>
-                            Свернуть
-                        </BtnRoll>
-                    ) : (
-                        <BtnRoll onClick={() => setIsOpen(true)}>
-                            Характеристики
-                        </BtnRoll>
-                    )}
-                </Right>
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
             </CardReduced>
 
             <div>
@@ -387,14 +353,9 @@ const OfferItem = () => {
     );
 };
 
-<<<<<<< HEAD
 
 const Card = tw("div")`
     px-3 py-4 border-gray-50 justify-between border-b-2
-=======
-const ListEl = tw("div")`
-    px-6 py-4 border-gray-50 justify-between border-b-2
->>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
 `;
 
 const CardReduced = tw("div")`
