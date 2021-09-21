@@ -27,7 +27,7 @@ const Header = () => {
                         О WebRx
                     </NavLink>
                     <NavLink
-                        to="insurance"
+                        to="/insurance"
                         className={navlinkCSS}
                         activeClassName={navlinkActiveCSS}
                     >
