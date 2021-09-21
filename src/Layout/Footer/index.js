@@ -52,13 +52,19 @@ const Footer = () => (
                             <Link href="/">Перечень услуг WebRx</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Информация о скидках и инструментах</Link>
+                            <Link href="/">
+                                Информация о скидках и инструментах
+                            </Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Препараты по состоянию здоровья</Link>
+                            <Link href="/">
+                                Препараты по состоянию здоровья
+                            </Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Препараты по системам организма</Link>
+                            <Link href="/">
+                                Препараты по системам организма
+                            </Link>
                         </PageListItem>
                     </PagesList>
                 </PagesBlockItem>

@@ -129,9 +129,8 @@ function SearchInput() {
             </BadgeLayout>
             <DescriptionLayout>
                 <p>
-                    WebRX собрал тысячи аптек. Только проверенные
-                    компании с лицензией
-                    &nbsp;
+                    WebRX собрал тысячи аптек. Только проверенные компании с
+                    лицензией &nbsp;
                     <TextUnderline>Ригла</TextUnderline>
                     &nbsp;
                     <TextUnderline>Аптека.ру</TextUnderline>

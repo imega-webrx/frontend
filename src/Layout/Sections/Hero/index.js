@@ -16,7 +16,8 @@ const Hero = () => (
                             </MainText>
                         </Title>
                         <JustText>
-                            Просто введите название лекарства и сэкономьте свое время и деньги.
+                            Просто введите название лекарства и сэкономьте свое
+                            время и деньги.
                         </JustText>
                         <NotifyBlock>
                             <NotifyBlockForm action="#" method="POST">
