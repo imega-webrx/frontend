@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import OfferItem from "./Layout/OfferItem";
 
 const SearchResult = () => {
+<<<<<<< HEAD
 
     const OFFERS = [
         {
@@ -42,9 +43,17 @@ const SearchResult = () => {
                     ))
                 }
 
+=======
+    return (
+        <Layout>
+            <ListContainer>
+                <OfferItem />
+                <OfferItem />
+                <OfferItem />
+                <OfferItem />
+>>>>>>> 6d2192466ce7c4a84f7e90a167aefc9d4d956e68
             </ListContainer>
         </Layout>
-
     );
 };
 
@@ -53,6 +62,5 @@ const Layout = tw("div")`max-w-7xl mx-auto sm:px-6 lg:px-8`;
 const ListContainer = tw("div")`
     bg-white overflow-hidden rounded-md
 `;
-
 
 export default SearchResult;

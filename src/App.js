@@ -6,17 +6,19 @@ import SearchResult from "./SearchReult.page";
 import Header from "./Layout/Header";
 
 const App = () => {
-
-
     return (
         <BrowserRouter>
-        <div>
-            <Header />
-            <Switch>
-                <Route path="/" component={Main} exact/>
-                <Route path="/searchResult" component={SearchResult} exact/>
-            </Switch>
-        </div>
+            <div>
+                <Header />
+                <Switch>
+                    <Route path="/" component={Main} exact />
+                    <Route
+                        path="/searchResult"
+                        component={SearchResult}
+                        exact
+                    />
+                </Switch>
+            </div>
         </BrowserRouter>
     );
 };
