@@ -104,7 +104,9 @@ function SearchInput() {
                         />
                     </Relative>
                 </Control>
-                <Button onClick={() => history.push("/searchResult")}>Искать</Button>
+                <Button onClick={() => history.push("/searchResult")}>
+                    Искать
+                </Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>

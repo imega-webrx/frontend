@@ -35,16 +35,13 @@ const SearchResult = () => {
     return (
         <Layout>
             <ListContainer>
-
                 {
                     OFFERS.map((offer) => (
                         <OfferItem offer={offer} key={offer.id}/>
                     ))
                 }
-
             </ListContainer>
         </Layout>
-
     );
 };
 
@@ -53,6 +50,5 @@ const Layout = tw("div")`max-w-7xl mx-auto sm:px-6 lg:px-8`;
 const ListContainer = tw("div")`
     bg-white overflow-hidden rounded-md
 `;
-
 
 export default SearchResult;
