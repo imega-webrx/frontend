@@ -3,23 +3,25 @@ import React, { useState } from "react";
 import tw from "twin.macro";
 
 
-const OfferItem = () => {
+const OfferItem = (props) => {
 
-    const [isOpen, setIsOpen] = useState(true);
+    const {name, img, price, pharmacyName, pharmacyLink} = props.offer;
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const [isOpenBlock, setIsOpenBlock] = useState({
         condition: false,
-        packing: false,
+        contraindication: false,
+        creator: false,
         description: false,
         dosage: false,
-        forms: false,
-        intName: false,
         farmAction: false,
+        forms: false,
         indication: false,
-        contraindication: false,
-        withCareful: false,
+        intName: false,
         modeOfApp: false,
-        creator: false
+        packing: false,
+        withCareful: false
     });
 
     const onClickHandler = (event) => {
@@ -29,17 +31,17 @@ const OfferItem = () => {
     };
 
     return (
-        <ListEl>
+        <Card>
             <CardReduced>
                 <ImgContainer>
-                    <CardImg src="https://vseapteki.ru/cropping/thumbnails/101/3239/share_default/" alt="cardImg" />
+                    <CardImg src={img} alt="cardImg" />
                 </ImgContainer>
-                <Right>
-                    <Name>Нурофен форте</Name>
+                <RightBlock>
+                    <OfferName>{name}</OfferName>
 
                     <BuyBlock>
-                        <PharmacyLink href="#">Apteka.ru</PharmacyLink>
-                        <Price>200 руб.</Price>
+                        <PharmacyLink href={pharmacyLink}>{pharmacyName}</PharmacyLink>
+                        <Price>{price} руб.</Price>
                         <BtnBuy type="button">
                             Купить
                         </BtnBuy>
@@ -51,7 +53,7 @@ const OfferItem = () => {
                             :
                             <BtnRoll onClick={() => setIsOpen(true)}>Характеристики</BtnRoll>
                     }
-                </Right>
+                </RightBlock>
             </CardReduced>
 
             <div>
@@ -214,33 +216,37 @@ const OfferItem = () => {
                             </TextBlock>
                         </Specifications> : null}
             </div>
-        </ListEl>
+        </Card>
     );
 };
 
 
-const ListEl = tw("div")`
-    px-6 py-4 border-gray-50 justify-between border-b-2
+const Card = tw("div")`
+    px-3 py-4 border-gray-50 justify-between border-b-2
 `;
 
 const CardReduced = tw("div")`
     flex mb-5
 `;
 
-const Right = tw("div")`
-     w-full pr-32 flex flex-col justify-between
-`;
-
 const ImgContainer = tw("div")`
-    mb-4 flex-shrink-0 sm:mb-0 mr-2 sm:mr-6 border border-gray-200
+     py-1 px-1 mr-4 sm:mr-6  flex items-start
 `;
 
 const CardImg = tw("img")`
-    h-24 w-24 sm:h-32 sm:w-32
+    h-20 w-20 sm:h-32 sm:w-32 object-contain
+`;
+
+const RightBlock = tw("div")`
+     w-full flex flex-col justify-between
+`;
+
+const OfferName = tw("h3")`
+    text-sm sm:text-lg font-semibold mb-3
 `;
 
 const BuyBlock = tw("div")`
-    flex  items-center
+    flex items-center mb-3
 `;
 
 const PharmacyLink = tw("a")`
@@ -260,16 +266,8 @@ const BtnBuy = tw("button")`
 
 const BtnRoll = tw("button")`
     w-28 inline-flex items-center px-2.5 py-1.5 border-0
-    text-xs text-gray-600 font-medium rounded shadow-sm
+    text-xs text-gray-700 font-medium rounded shadow-sm
     cursor-pointer
-`;
-
-// const Right = tw("div")`
-//     mr-4 flex-shrink-0
-// `;
-
-const Name = tw("h3")`
-    text-lg font-bold sm:text-2xl
 `;
 
 const Specifications = tw("div")`

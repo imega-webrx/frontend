@@ -8,10 +8,10 @@ const Hero = () => (
                 <GridBlock>
                     <TextSection>
                         <Title>
-                            <SmallText>Coming soon</SmallText>
+                            <SmallText>Уже скоро</SmallText>
                             <MainText>
                                 <MainTextUp>Как работает WebRX?</MainTextUp>
-                                <MainTextDown>Легко и быстро!</MainTextDown>
+                                <MainTextDown>Качественно, Легко и Быстро!</MainTextDown>
                             </MainText>
                         </Title>
                         <JustText>

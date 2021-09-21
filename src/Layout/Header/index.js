@@ -4,7 +4,6 @@ import tw from "twin.macro";
 
 import NavBar from "../NavBar";
 import MenuBar from "../NavBar/MenuBar";
-//import { DefaultItem, ActiveItem } from "../NavBar/MenuBar/Item";
 import { MobileMenu } from "../NavBar/MobileMenu";
 
 const HeaderContainer = (props) => (
@@ -14,7 +13,7 @@ const HeaderContainer = (props) => (
     </Container>
 );
 
-const Header = (props) => {
+const Header = () => {
 
     return (
         <HeaderContainer title="Поиск">
@@ -23,10 +22,9 @@ const Header = (props) => {
                     <NavLink exact to="/" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
                         О WebRx
                     </NavLink>
-                    <NavLink to="searchResult" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
-                        Поиск по состоянию здоровья
+                    <NavLink to="insurance" className={navlinkCSS} activeClassName={navlinkActiveCSS}>
+                        Страхование
                     </NavLink>
-                    <NavLink to="/contacts" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Контакты</NavLink>
                     <NavLink to="/news" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Новости</NavLink>
                     <NavLink to="/addCompany" className={navlinkCSS} activeClassName={navlinkActiveCSS}>Добавить компанию</NavLink>
                 </MenuBar>

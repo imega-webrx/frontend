@@ -14,7 +14,6 @@ import {
 const Main = () => {
     return (
         <React.Fragment>
-
             <SearchSection />
             <Hero />
             <Ready />
