@@ -5,34 +5,44 @@ const Footer = () => (
     <FooterLayout>
         <LogoGroup>
             <LogoLayout>
-                <Logo
-                    src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                    alt="Tuple"
-                ></Logo>
+                <LogoLink href="https://www.rigla.ru/">
+                    <Logo
+                        src="https://pobedaplaza.ru/wp-content/uploads/2017/11/rigla-1024x358.png"
+                        alt="Mirage"
+                    ></Logo>
+                </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <Logo
-                    src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                    alt="Mirage"
-                ></Logo>
+                <LogoLink href="https://apteka.ru/">
+                    <Logo
+                        src="https://delta-medical.ru/wp-content/uploads/2019/01/logo_aptekaru-min-1.png"
+                        alt="Tuple"
+                    ></Logo>
+                </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <Logo
-                    src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                    alt="StaticKit"
-                ></Logo>
+                <LogoLink href="https://366.ru/">
+                    <Logo
+                        src="https://tradernew.pro/wp-content/uploads/2020/03/1-46-768x300.png"
+                        alt="StaticKit"
+                    ></Logo>
+                </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <Logo
-                    src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                    alt="Transistor"
-                ></Logo>
+                <LogoLink href="https://zhivika.ru/">
+                    <Logo
+                        src="https://baby.neobiotic.ru/upload/iblock/da6/da62f53e293bfebeda18678de377ac57.png"
+                        alt="Transistor"
+                    ></Logo>
+                </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <Logo
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                ></Logo>
+                <LogoLink href="https://planetazdorovo.ru/">
+                    <Logo
+                        src="https://ярмаркавакансий.рф/public/img/5fbb8b04bae8e.png"
+                        alt="Workcation"
+                    ></Logo>
+                </LogoLink>
             </LogoLayout>
         </LogoGroup>
     </FooterLayout>
@@ -56,6 +66,7 @@ const LogoLayout = tw("div")`
     flex
     justify-center
 `;
+const LogoLink = tw("a")``;
 const Logo = tw("img")`h-12`;
 
 export { Footer };

@@ -83,7 +83,7 @@ function SearchInput() {
         <SearchInputLayout>
             <Container className="group">
                 <Control>
-                    <Label htmlFor="search">Search</Label>
+                    <Label htmlFor="search">Поиск</Label>
                     <Relative
                         onBlur={() => {
                             setIsShowHint(false);
@@ -97,7 +97,7 @@ function SearchInput() {
                         <Input
                             id="search"
                             name="search"
-                            placeholder="Search"
+                            placeholder="Поиск"
                             type="search"
                             value={searchValue}
                             onChange={(ev) => handleChange(ev)}
@@ -128,8 +128,18 @@ function SearchInput() {
                 </FilterBadges>
             </BadgeLayout>
             <DescriptionLayout>
-                WebRX собрал тысячи аптек. Только проверенные
-                компании с лицензией Ригла Аптека.ру 36.6 Живика
+                <p>
+                    WebRX собрал тысячи аптек. Только проверенные
+                    компании с лицензией
+                    &nbsp;
+                    <TextUnderline>Ригла</TextUnderline>
+                    &nbsp;
+                    <TextUnderline>Аптека.ру</TextUnderline>
+                    &nbsp;
+                    <TextUnderline>36.6</TextUnderline>
+                    &nbsp;
+                    <TextUnderline>Живика</TextUnderline>
+                </p>
             </DescriptionLayout>
         </SearchInputLayout>
     );
@@ -178,8 +188,13 @@ const DescriptionLayout = tw("div")`
     justify-center
     px-3
     py-3
+    font-serif
     font-medium
     text-center
+`;
+
+const TextUnderline = tw("span")`
+    underline
 `;
 
 const BadgeLayout = tw("div")`
