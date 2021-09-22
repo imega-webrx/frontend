@@ -128,17 +128,7 @@ function SearchInput() {
                 </FilterBadges>
             </BadgeLayout>
             <DescriptionLayout>
-                <p>
-                    WebRX собрал тысячи аптек. Только проверенные компании с
-                    лицензией &nbsp;
-                    <TextUnderline>Ригла</TextUnderline>
-                    &nbsp;
-                    <TextUnderline>Аптека.ру</TextUnderline>
-                    &nbsp;
-                    <TextUnderline>36.6</TextUnderline>
-                    &nbsp;
-                    <TextUnderline>Живика</TextUnderline>
-                </p>
+                WebRX собрал тысячи аптек. Только проверенные компании с лицензией
             </DescriptionLayout>
         </SearchInputLayout>
     );
@@ -190,10 +180,7 @@ const DescriptionLayout = tw("div")`
     font-serif
     font-medium
     text-center
-`;
-
-const TextUnderline = tw("span")`
-    underline
+    tracking-wide
 `;
 
 const BadgeLayout = tw("div")`
