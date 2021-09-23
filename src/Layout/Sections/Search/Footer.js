@@ -8,7 +8,7 @@ const Footer = () => (
                 <LogoLink href="https://www.rigla.ru/">
                     <Logo
                         src="https://pobedaplaza.ru/wp-content/uploads/2017/11/rigla-1024x358.png"
-                        alt="Mirage"
+                        alt="Rigla"
                     ></Logo>
                 </LogoLink>
             </LogoLayout>
@@ -16,7 +16,7 @@ const Footer = () => (
                 <LogoLink href="https://apteka.ru/">
                     <Logo
                         src="https://delta-medical.ru/wp-content/uploads/2019/01/logo_aptekaru-min-1.png"
-                        alt="Tuple"
+                        alt="AptekaRu"
                     ></Logo>
                 </LogoLink>
             </LogoLayout>
@@ -24,7 +24,7 @@ const Footer = () => (
                 <LogoLink href="https://366.ru/">
                     <Logo
                         src="https://tradernew.pro/wp-content/uploads/2020/03/1-46-768x300.png"
-                        alt="StaticKit"
+                        alt="36.6"
                     ></Logo>
                 </LogoLink>
             </LogoLayout>
@@ -32,15 +32,15 @@ const Footer = () => (
                 <LogoLink href="https://zhivika.ru/">
                     <Logo
                         src="https://baby.neobiotic.ru/upload/iblock/da6/da62f53e293bfebeda18678de377ac57.png"
-                        alt="Transistor"
+                        alt="Zhivika"
                     ></Logo>
                 </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <LogoLink href="https://planetazdorovo.ru/">
+                <LogoLink href="https://zdravcity.ru/">
                     <Logo
-                        src="https://ярмаркавакансий.рф/public/img/5fbb8b04bae8e.png"
-                        alt="Workcation"
+                        src="https://urolesan.ru/images/logo4.png"
+                        alt="Zdravcity"
                     ></Logo>
                 </LogoLink>
             </LogoLayout>
