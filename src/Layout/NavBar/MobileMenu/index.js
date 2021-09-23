@@ -1,5 +1,6 @@
 /* eslint-disable complexity */
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import tw from "twin.macro";
 import Bell from "./icon/bell.svg";
 
@@ -57,13 +58,35 @@ const MobileMenu = () => {
             {isOpenMenu ? (
                 <MobileMenuContainer>
                     <Menu>
-                        <LinkDefault href="/">О WebRx</LinkDefault>
-                        <LinkHover href="/">
-                            Поиск по состоянию здоровья
-                        </LinkHover>
-                        <LinkHover href="/">Контакты</LinkHover>
-                        <LinkHover href="/">Новости</LinkHover>
-                        <LinkHover href="/">Добавить компанию</LinkHover>
+                        <NavLink
+                            exact
+                            to="/"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            О WebRx
+                        </NavLink>
+                        <NavLink
+                            to="insurance"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            Страхование
+                        </NavLink>
+                        <NavLink
+                            to="/news"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            Новости
+                        </NavLink>
+                        <NavLink
+                            to="/addCompany"
+                            className={navlinkCSS}
+                            activeClassName={navlinkActiveCSS}
+                        >
+                            Добавить компанию
+                        </NavLink>
                     </Menu>
 
                     <Footer>
@@ -105,6 +128,11 @@ const MobileMenu = () => {
         </>
     );
 };
+
+const navlinkCSS =
+    "text-white block px-3 py-2 rounded-md text-base font-medium";
+const navlinkActiveCSS =
+    "block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium";
 
 const Footer = tw("div")`
     pt-4 pb-3 border-t border-gray-700
@@ -173,29 +201,6 @@ const Menu = tw("div")`
     px-2 pt-2 pb-3 space-y-1
 `;
 
-const LinkDefault = tw("a")`
-    bg-gray-900
-    text-white 
-    block 
-    px-3 
-    py-2 
-    rounded-md 
-    text-base 
-    font-medium
-`;
-
-const LinkHover = tw("a")`
-    block    
-    text-gray-300
-    hover:bg-gray-700 
-    hover:text-white  
-    px-3 
-    py-2 
-    rounded-md 
-    text-base 
-    font-medium
-`;
-
 const Header = tw("div")`
     max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
     flex items-center justify-end h-16
@@ -203,7 +208,7 @@ const Header = tw("div")`
 `;
 
 const MenuBtn = tw("button")`
-    inline-flex 
+    inline-flex
     items-center
     justify-center
     p-2

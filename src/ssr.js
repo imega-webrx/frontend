@@ -42,11 +42,13 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                     <script type="application/ld+json">
                         {structuredSeoData}
                     </script>
+
                     <Normalize />
                     <style
                         data-emotion-css={ids.join(" ")}
                         dangerouslySetInnerHTML={{ __html: css }}
                     />
+                    <link rel="stylesheet" href="../compiled.css" />
                     <title>Title</title>
                 </head>
                 <body>
@@ -59,7 +61,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
 });
 
 r.then((res) => {
-    fs.writeFile("./build/index.htm", `<!DOCTYPE html>${res}`, function (err) {
+    fs.writeFile("./build/index.html", `<!DOCTYPE html>${res}`, function (err) {
         if (err) {
             return console.error(err);
         }

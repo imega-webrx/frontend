@@ -16,16 +16,15 @@ const Newsletter = () => (
                         name="emailAddress"
                         type="email"
                         autocomplete="email"
-                        required=""
-                        placeholder="Enter your email"
+                        placeholder="Введите ваш email"
                     />
                     <ButtonLayout>
                         <Button type="submit">Подписаться</Button>
                     </ButtonLayout>
                 </Form>
                 <FormText>
-                    We care about the protection of your data. Read our{" "}
-                    <FormLink href="#">Privacy Policy.</FormLink>
+                    Мы заботимся о защите Ваших данных. Ознакомьтесь с нашей{" "}
+                    <FormLink href="#">Политикой Конфиденциальности.</FormLink>
                 </FormText>
             </FormLayout>
         </Section>
@@ -64,13 +63,10 @@ const Input = tw("input")`
     py-3
     border
     border-transparent
+    rounded-md
+    focus:border-indigo-500
     placeholder-gray-500
-    focus:ring-2
-    focus:ring-offset-2
-    focus:ring-offset-gray-800
-    focus:ring-white
-    focus:border-white
-    sm:max-w-xs rounded-md
+    sm:max-w-xs
 `;
 const ButtonLayout = tw("div")`
     mt-3

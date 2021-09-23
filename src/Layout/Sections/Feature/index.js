@@ -13,11 +13,6 @@ const Feature = () => (
                 <Title>
                     Сервис поиска и сравнения цен WebRX реализован для:
                 </Title>
-                <TextUnderTitle>
-                    Lorem ipsum dolor sit amet consect adipisicing elit.
-                    Possimus magnam voluptatum cupiditate veritatis in accusamus
-                    quisquam.
-                </TextUnderTitle>
             </TextBlock>
             <FeatureBlock>
                 <FeatureList>
@@ -45,7 +40,7 @@ const features = [
         higherText:
             "Ветеринарных клиник, которые планируют увеличить свою клиентскую базу",
         downText:
-            "Мы помогаем сравнить не только лекарства для людей, но и для животных, а также услуги ветеринарных клиник",
+            "Мы помогаем сравнить не только лекарства для людей, но и для животных",
     },
     {
         icon: <FourthIcon />,
@@ -89,13 +84,6 @@ const Title = tw("h2")`
    tracking-tight
    text-gray-900
    sm:text-4xl
-`;
-const TextUnderTitle = tw("p")`
-   mt-4
-   max-w-2xl
-   text-xl
-   text-gray-500
-   lg:mx-auto
 `;
 const FeatureBlock = tw("div")`
    mt-10

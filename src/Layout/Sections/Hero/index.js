@@ -8,23 +8,18 @@ const Hero = () => (
                 <GridBlock>
                     <TextSection>
                         <Title>
-                            <SmallText>Coming soon</SmallText>
                             <MainText>
                                 <MainTextUp>Как работает WebRX?</MainTextUp>
-                                <MainTextDown>Легко и быстро!</MainTextDown>
+                                <MainTextDown>
+                                    Качественно, Легко и Быстро!
+                                </MainTextDown>
                             </MainText>
                         </Title>
                         <JustText>
-                            Просто введите название лекарства (в том числе
-                            рецептурного), на которое хотите найти цены в своем
-                            городе и сервис покажет возможные варианты и
-                            местонахождение аптек. Мы также помогаем сравнить
-                            цены на ветеринарные услуги.
+                            Просто введите название лекарства и сэкономьте свое
+                            время и деньги.
                         </JustText>
                         <NotifyBlock>
-                            <NotifyBlockText>
-                                Sign up to get notified when it’s ready.
-                            </NotifyBlockText>
                             <NotifyBlockForm action="#" method="POST">
                                 <NotifyBlockFormMailLabel htmlFor="email">
                                     Email
@@ -33,10 +28,10 @@ const Hero = () => (
                                     type="email"
                                     name="email"
                                     id="email"
-                                    placeholder="Enter your email"
+                                    placeholder="Введите ваш email"
                                 />
                                 <NotifyBlockFormButton type="submit">
-                                    Notify me
+                                    Сообщите мне
                                 </NotifyBlockFormButton>
                             </NotifyBlockForm>
                             <TextUnder>
@@ -98,17 +93,17 @@ const TextSection = tw("div")`
     lg:text-left
 `;
 const Title = tw("div")``;
-const SmallText = tw("span")`
-    block
-    text-sm
-    font-semibold
-    uppercase
-    tracking-wide
-    text-gray-500
-    sm:text-base
-    lg:text-sm
-    xl:text-base
-`;
+// const SmallText = tw("span")`
+//     block
+//     text-sm
+//     font-semibold
+//     uppercase
+//     tracking-wide
+//     text-gray-500
+//     sm:text-base
+//     lg:text-sm
+//     xl:text-base
+// `;
 const MainText = tw("div")`
     mt-1
     block
@@ -142,11 +137,11 @@ const NotifyBlock = tw("div")`
     lg:text-left
     lg:mx-0
 `;
-const NotifyBlockText = tw("p")`
-    text-base
-    font-medium
-    text-gray-900
-`;
+// const NotifyBlockText = tw("p")`
+//     text-base
+//     font-medium
+//     text-gray-900
+// `;
 const NotifyBlockForm = tw("form")`
     mt-3
     sm:flex
@@ -159,6 +154,7 @@ const NotifyBlockFormMailInput = tw("input")`
     w-full
     rounded-md
     py-3
+    px-3
     text-base
     placeholder-gray-500
     shadow-sm

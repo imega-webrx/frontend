@@ -12,10 +12,10 @@ const Footer = () => (
                 <Logo>
                     <Img src={logo} />
                 </Logo>
-                <JustText>
+                {/* <JustText>
                     Making the world a better place through constructing elegant
                     hierarchies.
-                </JustText>
+                </JustText> */}
                 <SocialLinks>
                     <SocialLinkItem>
                         <Link href="/">
@@ -46,70 +46,59 @@ const Footer = () => (
             </SocialBlock>
             <PagesBlock>
                 <PagesBlockItem>
-                    <PageListTitle>Solutions</PageListTitle>
+                    {/* <PageListTitle>Solutions</PageListTitle> */}
                     <PagesList>
                         <PageListItem>
-                            <Link href="/">Marketing</Link>
+                            <Link href="/">Перечень услуг WebRx</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Analytics</Link>
+                            <Link href="/">
+                                Информация о скидках и инструментах
+                            </Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Commerce</Link>
+                            <Link href="/">
+                                Препараты по состоянию здоровья
+                            </Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Insights</Link>
+                            <Link href="/">
+                                Препараты по системам организма
+                            </Link>
                         </PageListItem>
                     </PagesList>
                 </PagesBlockItem>
                 <PagesBlockItem>
-                    <PageListTitle>Support</PageListTitle>
+                    {/* <PageListTitle>Support</PageListTitle> */}
                     <PagesList>
                         <PageListItem>
-                            <Link href="/">Pricing</Link>
+                            <Link href="/">Классы препаратов</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Documentation</Link>
+                            <Link href="/">О нас</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Guides</Link>
+                            <Link href="/">Оферта</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">API Status</Link>
+                            <Link href="/">Политика конфиденциальности</Link>
                         </PageListItem>
                     </PagesList>
                 </PagesBlockItem>
                 <PagesBlockItem>
-                    <PageListTitle>Company</PageListTitle>
+                    {/* <PageListTitle>Company</PageListTitle> */}
                     <PagesList>
                         <PageListItem>
-                            <Link href="/">About</Link>
+                            <Link href="/">Последние новости</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Blog</Link>
+                            <Link href="/">Связь</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Jobs</Link>
+                            <Link href="/">Помощь</Link>
                         </PageListItem>
                         <PageListItem>
-                            <Link href="/">Press</Link>
-                        </PageListItem>
-                        <PageListItem>
-                            <Link href="/">Partners</Link>
-                        </PageListItem>
-                    </PagesList>
-                </PagesBlockItem>
-                <PagesBlockItem>
-                    <PageListTitle>Legal</PageListTitle>
-                    <PagesList>
-                        <PageListItem>
-                            <Link href="/">Claim</Link>
-                        </PageListItem>
-                        <PageListItem>
-                            <Link href="/">Privacy</Link>
-                        </PageListItem>
-                        <PageListItem>
-                            <Link href="/">Terms</Link>
+                            <Link href="/">ДОБАВИТЬ КОМПАНИЮ ПАРТНЁР</Link>
                         </PageListItem>
                     </PagesList>
                 </PagesBlockItem>
@@ -127,12 +116,12 @@ const Container = tw("footer")`
     flex-col
 `;
 const Section = tw("div")`
-    flex
+
     mx-auto
     max-w-7xl
     pt-12
     px-4
-    sm:pt-24
+    sm:pt-16
     sm:px-6
     lg:pt-16 pb-12
     border-b
@@ -140,16 +129,17 @@ const Section = tw("div")`
     mb-4
     w-full
     flex-wrap
+    justify-between
 `;
 const SocialBlock = tw("div")`
     flex
-    flex-col
+    items-center
     text-gray-300
     max-w-sm
+    mb-6
 `;
 const Logo = tw("div")`
-    mb-8
-    w-10
+    w-10 mr-4
 `;
 const Img = tw("img")`
     max-w-full
@@ -159,10 +149,10 @@ const JustText = tw("p")`
 `;
 const SocialLinks = tw("ul")`
     flex
-    mb-8
+    items-center
 `;
 const SocialLinkItem = tw("li")`
-    mr-6 last:mr-0
+    mr-4 last:mr-0
 `;
 const Link = tw("a")`
     hover:text-gray-700 transition-all duration-300
@@ -175,13 +165,13 @@ const PagesList = tw("ul")`
     flex
     flex-col
 `;
-const PageListTitle = tw("h5")`
-    font-bold
-    uppercase
-    text-gray-400
-    mb-4
-    text-sm
-`;
+// const PageListTitle = tw("h5")`
+//     font-bold
+//     uppercase
+//     text-gray-400
+//     mb-4
+//     text-sm
+// `;
 const PagesBlockItem = tw("div")`
     flex
     flex-col

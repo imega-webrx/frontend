@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
@@ -12,6 +13,7 @@ import {
     useQuery,
 } from "@apollo/client";
 import fetch from "cross-fetch";
+import { useHistory } from "react-router";
 
 const graphqlHost =
     process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
@@ -37,6 +39,8 @@ const GET_PRODUCT = gql`
 `;
 
 function SearchInput() {
+    const history = useHistory();
+
     const [searchValue, setSearchValue] = useState("");
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
@@ -79,7 +83,7 @@ function SearchInput() {
         <SearchInputLayout>
             <Container className="group">
                 <Control>
-                    <Label htmlFor="search">Search</Label>
+                    <Label htmlFor="search">Поиск</Label>
                     <Relative
                         onBlur={() => {
                             setIsShowHint(false);
@@ -93,14 +97,16 @@ function SearchInput() {
                         <Input
                             id="search"
                             name="search"
-                            placeholder="Search"
+                            placeholder="Поиск"
                             type="search"
                             value={searchValue}
                             onChange={(ev) => handleChange(ev)}
                         />
                     </Relative>
                 </Control>
-                <Button>Искать</Button>
+                <Button onClick={() => history.push("/searchResult")}>
+                    Искать
+                </Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
@@ -122,8 +128,8 @@ function SearchInput() {
                 </FilterBadges>
             </BadgeLayout>
             <DescriptionLayout>
-                WebRX собрал тысячи аптек и ветклиник. Только проверенные
-                компании с лицензией. Мы помогаем людям по всей стране.
+                WebRX собрал тысячи аптек. Только проверенные компании с
+                лицензией
             </DescriptionLayout>
         </SearchInputLayout>
     );
@@ -172,8 +178,10 @@ const DescriptionLayout = tw("div")`
     justify-center
     px-3
     py-3
+    font-serif
     font-medium
     text-center
+    tracking-wide
 `;
 
 const BadgeLayout = tw("div")`
