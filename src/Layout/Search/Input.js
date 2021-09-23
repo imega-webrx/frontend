@@ -128,7 +128,8 @@ function SearchInput() {
                 </FilterBadges>
             </BadgeLayout>
             <DescriptionLayout>
-                WebRX собрал тысячи аптек. Только проверенные компании с лицензией
+                WebRX собрал тысячи аптек. Только проверенные компании с
+                лицензией
             </DescriptionLayout>
         </SearchInputLayout>
     );
