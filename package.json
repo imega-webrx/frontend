@@ -66,16 +66,16 @@
     "graphql": "^15.5.0",
     "graphql-tag": "^2.12.1",
     "jest": "^26.6.3",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
     "react": "16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.3.0",
-    "tailwindcss": "^2.2.15",
     "twin.macro": "^2.3.0",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.15",
     "emotion": "^10.0.27"
   }
 }

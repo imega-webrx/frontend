@@ -1,4 +1,5 @@
 const configRules = {
+    historyApiFallback: true,
     module: {
         rules: [
             {
