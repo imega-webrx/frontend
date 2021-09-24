@@ -1,14 +1,14 @@
 import React from "react";
-import "tailwindcss/tailwind.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
+//import "tailwindcss/tailwind.css";
 import Main from "./Main.page";
 import SearchResult from "./SearchReult.page";
 import Header from "./Layout/Header";
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <div>
+        <HashRouter>
+            <React.Fragment>
                 <Header />
                 <Switch>
                     <Route path="/" component={Main} exact />
@@ -18,8 +18,8 @@ const App = () => {
                         exact
                     />
                 </Switch>
-            </div>
-        </BrowserRouter>
+            </React.Fragment>
+        </HashRouter>
     );
 };
 

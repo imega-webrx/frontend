@@ -48,7 +48,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         data-emotion-css={ids.join(" ")}
                         dangerouslySetInnerHTML={{ __html: css }}
                     />
-                    <link rel="stylesheet" href="../compiled.css" />
+                    <link rel="stylesheet" href="./compiled.css" />
                     <title>Title</title>
                 </head>
                 <body>

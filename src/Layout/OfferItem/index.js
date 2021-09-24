@@ -276,7 +276,7 @@ const OfferItem = (props) => {
                             name="withCareful"
                             onClick={(event) => onClickHandler(event)}
                         >
-                            С осторожностью:
+                            С осторожностью
                         </Title>
                         <TextBlock
                             style={{
