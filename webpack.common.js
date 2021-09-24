@@ -20,11 +20,20 @@ const configRules = {
                     },
                 ],
             },
+            // {
+            //     test: /\.css$/i,
+            //     loader: "css-loader",
+            // },
             {
                 test: /\.css$/i,
-                loader: "css-loader",
-            },
+                use: ["style-loader", "css-loader", "postcss-loader"],
+            }
         ],
+    },
+
+    devServer: {
+        static: "build",
+        watchContentBase: true,
     },
 };
 

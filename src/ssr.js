@@ -48,7 +48,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         data-emotion-css={ids.join(" ")}
                         dangerouslySetInnerHTML={{ __html: css }}
                     />
-                    <link rel="stylesheet" href="../compiled.css" />
+                    <link rel="stylesheet" href="./compiled.css" />
                     <title>Title</title>
                 </head>
                 <body>
@@ -61,7 +61,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
 });
 
 r.then((res) => {
-    fs.writeFile("./build/index.html", `<!DOCTYPE html>${res}`, function (err) {
+    fs.writeFile("./build/index.html", `<!DOCTYPE html>${res}`, function(err) {
         if (err) {
             return console.error(err);
         }
