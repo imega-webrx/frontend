@@ -1,7 +1,6 @@
 import React from "react";
 
 import Normalize from "../src/Normalize";
-import "../src/styles.css";
 
 export const decorators = [
     (Story) => (
