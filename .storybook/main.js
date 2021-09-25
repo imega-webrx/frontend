@@ -1,6 +1,6 @@
 module.exports = {
     core: {
-        builder: "webpack5"
+        builder: "webpack5",
     },
     stories: [
         "../src/Intro.stories.mdx",
@@ -12,7 +12,7 @@ module.exports = {
         "@storybook/addon-a11y",
         "@storybook/addon-viewport/register",
         {
-            name: '@storybook/addon-postcss',
+            name: "@storybook/addon-postcss",
             options: {
                 cssLoaderOptions: {
                     // When you have splitted your css over multiple files
@@ -21,7 +21,7 @@ module.exports = {
                 },
                 postcssLoaderOptions: {
                     // When using postCSS 8
-                    implementation: require('postcss'),
+                    implementation: require("postcss"),
                 },
             },
         },
