@@ -20,10 +20,6 @@ const configRules = {
                     },
                 ],
             },
-            // {
-            //     test: /\.css$/i,
-            //     loader: "css-loader",
-            // },
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader", "postcss-loader"],
