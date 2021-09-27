@@ -60,7 +60,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
 });
 
 r.then((res) => {
-    fs.writeFile("./build/index.html", `<!DOCTYPE html>${res}`, function(err) {
+    fs.writeFile("./build/index.html", `<!DOCTYPE html>${res}`, function (err) {
         if (err) {
             return console.error(err);
         }
