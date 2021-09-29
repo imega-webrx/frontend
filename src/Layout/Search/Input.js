@@ -3,13 +3,9 @@ import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
-import {
-    gql,
-    useQuery,
-} from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import { useHistory } from "react-router";
 import { searchValueVar } from "../../graphql/localStore";
-
 
 const GET_PRODUCT = gql`
     query Query($title: String!) {
@@ -57,9 +53,7 @@ function SearchInput() {
         );
     }
     function ShowSuggest() {
-        return (
-            <GetProducts />
-        );
+        return <GetProducts />;
     }
 
     return (

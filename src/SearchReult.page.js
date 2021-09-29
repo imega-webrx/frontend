@@ -16,7 +16,6 @@ const GET_PRODUCT = gql`
 `;
 
 const SearchResult = () => {
-
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { title: searchValueVar() },
     });
@@ -30,7 +29,6 @@ const SearchResult = () => {
     const offers = data.product.map((offer) => (
         <OfferItem offer={offer} key={offer.id} />
     ));
-
 
     return (
         <Layout>
