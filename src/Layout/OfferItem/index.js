@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import tw from "twin.macro";
 
 const OfferItem = (props) => {
-    const { name, img, price, pharmacyName, pharmacyLink } = props.offer;
+    const { title, img, price, pharmacyName, pharmacyLink } = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +35,7 @@ const OfferItem = (props) => {
                     <CardImg src={img} alt="cardImg" />
                 </ImgContainer>
                 <RightBlock>
-                    <OfferName>{name}</OfferName>
+                    <OfferName>{title}</OfferName>
 
                     <BuyBlock>
                         <PharmacyLink href={pharmacyLink}>

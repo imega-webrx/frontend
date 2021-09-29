@@ -189,7 +189,12 @@ const resolvers = {
 
             return res;
         },
-
+        products: () => {
+            return products.map(
+                (product) =>
+                    product
+            );
+        },
         product(parent, args, context, info) {
             return products.filter(
                 (product) =>

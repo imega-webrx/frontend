@@ -4,29 +4,12 @@ import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
 import {
-    ApolloProvider,
-    ApolloClient,
-    ApolloLink,
-    HttpLink,
-    InMemoryCache,
     gql,
     useQuery,
 } from "@apollo/client";
-import fetch from "cross-fetch";
 import { useHistory } from "react-router";
+import { searchValueVar } from "../../graphql/localStore";
 
-const graphqlHost =
-    process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
-
-const httpLink = new HttpLink({
-    fetch,
-    uri: graphqlHost,
-});
-
-const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    link: ApolloLink.from([httpLink]),
-});
 
 const GET_PRODUCT = gql`
     query Query($title: String!) {
@@ -39,13 +22,15 @@ const GET_PRODUCT = gql`
 `;
 
 function SearchInput() {
+    console.log("searchvaluevar: ", searchValueVar());
     const history = useHistory();
 
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState(searchValueVar());
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
     const handleChange = (event) => {
         setSearchValue(event.target.value);
+        searchValueVar(event.target.value);
         setIsShowHint(true);
     };
 
@@ -73,9 +58,7 @@ function SearchInput() {
     }
     function ShowSuggest() {
         return (
-            <ApolloProvider client={client}>
-                <GetProducts />
-            </ApolloProvider>
+            <GetProducts />
         );
     }
 
