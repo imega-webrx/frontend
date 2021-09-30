@@ -74,9 +74,7 @@ function SearchInput() {
                         />
                     </Relative>
                 </Control>
-                <Button onClick={onSearch}>
-                    Искать
-                </Button>
+                <Button onClick={onSearch}>Искать</Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>

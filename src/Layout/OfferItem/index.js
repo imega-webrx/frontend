@@ -9,7 +9,7 @@ const OfferItem = (props) => {
         img = "https://activefisher.net/wp-content/uploads/8/c/5/8c5731b80c62c0bb1b42da86f5963c23.jpg",
         price,
         pharmacyName,
-        pharmacyLink
+        pharmacyLink,
     } = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
