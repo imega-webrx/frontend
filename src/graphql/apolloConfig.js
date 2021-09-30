@@ -1,8 +1,4 @@
-import {
-    ApolloClient,
-    ApolloLink,
-    HttpLink,
-} from "@apollo/client";
+import { ApolloClient, ApolloLink, HttpLink } from "@apollo/client";
 
 import fetch from "cross-fetch";
 import { cache } from "./cache";
@@ -15,7 +11,6 @@ const httpLink = new HttpLink({
     fetch,
     uri: graphqlHost,
 });
-
 
 const client = new ApolloClient({
     cache: cache,
