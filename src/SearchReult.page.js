@@ -1,21 +1,13 @@
 /* eslint-disable complexity */
-import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import tw from "twin.macro";
+import { useQuery } from "@apollo/client";
+import { GET_PRODUCT } from "./graphql/queries";
 import { searchValueVar } from "./graphql/localStore";
 import OfferItem from "./Layout/OfferItem";
 
-const GET_PRODUCT = gql`
-    query Query($title: String!) {
-        product(title: $title) {
-            id
-            title
-            price
-        }
-    }
-`;
-
 const SearchResult = () => {
+    console.log("search: ", searchValueVar());
 
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { title: searchValueVar() },
@@ -30,7 +22,6 @@ const SearchResult = () => {
     const offers = data.product.map((offer) => (
         <OfferItem offer={offer} key={offer.id} />
     ));
-
 
     return (
         <Layout>

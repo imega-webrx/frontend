@@ -23,6 +23,26 @@ const products = [
         title: "Пендаль",
         price: "от 700р.",
     },
+    {
+        id: "5",
+        title: "Нурофен",
+        price: "от 150р.",
+    },
+    {
+        id: "6",
+        title: "Парацетомол",
+        price: "от 50р.",
+    },
+    {
+        id: "7",
+        title: "Арбидол",
+        price: "от 180р.",
+    },
+    {
+        id: "8",
+        title: "Гриппферон",
+        price: "от 260р.",
+    },
 ];
 
 const resolvers = {
@@ -190,10 +210,7 @@ const resolvers = {
             return res;
         },
         products: () => {
-            return products.map(
-                (product) =>
-                    product
-            );
+            return products;
         },
         product(parent, args, context, info) {
             return products.filter(

@@ -3,35 +3,26 @@ import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
-import {
-    gql,
-    useQuery,
-} from "@apollo/client";
 import { useHistory } from "react-router";
+import { useQuery } from "@apollo/client";
 import { searchValueVar } from "../../graphql/localStore";
-
-
-const GET_PRODUCT = gql`
-    query Query($title: String!) {
-        product(title: $title) {
-            id
-            title
-            price
-        }
-    }
-`;
+import { GET_PRODUCT } from "../../graphql/queries";
 
 function SearchInput() {
     console.log("searchvaluevar: ", searchValueVar());
     const history = useHistory();
 
-    const [searchValue, setSearchValue] = useState(searchValueVar());
+    const [searchValue, setSearchValue] = useState("");
     const [isShowHint, setIsShowHint] = useState(false);
     const minValueHint = 3;
     const handleChange = (event) => {
         setSearchValue(event.target.value);
-        searchValueVar(event.target.value);
         setIsShowHint(true);
+    };
+
+    const onSearch = () => {
+        searchValueVar(searchValue);
+        history.push("/searchResult");
     };
 
     function GetProducts() {
@@ -54,11 +45,6 @@ function SearchInput() {
                     </ResultItemName>
                 ))}
             </div>
-        );
-    }
-    function ShowSuggest() {
-        return (
-            <GetProducts />
         );
     }
 
@@ -84,17 +70,18 @@ function SearchInput() {
                             type="search"
                             value={searchValue}
                             onChange={(ev) => handleChange(ev)}
+                            autoComplete="off"
                         />
                     </Relative>
                 </Control>
-                <Button onClick={() => history.push("/searchResult")}>
+                <Button onClick={onSearch}>
                     Искать
                 </Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ShowSuggest />
+                            <GetProducts />
                         </ResultList>
                     </ContainerResults>
                 ) : null}
