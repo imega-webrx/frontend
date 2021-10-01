@@ -46,9 +46,9 @@ const features = [
     },
     {
         icon: <FourthIcon />,
-        higherText:
-            "Врачей",
-        higherTextLight: "которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
+        higherText: "Врачей",
+        higherTextLight:
+            "которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
         downText:
             "С помощью наших алгоритмов мы поможем подобрать аналоги за считанные секунды, в том числе по ценовому диапазону",
     },
@@ -62,7 +62,8 @@ const Features = () =>
             <TextBlockIcon>
                 <div>
                     <HigherText>{feature.higherText}</HigherText>
-                    {", "} <HigherTextLight>{feature.higherTextLight}</HigherTextLight>
+                    {", "}{" "}
+                    <HigherTextLight>{feature.higherTextLight}</HigherTextLight>
                 </div>
                 <DownText>{feature.downText}</DownText>
             </TextBlockIcon>
