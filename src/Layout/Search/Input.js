@@ -9,7 +9,6 @@ import { searchValueVar } from "../../graphql/localStore";
 import { GET_PRODUCT } from "../../graphql/queries";
 
 function SearchInput() {
-    console.log("searchvaluevar: ", searchValueVar());
     const history = useHistory();
 
     const [searchValue, setSearchValue] = useState("");
