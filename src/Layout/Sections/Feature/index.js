@@ -25,27 +25,30 @@ const Feature = () => (
 const features = [
     {
         icon: <FirstIcon />,
-        higherText: "Людей, которые ценят свое время и хотят сэкономить деньги",
+        higherText: "Людей",
+        higherTextLight: "которые ценят свое время и хотят сэкономить деньги",
         downText:
             "Мы покажем самую низкую цену на лекарства в вашем городе и аптеку, где они продаются, в том числе и аналоги",
     },
     {
         icon: <SecondIcon />,
-        higherText: "Аптек, желающих увеличить узнаваемость и выручку",
+        higherText: "Аптек",
+        higherTextLight: "желающих увеличить узнаваемость и выручку",
         downText:
-            "Направьте нам актуальный прайс-лист лекарств, чтобы посетители видели вашу аптеку в выдаче и приобрели лекарства",
+            "Направьте нам актуальный прайс-лист лекарств, чтобы посетители видели вашу аптеку в выдаче и приобретали лекарства",
     },
     {
         icon: <ThirdIcon />,
-        higherText:
-            "Ветеринарных клиник, которые планируют увеличить свою клиентскую базу",
+        higherText: "Ветеринарных клиник",
+        higherTextLight: "которые планируют увеличить свою клиентскую базу",
         downText:
             "Мы помогаем сравнить не только лекарства для людей, но и для животных",
     },
     {
         icon: <FourthIcon />,
         higherText:
-            "Врачей, которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
+            "Врачей",
+        higherTextLight: "которые за считанные секунды смогут на месте подобрать пациенту аптеку с лучшими условиями на лекарства",
         downText:
             "С помощью наших алгоритмов мы поможем подобрать аналоги за считанные секунды, в том числе по ценовому диапазону",
     },
@@ -57,7 +60,10 @@ const Features = () =>
                 <Icon>{feature.icon}</Icon>
             </IconBlock>
             <TextBlockIcon>
-                <HigherText>{feature.higherText}</HigherText>
+                <div>
+                    <HigherText>{feature.higherText}</HigherText>
+                    {", "} <HigherTextLight>{feature.higherTextLight}</HigherTextLight>
+                </div>
                 <DownText>{feature.downText}</DownText>
             </TextBlockIcon>
         </FlexBlock>
@@ -116,10 +122,19 @@ const TextBlockIcon = tw("div")`
    ml-4
 `;
 const HigherText = tw("dt")`
+   inline
    text-lg
    leading-6
    font-medium
    text-gray-900
+`;
+
+const HigherTextLight = tw("dt")`
+   inline
+   text-lg
+   leading-6
+   font-medium
+   text-gray-500
 `;
 const DownText = tw("dd")`
    mt-2
