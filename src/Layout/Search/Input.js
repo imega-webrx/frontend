@@ -3,40 +3,10 @@ import React, { useState } from "react";
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 import SearchIcon from "./icon/search.svg";
-import {
-    ApolloProvider,
-    ApolloClient,
-    ApolloLink,
-    HttpLink,
-    InMemoryCache,
-    gql,
-    useQuery,
-} from "@apollo/client";
-import fetch from "cross-fetch";
 import { useHistory } from "react-router";
-
-const graphqlHost =
-    process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
-
-const httpLink = new HttpLink({
-    fetch,
-    uri: graphqlHost,
-});
-
-const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    link: ApolloLink.from([httpLink]),
-});
-
-const GET_PRODUCT = gql`
-    query Query($title: String!) {
-        product(title: $title) {
-            id
-            title
-            price
-        }
-    }
-`;
+import { useQuery } from "@apollo/client";
+import { searchValueVar } from "../../graphql/localStore";
+import { GET_PRODUCT } from "../../graphql/queries";
 
 function SearchInput() {
     const history = useHistory();
@@ -47,6 +17,11 @@ function SearchInput() {
     const handleChange = (event) => {
         setSearchValue(event.target.value);
         setIsShowHint(true);
+    };
+
+    const onSearch = () => {
+        searchValueVar(searchValue);
+        history.push("/searchResult");
     };
 
     function GetProducts() {
@@ -69,13 +44,6 @@ function SearchInput() {
                     </ResultItemName>
                 ))}
             </div>
-        );
-    }
-    function ShowSuggest() {
-        return (
-            <ApolloProvider client={client}>
-                <GetProducts />
-            </ApolloProvider>
         );
     }
 
@@ -101,17 +69,16 @@ function SearchInput() {
                             type="search"
                             value={searchValue}
                             onChange={(ev) => handleChange(ev)}
+                            autoComplete="off"
                         />
                     </Relative>
                 </Control>
-                <Button onClick={() => history.push("/searchResult")}>
-                    Искать
-                </Button>
+                <Button onClick={onSearch}>Искать</Button>
                 {/* hint based on the entered data  */}
                 {searchValue.length >= minValueHint && isShowHint ? (
                     <ContainerResults>
                         <ResultList>
-                            <ShowSuggest />
+                            <GetProducts />
                         </ResultList>
                     </ContainerResults>
                 ) : null}

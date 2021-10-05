@@ -1,9 +1,16 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable complexity */
 import React, { useState } from "react";
 import tw from "twin.macro";
 
 const OfferItem = (props) => {
-    const { name, img, price, pharmacyName, pharmacyLink } = props.offer;
+    const {
+        title,
+        img = "https://activefisher.net/wp-content/uploads/8/c/5/8c5731b80c62c0bb1b42da86f5963c23.jpg",
+        price,
+        pharmacyName,
+        pharmacyLink,
+    } = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +42,7 @@ const OfferItem = (props) => {
                     <CardImg src={img} alt="cardImg" />
                 </ImgContainer>
                 <RightBlock>
-                    <OfferName>{name}</OfferName>
+                    <OfferName>{title}</OfferName>
 
                     <BuyBlock>
                         <PharmacyLink href={pharmacyLink}>
