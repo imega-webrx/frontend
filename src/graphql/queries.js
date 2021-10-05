@@ -24,7 +24,7 @@ export const FEED_QUERY = gql`
                 title
                 price
             }
-            length
+            totalCount
     }
   }
 `;

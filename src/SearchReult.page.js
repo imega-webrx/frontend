@@ -38,7 +38,7 @@ const SearchResult = () => {
             <Pagination
                 page={page}
                 onChangePage={onChangePage}
-                length={data.paginationProduct.length}
+                totalCount={data.paginationProduct.totalCount}
             />
         </Layout>
     );

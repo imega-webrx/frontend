@@ -2,10 +2,10 @@
 import React from "react";
 import tw from "twin.macro";
 
-const Pagination = ({ page, length, onChangePage }) => {
+const Pagination = ({ page, totalCount, onChangePage }) => {
     const pageComponents = [];
 
-    for (let i = 1; i < length; i++) {
+    for (let i = 1; i < totalCount; i++) {
         if (page !== i) {
             pageComponents.push(
                 <PageNumber value={i} onClick={(e) => onChangePage(e)} key={`page${i}`}>
