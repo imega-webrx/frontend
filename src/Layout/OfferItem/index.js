@@ -6,9 +6,9 @@ import tw from "twin.macro";
 const OfferItem = (props) => {
     const {
         title,
-        img = "https://activefisher.net/wp-content/uploads/8/c/5/8c5731b80c62c0bb1b42da86f5963c23.jpg",
+        img = "https://edutorg.ru/image/cache/catalog/МАТЕМАТИКАПП/9/ge-catalog-matematikapp-06-700x700.jpg",
         price,
-        pharmacyName,
+        pharmacyName = "Какая-то аптека",
         pharmacyLink,
     } = props.offer;
 

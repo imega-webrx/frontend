@@ -18,6 +18,7 @@ type Query {
     products: [Product]
     searchEntity(id: ID!): Entity
     product(title: String!): [Product]
+    paginationProduct(title: String!, currPage: Int!): PaginatedProducts
 }
 type Product implements Node {
     id: ID!
@@ -32,6 +33,11 @@ type Product implements Node {
 
 interface Node {
     id: ID!
+}
+
+type PaginatedProducts {
+    products: [Product]
+    length: Int!
 }
 
 input SearchProductInput {

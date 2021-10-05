@@ -221,6 +221,26 @@ const resolvers = {
                         .indexOf(args.title.toLowerCase()) > -1
             );
         },
+        paginationProduct(_, { title, currPage }) {
+            const pageSize = 2;
+
+            const filteredProducts = products.filter(
+                (product) =>
+                    title.length > 2 &&
+                    product.title
+                        .toLowerCase()
+                        .indexOf(title.toLowerCase()) > -1
+
+            );
+
+            const sliceArr =
+                filteredProducts.slice((currPage - 1) * pageSize, currPage * pageSize);
+
+            return {
+                products: sliceArr,
+                length: filteredProducts.length,
+            };
+        }
     },
 };
 
