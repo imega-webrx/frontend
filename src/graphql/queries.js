@@ -19,5 +19,5 @@ export const FEED_QUERY = gql`
                 price
             }
             totalCount
-    }
+    }}
 `;
