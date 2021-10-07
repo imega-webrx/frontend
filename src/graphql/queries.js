@@ -9,3 +9,16 @@ export const GET_PRODUCT = gql`
         }
     }
 `;
+
+export const FEED_QUERY = gql`
+    query Query($title: String!, $currPage: Int!) {
+        paginationProduct(title: $title, currPage: $currPage) {
+            products {
+                id
+                title
+                price
+            }
+            totalCount
+        }
+    }
+`;

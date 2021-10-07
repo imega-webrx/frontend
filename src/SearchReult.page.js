@@ -1,25 +1,32 @@
 /* eslint-disable complexity */
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCT } from "./graphql/queries";
+import { FEED_QUERY } from "./graphql/queries";
 import { searchValueVar } from "./graphql/localStore";
 import OfferItem from "./Layout/OfferItem";
+import Pagination from "./Layout/Pagination";
 
 const SearchResult = () => {
-    console.log("search: ", searchValueVar());
+    const [page, setPage] = useState(1);
+    const onChangePage = (e) => {
+        e.preventDefault();
+        setPage(Number(e.target.value));
+    };
 
-    const { loading, error, data } = useQuery(GET_PRODUCT, {
-        variables: { title: searchValueVar() },
+    const { loading, error, data } = useQuery(FEED_QUERY, {
+        variables: { title: searchValueVar(), currPage: page },
     });
     if (loading) {
         return <p>Loading...</p>;
     }
     if (error) {
-        return console.log("Error");
+        console.log(JSON.stringify(error, null, 2));
     }
 
-    const offers = data.product.map((offer) => (
+    //console.log("INFO: ", data, error, loading);
+
+    const offers = data.paginationProduct.products.map((offer) => (
         <OfferItem offer={offer} key={offer.id} />
     ));
 
@@ -28,6 +35,11 @@ const SearchResult = () => {
             <ListContainer>
                 {offers.length ? offers : <h2>Ничего не найдено</h2>}
             </ListContainer>
+            <Pagination
+                page={page}
+                onChangePage={onChangePage}
+                totalCount={data.paginationProduct.totalCount}
+            />
         </Layout>
     );
 };
