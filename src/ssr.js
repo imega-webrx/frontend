@@ -48,7 +48,7 @@ const r = renderToStringWithData(<MainPage />).then((content) => {
                         data-emotion-css={ids.join(" ")}
                         dangerouslySetInnerHTML={{ __html: css }}
                     />
-                    <title>Title</title>
+                    <title>WebRx 1.1</title>
                 </head>
                 <body>
                     <div id="root" dangerouslySetInnerHTML={{ __html: html }} />
