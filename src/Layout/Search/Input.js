@@ -35,15 +35,17 @@ function SearchInput() {
             return console.log("Error");
         }
 
+        const dataFirstFour = data.searchProduct.slice(0, 4);
+
         return (
-            <div>
-                {data.product.map((product) => (
+            <React.Fragment>
+                {dataFirstFour.map((product) => (
                     <ResultItemName key={product.id}>
                         {product.title}
-                        <ResultItemType>{product.price}</ResultItemType>
+                        <ResultItemType>{product.price || "Нет цены"}</ResultItemType>
                     </ResultItemName>
                 ))}
-            </div>
+            </React.Fragment>
         );
     }
 
@@ -110,6 +112,9 @@ const ResultList = styled.ul`
     position: absolute;
     max-width: 640px;
     width: 100%;
+
+    max-height: 260px;
+    overflow-y: scroll;
 
     border-radius: 0px 0px 7px 7px;
     cursor: pointer;
@@ -190,7 +195,7 @@ const Badge = tw("span")`
     cursor-pointer
 `;
 
-const Button = tw("a")`
+const Button = tw("button")`
     col-start-5
     col-end-9
     sm:col-span-2
