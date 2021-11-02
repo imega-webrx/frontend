@@ -4,7 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "./graphql/apolloConfig";
 
 import Main from "./Main.page";
-import SearchResult from "./SearchReult.page";
+import SearchResult from "./SearchResult.page";
 import Header from "./Layout/Header";
 
 const App = () => {
