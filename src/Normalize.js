@@ -29,6 +29,7 @@ const Normalize = () => (
             a {
                 color: inherit;
                 text-decoration: inherit;
+                cursor: pointer;
             }
             .rounded {
                 border-radius: 0.25rem;

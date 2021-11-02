@@ -6,10 +6,11 @@ import tw from "twin.macro";
 const OfferItem = (props) => {
     const {
         title,
-        img = "https://activefisher.net/wp-content/uploads/8/c/5/8c5731b80c62c0bb1b42da86f5963c23.jpg",
-        price,
-        pharmacyName,
+        img = "https://mvo4x4.ru/image/cache/catalog/raznoe/62-600x600.jpg",
+        price = 0,
+        pharmacyName = "Какая-то аптека",
         pharmacyLink,
+        description,
     } = props.offer;
 
     const [isOpen, setIsOpen] = useState(false);
@@ -110,10 +111,7 @@ const OfferItem = (props) => {
                                     : "none",
                             }}
                         >
-                            <Paragraph>
-                                Нестероидный противовоспалительный препарат
-                                (НПВП).
-                            </Paragraph>
+                            <Paragraph>{description}</Paragraph>
                         </TextBlock>
                         <Title
                             name="dosage"

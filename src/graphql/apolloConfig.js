@@ -6,7 +6,7 @@ import { cache } from "./cache";
 const graphqlHost =
     process.env.STORYBOOK_GRAPHQL_HOST || "http://localhost:4000/graphql";
 
-//const graphqlHost = "http://localhost:4000/graphql";
+// const graphqlHost = "http://localhost:4000/graphql";
 
 const httpLink = new HttpLink({
     fetch,

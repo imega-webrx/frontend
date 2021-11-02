@@ -7,8 +7,6 @@ import { searchValueVar } from "./graphql/localStore";
 import OfferItem from "./Layout/OfferItem";
 
 const SearchResult = () => {
-    console.log("search: ", searchValueVar());
-
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { title: searchValueVar() },
     });
@@ -19,7 +17,7 @@ const SearchResult = () => {
         return console.log("Error");
     }
 
-    const offers = data.product.map((offer) => (
+    const offers = data.searchProduct.map((offer) => (
         <OfferItem offer={offer} key={offer.id} />
     ));
 
