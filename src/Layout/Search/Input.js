@@ -42,7 +42,9 @@ function SearchInput() {
                 {dataFirstFour.map((product) => (
                     <ResultItemName key={product.id}>
                         {product.title}
-                        <ResultItemType>{product.price || "Нет цены"}</ResultItemType>
+                        <ResultItemType>
+                            {product.price || "Нет цены"}
+                        </ResultItemType>
                     </ResultItemName>
                 ))}
             </React.Fragment>

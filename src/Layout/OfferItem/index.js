@@ -111,9 +111,7 @@ const OfferItem = (props) => {
                                     : "none",
                             }}
                         >
-                            <Paragraph>
-                                {description}
-                            </Paragraph>
+                            <Paragraph>{description}</Paragraph>
                         </TextBlock>
                         <Title
                             name="dosage"
