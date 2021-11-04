@@ -2,12 +2,12 @@
 import React from "react";
 import tw from "twin.macro";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCT } from "./graphql/queries";
+import { SEARCH_PRODUCT } from "./graphql/queries";
 import { searchValueVar } from "./graphql/localStore";
 import OfferItem from "./Layout/OfferItem";
 
 const SearchResult = () => {
-    const { loading, error, data } = useQuery(GET_PRODUCT, {
+    const { loading, error, data } = useQuery(SEARCH_PRODUCT, {
         variables: { title: searchValueVar() },
     });
     if (loading) {

@@ -6,7 +6,7 @@ import SearchIcon from "./icon/search.svg";
 import { useHistory } from "react-router";
 import { useQuery } from "@apollo/client";
 import { searchValueVar } from "../../graphql/localStore";
-import { GET_PRODUCT } from "../../graphql/queries";
+import { SEARCH_PRODUCT } from "../../graphql/queries";
 
 function SearchInput() {
     const history = useHistory();
@@ -25,7 +25,7 @@ function SearchInput() {
     };
 
     function GetProducts() {
-        const { loading, error, data } = useQuery(GET_PRODUCT, {
+        const { loading, error, data } = useQuery(SEARCH_PRODUCT, {
             variables: { title: searchValue },
         });
         if (loading) {

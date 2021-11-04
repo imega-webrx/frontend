@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable complexity */
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import tw from "twin.macro";
 
 const OfferItem = (props) => {
+    console.log(props.offer)
     const {
+        id,
         title,
         img = "https://mvo4x4.ru/image/cache/catalog/raznoe/62-600x600.jpg",
         price = 0,
@@ -43,7 +46,8 @@ const OfferItem = (props) => {
                     <CardImg src={img} alt="cardImg" />
                 </ImgContainer>
                 <RightBlock>
-                    <OfferName>{title}</OfferName>
+                    {/* <OfferName>{title}</OfferName> */}
+                    <NavLink to={`/product/:${id}`}>{title}</NavLink>
 
                     <BuyBlock>
                         <PharmacyLink href={pharmacyLink}>
