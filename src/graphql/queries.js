@@ -19,23 +19,3 @@ export const GET_PRODUCT = gql`
         }
     }
 `;
-
-export const GET_PRODUCT_OFFERS = gql`
-    query Query($subject: ID!) {
-        getOffersOfProductById(subject: $subject) {
-            id
-            seller
-            prices
-        }
-    }
-`;
-
-// export const GET_OFFERS = gql`
-//     query Query($uuIds: [ID]!) {
-//         getOffers(uuIds: $uuIds) {
-//             id
-//             seller
-//             prices
-//         }
-//     }
-// `;

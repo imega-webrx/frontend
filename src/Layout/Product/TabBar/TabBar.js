@@ -9,7 +9,7 @@ const TabBar = () => {
                 <Select id="tabs" name="tabs" className="">
                     <option>Предложения</option>
                     <option>Характеристики</option>
-                    <option selected="">Отзывы</option>
+                    <option>Отзывы</option>
                     <option>Дополнительно</option>
                 </Select>
             </Mobile>

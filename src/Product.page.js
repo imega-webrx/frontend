@@ -1,15 +1,21 @@
 /* eslint-disable complexity */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import tw from "twin.macro";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCT } from "./graphql/queries";
 // import Specifications from "./Layout/Product/Specifications/Specifications";
-// import TabBar from "./Layout/Product/TabBar/TabBar";
+import TabBar from "./Layout/Product/TabBar/TabBar";
 import OfferList from "./Layout/Product/Offers/OfferList";
 
-const Product = () => {
+const Product = (props) => {
+    const [productUuid, setProductUuid] = useState(props.match.params.id);
+
+    useEffect(() => {
+        setProductUuid(props.match.params.id);
+    }, [props.match]);
+
     const { loading, error, data } = useQuery(GET_PRODUCT, {
-        variables: { uuIds: ["8cb7612a-c003-45db-8c5b-dae24aa6fea1"] },
+        variables: { uuIds: [productUuid] },
     });
     if (loading) {
         return <p>Loading...</p>;
@@ -18,19 +24,20 @@ const Product = () => {
         return console.log("Error");
     }
 
-    console.log("PRODUCT: ", data.getProducts[0]);
+    if (!data.getProducts.length && !data.getProducts) {
+        return <h2>Продукт не найден</h2>;
+    }
+
+    const product = data.getProducts[0];
 
     return (
         <Layout>
             <ListContainer>
                 <ProductBlock>
-                    <ProductTitle>
-                        Анальгин таблетки 500 мг 20 шт. в Москве
-                    </ProductTitle>
+                    <ProductTitle>{product.title}</ProductTitle>
                     <ProductInfo>
                         <ImgBlock>
                             <ProductImg src="https://osnova-k.ru/images/no-image.jpg" />
-                            {/* <ProductImg src="https://36b7553d-2226-412d-9335-17a4e346585f.selcdn.net/items/squares/4f/6f/4f6f64811760562d85ba00ba4ac2d6ece145428eb9bef432d6bf40f6da63d947.jpg" /> */}
                         </ImgBlock>
                         <DescriptionBlock>
                             <DescriptionItem>
@@ -38,8 +45,7 @@ const Product = () => {
                                     Форма выпуска:
                                 </DescriptionTitle>
                                 <DescriptionBody>
-                                    Таблетки, упаковка 20 шт. Все формы выпуска
-                                    Анальгин (30)
+                                    {product.description}
                                 </DescriptionBody>
                             </DescriptionItem>
 
@@ -73,10 +79,10 @@ const Product = () => {
                         </PriceBlock>
                     </ProductInfo>
 
-                    {/* <TabBar /> */}
-                    <OffersTitle>Предложения</OffersTitle>
+                    <TabBar />
 
                     <OfferList productId={data.getProducts[0].id} />
+
                     {/* <Specifications /> */}
                 </ProductBlock>
             </ListContainer>
@@ -169,10 +175,6 @@ const BuyButton = tw("button")`
     focus:ring-offset-2
     focus:ring-indigo-500
     cursor-pointer
-`;
-
-const OffersTitle = tw("h4")`
-    inline font-medium text-lg leading-normal text-indigo-500 mt-4
 `;
 
 export default Product;
