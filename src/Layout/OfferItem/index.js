@@ -38,7 +38,7 @@ const OfferItem = (props) => {
 
         setIsOpenBlock((prev) => ({ ...prev, [name]: !prev[name] }));
     };
-
+    console.log("offer item ID", id)
     return (
         <Card>
             <CardReduced>
@@ -47,7 +47,7 @@ const OfferItem = (props) => {
                 </ImgContainer>
                 <RightBlock>
                     {/* <OfferName>{title}</OfferName> */}
-                    <NavLink to={`/product/:${id}`}>{title}</NavLink>
+                    <NavLink to={`/searchResult/${id}`}>{title}</NavLink>
 
                     <BuyBlock>
                         <PharmacyLink href={pharmacyLink}>

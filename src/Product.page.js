@@ -7,7 +7,9 @@ import { GET_PRODUCT } from "./graphql/queries";
 // import TabBar from "./Layout/Product/TabBar/TabBar";
 import OfferList from "./Layout/Product/Offers/OfferList";
 
-const Product = () => {
+const Product = (props) => {
+    console.log("Product props: ", props);
+
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { uuIds: ["8cb7612a-c003-45db-8c5b-dae24aa6fea1"] },
     });

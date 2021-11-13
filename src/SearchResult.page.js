@@ -6,7 +6,9 @@ import { SEARCH_PRODUCT } from "./graphql/queries";
 import { searchValueVar } from "./graphql/localStore";
 import OfferItem from "./Layout/OfferItem";
 
-const SearchResult = () => {
+const SearchResult = (props) => {
+    console.log("SearchResult props: ", props);
+
     const { loading, error, data } = useQuery(SEARCH_PRODUCT, {
         variables: { title: searchValueVar() },
     });
