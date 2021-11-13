@@ -24,7 +24,7 @@ const Product = (props) => {
         return console.log("Error");
     }
 
-    if (!data.getProducts.length && !data.getProducts ) {
+    if (!data.getProducts.length && !data.getProducts) {
         return <h2>Продукт не найден</h2>;
     }
 
@@ -34,9 +34,7 @@ const Product = (props) => {
         <Layout>
             <ListContainer>
                 <ProductBlock>
-                    <ProductTitle>
-                        {product.title}
-                    </ProductTitle>
+                    <ProductTitle>{product.title}</ProductTitle>
                     <ProductInfo>
                         <ImgBlock>
                             <ProductImg src="https://osnova-k.ru/images/no-image.jpg" />

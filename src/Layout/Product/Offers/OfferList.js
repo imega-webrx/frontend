@@ -26,21 +26,22 @@ const OfferList = ({ productId }) => {
         return <div>Error</div>;
     }
 
-    const offers = data.getOffersOfProductById && data.getOffersOfProductById.length ?
-        data.getOffersOfProductById.map((offer) => (
-            <Offer key={offer.id}>
-                <Pharmacy href="#" target="_blank">{offer.seller}</Pharmacy>
-                <Price>{offer.prices}</Price>
-                <BuyLink href="#" target="_blank">Заказать</BuyLink>
-            </Offer>
-        ))
-    : null;
+    const offers =
+        data.getOffersOfProductById && data.getOffersOfProductById.length
+            ? data.getOffersOfProductById.map((offer) => (
+                  <Offer key={offer.id}>
+                      <Pharmacy href="#" target="_blank">
+                          {offer.seller}
+                      </Pharmacy>
+                      <Price>{offer.prices}</Price>
+                      <BuyLink href="#" target="_blank">
+                          Заказать
+                      </BuyLink>
+                  </Offer>
+              ))
+            : null;
 
-    return (
-        <OfferListBlock>
-            {offers}
-        </OfferListBlock>
-    );
+    return <OfferListBlock>{offers}</OfferListBlock>;
 };
 
 const OfferListBlock = tw("div")`
