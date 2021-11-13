@@ -38,7 +38,7 @@ const OfferItem = (props) => {
 
         setIsOpenBlock((prev) => ({ ...prev, [name]: !prev[name] }));
     };
-    console.log("offer item ID", id)
+    console.log("offer item ID", id);
     return (
         <Card>
             <CardReduced>
