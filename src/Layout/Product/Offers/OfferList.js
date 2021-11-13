@@ -5,11 +5,7 @@ import tw from "twin.macro";
 // import { GET_OFFERS, GET_OFFERS_ID } from "../../../graphql/queries";
 import { GET_PRODUCT_OFFERS } from "../../../graphql/queries";
 
-
-
-
 const OfferList = ({ productId }) => {
-
     const { loading, error, data } = useQuery(GET_PRODUCT_OFFERS, {
         variables: { subject: productId },
     });
@@ -30,23 +26,16 @@ const OfferList = ({ productId }) => {
             {data.getOffersOfProductById.map((offer) => (
                 <Offer key={offer.id}>
                     <ProductTitle>
-                        АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК РОССИЯ)
+                        АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК
+                        РОССИЯ)
                     </ProductTitle>
-                    <Pharmacy>
-                        {offer.seller}
-                    </Pharmacy>
-                    <Price>
-                        {offer.prices}
-                    </Price>
-                    <BuyBtn>
-                        Заказать
-                    </BuyBtn>
+                    <Pharmacy>{offer.seller}</Pharmacy>
+                    <Price>{offer.prices}</Price>
+                    <BuyBtn>Заказать</BuyBtn>
                 </Offer>
             ))}
-
         </OfferListBlock>
     );
-
 };
 
 const OfferListBlock = tw("div")`
@@ -90,6 +79,5 @@ const BuyBtn = tw("button")`
     focus:ring-indigo-500
     cursor-pointer
 `;
-
 
 export default OfferList;

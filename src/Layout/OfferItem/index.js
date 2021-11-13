@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import tw from "twin.macro";
 
 const OfferItem = (props) => {
-    console.log(props.offer)
+    console.log(props.offer);
     const {
         id,
         title,

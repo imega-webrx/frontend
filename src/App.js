@@ -21,11 +21,7 @@ const App = () => {
                             component={SearchResult}
                             exact
                         />
-                        <Route
-                            path="/product/:id"
-                            component={Product}
-                            exact
-                        />
+                        <Route path="/product/:id" component={Product} exact />
                     </Switch>
                 </React.Fragment>
             </HashRouter>

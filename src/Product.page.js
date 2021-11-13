@@ -24,7 +24,9 @@ const Product = () => {
         <Layout>
             <ListContainer>
                 <ProductBlock>
-                    <ProductTitle>Анальгин таблетки 500 мг 20 шт. в Москве</ProductTitle>
+                    <ProductTitle>
+                        Анальгин таблетки 500 мг 20 шт. в Москве
+                    </ProductTitle>
                     <ProductInfo>
                         <ImgBlock>
                             <ProductImg src="https://osnova-k.ru/images/no-image.jpg" />
@@ -36,8 +38,8 @@ const Product = () => {
                                     Форма выпуска:
                                 </DescriptionTitle>
                                 <DescriptionBody>
-                                    Таблетки, упаковка 20 шт.
-                                    Все формы выпуска Анальгин (30)
+                                    Таблетки, упаковка 20 шт. Все формы выпуска
+                                    Анальгин (30)
                                 </DescriptionBody>
                             </DescriptionItem>
 
@@ -54,18 +56,12 @@ const Product = () => {
                                 <DescriptionTitle>
                                     Условия отпуска Анальгин:
                                 </DescriptionTitle>
-                                <DescriptionBody>
-                                    Без рецепта
-                                </DescriptionBody>
+                                <DescriptionBody>Без рецепта</DescriptionBody>
                             </DescriptionItem>
 
                             <DescriptionItem>
-                                <DescriptionTitle>
-                                    Страна:
-                                </DescriptionTitle>
-                                <DescriptionBody>
-                                    Россия
-                                </DescriptionBody>
+                                <DescriptionTitle>Страна:</DescriptionTitle>
+                                <DescriptionBody>Россия</DescriptionBody>
                             </DescriptionItem>
                         </DescriptionBlock>
                         <PriceBlock>
@@ -80,9 +76,8 @@ const Product = () => {
                     {/* <TabBar /> */}
                     <OffersTitle>Предложения</OffersTitle>
 
-                    <OfferList productId={data.getProducts[0].id}/>
+                    <OfferList productId={data.getProducts[0].id} />
                     {/* <Specifications /> */}
-
                 </ProductBlock>
             </ListContainer>
         </Layout>
