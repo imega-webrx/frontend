@@ -5,7 +5,7 @@ const Footer = () => (
     <FooterLayout>
         <LogoGroup>
             <LogoLayout>
-                <LogoLink href="https://www.rigla.ru/">
+                <LogoLink href="https://www.rigla.ru/" target="_blank">
                     <Logo
                         src="https://pobedaplaza.ru/wp-content/uploads/2017/11/rigla-1024x358.png"
                         alt="Rigla"
@@ -13,7 +13,7 @@ const Footer = () => (
                 </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <LogoLink href="https://apteka.ru/">
+                <LogoLink href="https://apteka.ru/" target="_blank">
                     <Logo
                         src="https://delta-medical.ru/wp-content/uploads/2019/01/logo_aptekaru-min-1.png"
                         alt="AptekaRu"
@@ -21,7 +21,7 @@ const Footer = () => (
                 </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <LogoLink href="https://366.ru/">
+                <LogoLink href="https://366.ru/" target="_blank">
                     <Logo
                         src="https://tradernew.pro/wp-content/uploads/2020/03/1-46-768x300.png"
                         alt="36.6"
@@ -29,7 +29,7 @@ const Footer = () => (
                 </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <LogoLink href="https://zhivika.ru/">
+                <LogoLink href="https://zhivika.ru/" target="_blank">
                     <Logo
                         src="https://baby.neobiotic.ru/upload/iblock/da6/da62f53e293bfebeda18678de377ac57.png"
                         alt="Zhivika"
@@ -37,7 +37,7 @@ const Footer = () => (
                 </LogoLink>
             </LogoLayout>
             <LogoLayout>
-                <LogoLink href="https://zdravcity.ru/">
+                <LogoLink href="https://zdravcity.ru/" target="_blank">
                     <Logo
                         src="https://urolesan.ru/images/logo4.png"
                         alt="Zdravcity"

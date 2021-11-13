@@ -22,7 +22,7 @@ const App = () => {
                             exact
                         />
                         <Route
-                            path="/searchResult/:id"
+                            path="/product/:id"
                             component={Product}
                             exact
                         />

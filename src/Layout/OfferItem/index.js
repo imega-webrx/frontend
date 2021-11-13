@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import tw from "twin.macro";
 
 const OfferItem = (props) => {
-    console.log(props.offer);
     const {
         id,
         title,
@@ -38,7 +37,7 @@ const OfferItem = (props) => {
 
         setIsOpenBlock((prev) => ({ ...prev, [name]: !prev[name] }));
     };
-    console.log("offer item ID", id);
+
     return (
         <Card>
             <CardReduced>
@@ -46,8 +45,7 @@ const OfferItem = (props) => {
                     <CardImg src={img} alt="cardImg" />
                 </ImgContainer>
                 <RightBlock>
-                    {/* <OfferName>{title}</OfferName> */}
-                    <NavLink to={`/searchResult/${id}`}>{title}</NavLink>
+                    <NavLink to={`/product/${id}`}>{title}</NavLink>
 
                     <BuyBlock>
                         <PharmacyLink href={pharmacyLink}>

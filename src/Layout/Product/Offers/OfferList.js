@@ -1,9 +1,17 @@
 /* eslint-disable complexity */
-import { useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import tw from "twin.macro";
-// import { GET_OFFERS, GET_OFFERS_ID } from "../../../graphql/queries";
-import { GET_PRODUCT_OFFERS } from "../../../graphql/queries";
+
+const GET_PRODUCT_OFFERS = gql`
+    query Query($subject: ID!) {
+        getOffersOfProductById(subject: $subject) {
+            id
+            seller
+            prices
+        }
+    }
+`;
 
 const OfferList = ({ productId }) => {
     const { loading, error, data } = useQuery(GET_PRODUCT_OFFERS, {
@@ -17,23 +25,20 @@ const OfferList = ({ productId }) => {
 
         return <div>Error</div>;
     }
-    // console.log(data);
+
+    const offers = data.getOffersOfProductById && data.getOffersOfProductById.length ?
+        data.getOffersOfProductById.map((offer) => (
+            <Offer key={offer.id}>
+                <Pharmacy href="#" target="_blank">{offer.seller}</Pharmacy>
+                <Price>{offer.prices}</Price>
+                <BuyLink href="#" target="_blank">Заказать</BuyLink>
+            </Offer>
+        ))
+    : null;
 
     return (
         <OfferListBlock>
-            {/* <GetOfferIds subject={productId} /> */}
-
-            {data.getOffersOfProductById.map((offer) => (
-                <Offer key={offer.id}>
-                    <ProductTitle>
-                        АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК
-                        РОССИЯ)
-                    </ProductTitle>
-                    <Pharmacy>{offer.seller}</Pharmacy>
-                    <Price>{offer.prices}</Price>
-                    <BuyBtn>Заказать</BuyBtn>
-                </Offer>
-            ))}
+            {offers}
         </OfferListBlock>
     );
 };
@@ -49,16 +54,13 @@ const Offer = tw("div")`
     border-solid
     border-gray-200
 `;
-const ProductTitle = tw("a")`
-    text-xs underline
-`;
 const Pharmacy = tw("a")`
     text-xs underline
 `;
 const Price = tw("h3")`
 
 `;
-const BuyBtn = tw("button")`
+const BuyLink = tw("a")`
     px-4
     py-1
     border
