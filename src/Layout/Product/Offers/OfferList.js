@@ -1,55 +1,49 @@
+/* eslint-disable complexity */
+import { useQuery } from "@apollo/client";
 import React from "react";
 import tw from "twin.macro";
+// import { GET_OFFERS, GET_OFFERS_ID } from "../../../graphql/queries";
+import { GET_PRODUCT_OFFERS } from "../../../graphql/queries";
 
-const OfferList = () => {
 
 
 
+const OfferList = ({ productId }) => {
+
+    const { loading, error, data } = useQuery(GET_PRODUCT_OFFERS, {
+        variables: { subject: productId },
+    });
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+    if (error) {
+        console.log("Error", error);
+
+        return <div>Error</div>;
+    }
+    // console.log(data);
 
     return (
         <OfferListBlock>
-            <Offer>
-                <ProductTitle>
-                    АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК РОССИЯ)
-                </ProductTitle>
-                <Pharmacy>
-                    Aptekayg.ru
-                </Pharmacy>
-                <Price>
-                    16 руб
-                </Price>
-                <BuyBtn>
-                    Заказать
-                </BuyBtn>
-            </Offer>
-            <Offer>
-                <ProductTitle>
-                    АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК РОССИЯ)
-                </ProductTitle>
-                <Pharmacy>
-                    Aptekayg.ru
-                </Pharmacy>
-                <Price>
-                    16 руб
-                </Price>
-                <BuyBtn>
-                    Заказать
-                </BuyBtn>
-            </Offer>
-            <Offer>
-                <ProductTitle>
-                    АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК РОССИЯ)
-                </ProductTitle>
-                <Pharmacy>
-                    Aptekayg.ru
-                </Pharmacy>
-                <Price>
-                    16 руб
-                </Price>
-                <BuyBtn>
-                    Заказать
-                </BuyBtn>
-            </Offer>
+            {/* <GetOfferIds subject={productId} /> */}
+
+            {data.getOffersOfProductById.map((offer) => (
+                <Offer key={offer.id}>
+                    <ProductTitle>
+                        АНАЛЬГИН 500МГ. № 20ТАБ. (ICN ЛЕКСРЕДСТВА Г.КУРСК РОССИЯ)
+                    </ProductTitle>
+                    <Pharmacy>
+                        {offer.seller}
+                    </Pharmacy>
+                    <Price>
+                        {offer.prices}
+                    </Price>
+                    <BuyBtn>
+                        Заказать
+                    </BuyBtn>
+                </Offer>
+            ))}
+
         </OfferListBlock>
     );
 
@@ -67,10 +61,10 @@ const Offer = tw("div")`
     border-gray-200
 `;
 const ProductTitle = tw("a")`
-    text-base underline
+    text-xs underline
 `;
 const Pharmacy = tw("a")`
-    text-base underline
+    text-xs underline
 `;
 const Price = tw("h3")`
 

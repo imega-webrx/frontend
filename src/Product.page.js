@@ -3,13 +3,13 @@ import React from "react";
 import tw from "twin.macro";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCT } from "./graphql/queries";
-import Specifications from "./Layout/Product/Specifications/Specifications";
-import TabBar from "./Layout/Product/TabBar/TabBar";
+// import Specifications from "./Layout/Product/Specifications/Specifications";
+// import TabBar from "./Layout/Product/TabBar/TabBar";
 import OfferList from "./Layout/Product/Offers/OfferList";
 
 const Product = () => {
     const { loading, error, data } = useQuery(GET_PRODUCT, {
-        variables: { uuIds: ["97b972a4-3f2f-4362-a9db-a528de29ab72"] },
+        variables: { uuIds: ["8cb7612a-c003-45db-8c5b-dae24aa6fea1"] },
     });
     if (loading) {
         return <p>Loading...</p>;
@@ -18,7 +18,7 @@ const Product = () => {
         return console.log("Error");
     }
 
-    console.log("PRODUCT: ", data);
+    console.log("PRODUCT: ", data.getProducts[0]);
 
     return (
         <Layout>
@@ -80,7 +80,7 @@ const Product = () => {
                     {/* <TabBar /> */}
                     <OffersTitle>Предложения</OffersTitle>
 
-                    <OfferList />
+                    <OfferList productId={data.getProducts[0].id}/>
                     {/* <Specifications /> */}
 
                 </ProductBlock>
