@@ -6,6 +6,7 @@ import {
     Newsletter,
     Ready,
     Feature,
+    MainInfo,
     Hero,
     SearchSection,
 } from "./Layout/Sections";
@@ -16,6 +17,7 @@ const Main = () => {
             <SearchSection />
             <Hero />
             <Ready />
+            <MainInfo />
             <Feature />
             <Newsletter />
             <Footer />
