@@ -35,8 +35,8 @@ const HeroTitle = tw("h2")`
     text-xl font-extrabold text-gray-900 sm:text-2xl
 `;
 const FeaturesText = tw("ul")`
-    flex
-    justify-center
+    grid
+    grid-cols-3
     gap-20
 `;
 const JustText = tw("li")`
