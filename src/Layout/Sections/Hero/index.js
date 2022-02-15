@@ -8,15 +8,15 @@ const Hero = () => (
             сравнения цен
         </HeroTitle>
         <FeaturesText>
-            <JustText>
-                <p>Выгодные условия в любой стране</p>
-            </JustText>
-            <JustText>
-                <p>Аналоги для любого лекарства</p>
-            </JustText>
-            <JustText>
-                <p>Удобный формат поиска</p>
-            </JustText>
+            <FeaturesItem>
+                <JustText>Выгодные условия в любой стране</JustText>
+            </FeaturesItem>
+            <FeaturesItem>
+                <JustText>Аналоги для любого лекарства</JustText>
+            </FeaturesItem>
+            <FeaturesItem>
+                <JustText>Удобный формат поиска</JustText>
+            </FeaturesItem>
         </FeaturesText>
         <AdditionalText>
             Нет необходимости искать лекарства по отдельности в каждой
@@ -35,13 +35,18 @@ const HeroTitle = tw("h2")`
     text-xl font-extrabold text-gray-900 sm:text-2xl
 `;
 const FeaturesText = tw("ul")`
-    flex
-    justify-center
-    gap-20
+    grid
+    grid-cols-1
+    gap-10
+    sm:grid-cols-3
 `;
-const JustText = tw("li")`
+const FeaturesItem = tw("li")`
+`;
+const JustText = tw("p")`
+    p-4
+    shadow-md
     text-base
     text-gray-500
-`;
+    `;
 const AdditionalText = tw("p")``;
 export { Hero };

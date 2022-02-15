@@ -5,7 +5,7 @@ import secondImage from "./images/delivery-man-holds-bag-with-medicines-pink-bac
 import thirdImage from "./images/doctor-using-modern-computer.jpg";
 
 const imageSrc = [firstImage, secondImage, thirdImage];
-const delay = 3000;
+const delay = 4000;
 
 const MainInfo = () => {
     const [index, setIndex] = useState(0);
@@ -105,6 +105,7 @@ const Slide = tw("div")`
     whitespace-nowrap
     transition
     ease
+    duration-700
     delay-200
     max-h-96
     max-w-sm
@@ -127,6 +128,7 @@ const SlideDot = tw("div")`
     bg-gray-300
     transition
     ease
+    duration-700
     delay-200
     `;
 
