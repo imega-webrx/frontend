@@ -9,6 +9,7 @@ import {
     MainInfo,
     Hero,
     SearchSection,
+    GoToBlog,
 } from "./Layout/Sections";
 
 const Main = () => {
@@ -19,6 +20,7 @@ const Main = () => {
             <Ready />
             <MainInfo />
             <Feature />
+            <GoToBlog />
             <Newsletter />
             <Footer />
         </React.Fragment>
